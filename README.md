@@ -3,11 +3,11 @@ Just a litle Anime info app using these technologies.
 
 ## First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
-Here you have some links:
-[NodeJS Download](https://nodejs.org/es/)
-[Ruby Download](https://rubyinstaller.org/downloads/)
-[Ruby on Rails Installation Tutorial](https://guides.rubyonrails.org/getting_started.html)
-[PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+Here you have some links:<br/>
+[NodeJS Download](https://nodejs.org/es/)<br/>
+[Ruby Download](https://rubyinstaller.org/downloads/)<br/>
+[Ruby on Rails Installation Tutorial](https://guides.rubyonrails.org/getting_started.html)<br/>
+[PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)<br/>
 
 ## Get the app running
 Once you have everything downloaded and installed you'll need to run a few things in the command prompt.
