@@ -2,7 +2,7 @@
 Just a litle Anime info app using these technologies.
 
 ## First of all
-To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).
+To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).\n
 Here you have some links:
 [NodeJS Download](https://nodejs.org/es/)
 [Ruby Download](https://rubyinstaller.org/downloads/)
