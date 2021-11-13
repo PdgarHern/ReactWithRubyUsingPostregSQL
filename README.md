@@ -15,12 +15,12 @@ I recommend using the *Git Bash*. It's comfortable and shouldn't give you any pr
 [Git Download](https://git-scm.com/downloads)
 
 ## Backend
-The Backend is created with Ruby on Rails and uses PostgreSQL for the database.
-
-In the *Backend* you need to run ```bundle install``` and ```rails db:setup```.
-
-Also, you will have to create a file called *application.yml* inside the *config* folder.
-In that file, you will have to write the following:
+The Backend is created with Ruby on Rails and uses PostgreSQL for the database.<br/>
+<br/>
+In the *Backend* you need to run ```bundle install``` and ```rails db:setup```.<br/>
+<br/>
+Also, you will have to create a file called *application.yml* inside the *config* folder.<br/>
+In that file, you will have to write the following:<br/>
 ```
 development:
   host_postgres: your_host
@@ -28,10 +28,10 @@ development:
   username_postgres: your_user
   password_postgres: your_password
 ```
-This is done this way for security reasons.
-
-If you want to insert some test data into the database I recomend using Postman.
-[Postman Download](https://www.postman.com/downloads/)
+This is done this way for security reasons.<br/>
+<br/>
+If you want to insert some test data into the database I recomend using Postman.<br/>
+[Postman Download](https://www.postman.com/downloads/)<br/>
 
 ## Frontend
 This is an early version of the project so, for now there is not much to see here really.
