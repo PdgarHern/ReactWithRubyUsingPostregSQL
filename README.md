@@ -10,8 +10,8 @@ Here you have some links:<br/>
 [PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)<br/>
 
 ## Get the app running
-Once you have everything downloaded and installed you'll need to run a few things in the command prompt.
-I recommend using the *Git Bash*. It's comfortable and shouldn't give you any problem.
+Once you have everything downloaded and installed you'll need to run a few things in the command prompt.<br/>
+I recommend using the *Git Bash*. It's comfortable and shouldn't give you any problem.<br/>
 [Git Download](https://git-scm.com/downloads)
 
 ## Backend
