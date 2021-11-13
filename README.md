@@ -40,6 +40,6 @@ However you can see some information displaying on the screen and some routes ar
 The *Frontend* preparation is easy. You just have to run ```npm install```.
 
 ## Starting the app
-Both *Ruby on Rails* and *React* uses port 3000.
-However, run the *Backend* with ```rails s``` and then, when you run *React* using ```npm start``` it will auto select another port.
+Both *Ruby on Rails* and *React* uses port 3000.<br/>
+However, run the *Backend* with ```rails s``` and then, when you run *React* using ```npm start``` it will auto select another port.<br/>
 In further commits, the installation guide may be updated if necessary.
