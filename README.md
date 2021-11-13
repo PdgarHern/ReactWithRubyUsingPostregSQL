@@ -34,9 +34,9 @@ If you want to insert some test data into the database I recomend using Postman.
 [Postman Download](https://www.postman.com/downloads/)<br/>
 
 ## Frontend
-This is an early version of the project so, for now there is not much to see here really.
-However you can see some information displaying on the screen and some routes are already created.
-
+This is an early version of the project so, for now there is not much to see here really.<br/>
+However you can see some information displaying on the screen and some routes are already created.<br/>
+<br/>
 The *Frontend* preparation is easy. You just have to run ```npm install```.
 
 ## Starting the app
