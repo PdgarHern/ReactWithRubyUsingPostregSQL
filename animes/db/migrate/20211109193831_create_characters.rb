@@ -5,7 +5,6 @@ class CreateCharacters < ActiveRecord::Migration[6.1]
       t.string :gender
       t.integer :age
       t.string :role
-      t.string :thumb
       t.references :anime, foreign_key: true
       t.timestamps
     end

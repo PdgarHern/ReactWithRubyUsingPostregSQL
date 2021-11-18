@@ -4,9 +4,10 @@ class AnimesController < ApplicationController
 
   # GET /animes
   def index
-    @animes = Anime.all
+    @q = Anime.ransack(title_cont: params[:query])
+    @animes = @q.result(distinct: true).page params[:page]
 
-    render json: @animes, include: @models
+    render json: {page: Integer(params[:page]), results: @animes, total_pages: @animes.total_pages}, include: @models
   end
 
   # GET /animes/1

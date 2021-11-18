@@ -9,8 +9,6 @@ class CreateAnimes < ActiveRecord::Migration[6.1]
       t.integer :premiered
       t.string :demographic
       t.integer :episodes
-      t.string :poster
-      t.string :thumb
 
       t.timestamps
     end
