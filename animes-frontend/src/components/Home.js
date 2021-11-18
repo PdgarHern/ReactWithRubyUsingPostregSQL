@@ -4,8 +4,12 @@ import HeroImage from "./HeroImage";
 import HomeContent from "./HomeContent";
 import Thumb from "./Thumb";
 import HomeBar from "./HomeBar";
+import Spinner from "./Spinner";
 // Hooks
 import { useHomeFetch } from "../hooks/useHomeFetch";
+// Image
+import NoImage from "../images/NoThumb.png";
+import NoPoster from "../images/NoPoster.png";
 
 
 const Home = () => {
@@ -25,7 +29,9 @@ const Home = () => {
       {console.log(`2: ${randomNumber2}`)}
       {state.results[randomNumber] ? (
         <HeroImage
-          image={state.results[randomNumber].poster}
+          image={state.results[randomNumber].poster == null
+            ? NoPoster
+            : state.results[randomNumber].poster}
           clickable
           title={state.results[randomNumber].title}
           text={state.results[randomNumber].plot}
@@ -40,7 +46,11 @@ const Home = () => {
             <div className="Content">
               <div className="Thumb">
                 <Thumb
-                  image={state.results[randomNumber2].thumb}
+                  image={
+                    state.results[randomNumber2].thumb == ""
+                      ? NoImage
+                      : state.results[randomNumber2].thumb
+                  }
                   clickable
                   animeId={state.results[randomNumber2].id}
                 />
@@ -60,7 +70,11 @@ const Home = () => {
             <div className="Content">
               <div className="Thumb">
                 <Thumb
-                  image={state.results[randomNumber3].thumb}
+                  image={
+                    state.results[randomNumber3].thumb == ""
+                      ? NoImage
+                      : state.results[randomNumber3].thumb
+                  }
                   clickable
                   animeId={state.results[randomNumber3].id}
                 />
@@ -77,6 +91,7 @@ const Home = () => {
           </div>
         </HomeContent>
       ) : null}
+      {loading && <Spinner />}
     </>
   )
 }

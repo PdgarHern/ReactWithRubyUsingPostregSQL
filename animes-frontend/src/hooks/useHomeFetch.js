@@ -17,7 +17,7 @@ export const useHomeFetch = () => {
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
   const fetchAnimes = async (page, searchTerm = '') => {
-    try {
+    // try {
       setError(false);
       setLoading(true);
 
@@ -29,9 +29,9 @@ export const useHomeFetch = () => {
           page > 1 ? [...prev.results, ...animes.results] : [...animes.results]
       }))
 
-    } catch (error) {
-      setError(true);
-    }
+    // } catch (error) {
+    //   setError(true);
+    // }
     setLoading(false);
   };
 

@@ -9,11 +9,11 @@ const apiSettings = {
     const endpoint = searchTerm
       ? `${GET_ANIMES}?query=${searchTerm}&page=${page}`
       : `${GET_ANIMES}?page=${page}`;
-    return await (await axios.get(endpoint)).json();
+    return await (await fetch(endpoint)).json();
   },
   fetchAnime: async animeId => {
     const endpoint = `${GET_ANIMES}/${animeId}`;
-    return await (await axios.get(endpoint)).json();
+    return await (await fetch(endpoint)).json();
   }
 };
 
