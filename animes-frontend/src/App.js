@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import BrowseInfo from "./components/BrowseInfo";
 import Anime from "./components/Anime";
+import PostAnime from "./components/PostAnime";
+import UpdateAnime from "./components/UpdateAnime";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -24,6 +26,8 @@ function App() {
           <Route path='/:animeId' element={<Anime />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/browse-info' element={<BrowseInfo />} />
+          <Route path='/post-anime' element={<PostAnime />} />
+          <Route path='/update-anime/:animeId' element={<UpdateAnime />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>

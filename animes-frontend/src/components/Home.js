@@ -13,7 +13,7 @@ import NoPoster from "../images/NoPoster.png";
 
 
 const Home = () => {
-  const { state, loading, error, setIsLoading } = useHomeFetch();
+  const { state, loading, error } = useHomeFetch();
   console.log(state);
 
   if (error) return <div>Something went wrong...</div>;
@@ -29,7 +29,7 @@ const Home = () => {
       {console.log(`2: ${randomNumber2}`)}
       {state.results[randomNumber] ? (
         <HeroImage
-          image={state.results[randomNumber].poster == null
+          image={state.results[randomNumber].poster == null | state.results[randomNumber].poster == ""
             ? NoPoster
             : state.results[randomNumber].poster}
           clickable

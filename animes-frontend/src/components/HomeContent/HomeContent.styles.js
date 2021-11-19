@@ -37,7 +37,7 @@ export const Content = styled.div`
     justify-content: flex-start;
     flex-direction: column;
     padding: 20px;
-    line-height: 0;
+    line-height: 15px;
     
     h1 {
       font-size: var(--fontMed);
@@ -46,6 +46,16 @@ export const Content = styled.div`
     p {
       color: var(--medGrey)
     }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 15px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    } 
 
   }
 

@@ -63,4 +63,12 @@ export const Text = styled.div`
     }
   }
 
+  .button {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
 `;

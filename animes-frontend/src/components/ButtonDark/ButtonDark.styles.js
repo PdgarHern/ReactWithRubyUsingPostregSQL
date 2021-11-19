@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Wrapper = styled.button`
   display: block;
-  background: var(--medGrey);
+  background: var(--darkGrey);
   width: 25%;
   min-width: 200px;
   height: 60px;
   border-radius: 30px;
   color: var(--white);
   border: 0;
-  font-size: var(--fontMed);
+  font-size: var(--fontBig);
   margin: 20px auto;
   transition: all 0.3s;
   outline: none;
@@ -20,8 +20,8 @@ export const Wrapper = styled.button`
   }
 
   @media screen and (max-width: 768px) {
-    min-width: 100px;
-    font-size: var(--fontSmall);
+    min-width: 120px;
+    font-size: var(--fontMed);
   }
 
 `;

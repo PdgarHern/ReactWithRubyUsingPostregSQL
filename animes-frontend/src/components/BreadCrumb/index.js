@@ -6,11 +6,11 @@ import { Wrapper, Content, BackImage } from "./BreadCrumb.styles";
 // Images
 import GoBack from "../../images/back.png";
 
-const BreadCrumb = ({ animeTitle }) => (
+const BreadCrumb = ({ animeTitle, linkPath }) => (
   <Wrapper>
     <Content>
-      <Link to='/'>
-        <span>Home</span>
+      <Link to={linkPath}>
+        <span>Back</span>
       </Link>
       <span>|</span>
       <span>{animeTitle}</span>

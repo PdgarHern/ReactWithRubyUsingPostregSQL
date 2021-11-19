@@ -15,6 +15,11 @@ class AnimesController < ApplicationController
     render json: @anime
   end
 
+  def sendAll
+    @animes = Anime.all
+    render json: @animes
+  end
+
   # POST /animes
   def create
     @anime = Anime.new(anime_params)

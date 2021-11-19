@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom";
 // Config
 import { POSTER_SIZE } from "../config";
 // Components
-import HeroImage from "./HeroImage";
-// Hook
-import { useAnimeFetch } from "../hooks/useAnimeFetch";
 import BreadCrumb from "./BreadCrumb";
 import AnimeInfo from "./AnimeInfo";
+import AnimeBar from "./AnimeBar";
+import Spinner from "./Spinner";
+// Hook
+import { useAnimeFetch } from "../hooks/useAnimeFetch";
 
 const Anime = () => {
   const { animeId } = useParams();
@@ -18,8 +19,14 @@ const Anime = () => {
 
   return (
     <>
-      <BreadCrumb animeTitle={anime.title} />
-      <AnimeInfo anime={anime} />
+      {!loading ? (
+        <>
+        <BreadCrumb animeTitle={anime.title} linkPath={'/browse-info'} />
+        <AnimeInfo anime={anime} />
+        <AnimeBar anime={anime} />
+        </>
+      ) : null}
+      {loading && <Spinner />}      
     </>
   )
 }
