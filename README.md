@@ -42,4 +42,5 @@ The *Frontend* preparation is easy. You just have to run ```npm install```.
 ## Starting the app
 Both *Ruby on Rails* and *React* uses port 3000.<br/>
 However, run the *Backend* with ```rails s``` and then, when you run *React* using ```npm start``` it will auto select another port.<br/>
+Is possible that running ```rails s``` throughs you an error the first time. The terminal will require you to run ```yarn install --check-files```. Do so and then you should be able to run the server as normally.<br/>
 In further commits, the installation guide may be updated if necessary.
