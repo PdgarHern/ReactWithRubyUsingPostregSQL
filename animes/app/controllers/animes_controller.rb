@@ -5,9 +5,11 @@ class AnimesController < ApplicationController
   # GET /animes
   def index
     @q = Anime.ransack(title_cont: params[:query])
-    @animes = @q.result(distinct: true).page params[:page]
+    @animes = @q.result(distinct: true).all.page params[:page]
 
-    render json: {page: Integer(params[:page]), results: @animes, total_pages: @animes.total_pages}, include: @models
+    @animesSerialized = ActiveModel::SerializableResource.new(@animes).serializable_hash
+
+    render json: {page: Integer(params[:page]), results: @animesSerialized, total_pages: @animes.total_pages}
   end
 
   # GET /animes/1
@@ -15,7 +17,7 @@ class AnimesController < ApplicationController
     render json: @anime
   end
 
-  def sendAll
+  def send_all
     @animes = Anime.all
     render json: @animes
   end
@@ -56,6 +58,6 @@ class AnimesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def anime_params
-      params.require(:anime).permit(:title, :plot, :genres, :author, :studio, :premiered, :demographic, :episodes, :poster, :thumb)
+      params.permit(:title, :plot, :genres, :author, :studio, :premiered, :demographic, :episodes, :poster, :thumb)
     end
 end

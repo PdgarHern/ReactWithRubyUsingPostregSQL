@@ -27,7 +27,7 @@ const BrowseInfo = () => {
             image={
               anime.thumb == "" | anime.thumb == null
                 ? NoImage
-                : anime.thumb
+                : anime.thumb.url
             }
             animeId={anime.id}
           />

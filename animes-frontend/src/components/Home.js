@@ -31,7 +31,7 @@ const Home = () => {
         <HeroImage
           image={state.results[randomNumber].poster == null | state.results[randomNumber].poster == ""
             ? NoPoster
-            : state.results[randomNumber].poster}
+            : state.results[randomNumber].poster.url}
           clickable
           title={state.results[randomNumber].title}
           text={state.results[randomNumber].plot}
@@ -47,9 +47,9 @@ const Home = () => {
               <div className="Thumb">
                 <Thumb
                   image={
-                    state.results[randomNumber2].thumb == ""
+                    state.results[randomNumber2].thumb == null
                       ? NoImage
-                      : state.results[randomNumber2].thumb
+                      : state.results[randomNumber2].thumb.url
                   }
                   clickable
                   animeId={state.results[randomNumber2].id}
@@ -71,9 +71,9 @@ const Home = () => {
               <div className="Thumb">
                 <Thumb
                   image={
-                    state.results[randomNumber3].thumb == ""
+                    state.results[randomNumber3].thumb == null
                       ? NoImage
-                      : state.results[randomNumber3].thumb
+                      : state.results[randomNumber3].thumb.url
                   }
                   clickable
                   animeId={state.results[randomNumber3].id}

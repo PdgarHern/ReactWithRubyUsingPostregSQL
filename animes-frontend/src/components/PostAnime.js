@@ -29,41 +29,25 @@ const PostAnime = () => {
 
   const handleSubmit = async () => {
     setLoading(true);
-    // const formData = new FormData();
-    // formData.append('title', title);
-    // formData.append('plot', plot);
-    // formData.append('genres', genres);
-    // formData.append('author', author);
-    // formData.append('studio', studio);
-    // formData.append('premiered', premiered);
-    // formData.append('demographic', demographic);
-    // formData.append('episodes', episodes);
-    // formData.append('poster_image', poster);
-    // formData.append('thumb_image', thumb);
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('plot', plot);
+    formData.append('genres', genres);
+    formData.append('author', author);
+    formData.append('studio', studio);
+    formData.append('premiered', premiered);
+    formData.append('demographic', demographic);
+    formData.append('episodes', episodes);
+    formData.append('poster', poster);
+    formData.append('thumb', thumb);
 
-    const body = { title: title, plot: plot, genres: genres, author: author, studio: studio, premiered: premiered, demographic: demographic, episodes: episodes, poster: poster, thumb: thumb };
 
-    await API.postAnime(body);
+    await API.postAnime(formData);
 
     setLoading(false);
 
     navigate(`/browse-info`);
 
-  }
-
-  const convertBase64 = async (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
   }
 
   const handleInput = async (e) => {
@@ -78,8 +62,8 @@ const PostAnime = () => {
     if (name === 'premiered') setPremiered(parseInt(value));
     if (name === 'demographic') setDemographic(value);
     if (name === 'episodes') setEpisodes(parseInt(value));
-    if (name === 'poster_image') setPoster(await convertBase64(e.currentTarget.files[0]));
-    if (name === 'thumb_image') setThumb(await convertBase64(e.currentTarget.files[0]));
+    if (name === 'poster_image') setPoster(e.currentTarget.files[0]);
+    if (name === 'thumb_image') setThumb(e.currentTarget.files[0]);
 
   }
 

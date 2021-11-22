@@ -32,14 +32,14 @@ const AnimeInfo = ({ anime }) => {
     <Wrapper backdrop={
               anime.poster == "" || anime.poster == null
                 ? NoPoster
-                : anime.poster
+                : anime.poster.url
             }>
       <Content>
         <Thumb
           image={
             anime.thumb == "" || anime.thumb == null
              ? NoImage
-             : anime.thumb
+             : anime.thumb.url
           }
           clickable={false}
         />
