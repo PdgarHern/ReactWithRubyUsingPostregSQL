@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 // API
 import API from "../API";
 // Components
@@ -30,6 +31,10 @@ const UpdateAnime = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  const handleUpdateImg = () => {
+    navigate(`/update-anime-imgs/${anime.id}`);
+  }
 
   const handleValue = (e) => {
     const name = e.currentTarget.name;
@@ -72,21 +77,21 @@ const UpdateAnime = () => {
     let aDemographic = '';
     let aEpisodes = '';
 
-    if (title == '') {  aTitle = anime.title; }
+    if (title === '') {  aTitle = anime.title; }
     else {  aTitle = title; }
-    if (plot == '') {  aPlot = anime.plot; }
+    if (plot === '') {  aPlot = anime.plot; }
     else {  aPlot = plot; }
-    if (genres == '') {  aGenres = anime.genres; }
+    if (genres === '') {  aGenres = anime.genres; }
     else {  aGenres = genres; }
-    if (author == '') {  aAuthor = anime.author; }
+    if (author === '') {  aAuthor = anime.author; }
     else {  aAuthor = author; }
-    if (studio == '') {  aStudio = anime.studio; }
+    if (studio === '') {  aStudio = anime.studio; }
     else {  aStudio = studio; }
-    if (premiered == '') {  aPremiered = anime.premiered; }
+    if (premiered === '') {  aPremiered = anime.premiered; }
     else {  aPremiered = premiered; }
-    if (demographic == '') {  aDemographic = anime.demographic; }
+    if (demographic === '') {  aDemographic = anime.demographic; }
     else {  aDemographic = demographic; }
-    if (episodes == '') {  aEpisodes = anime.episodes; }
+    if (episodes === '') {  aEpisodes = anime.episodes; }
     else {  aEpisodes = episodes; }
 
     const body = { title: aTitle, plot: aPlot, genres: aGenres, author: aAuthor, studio: aStudio, premiered: aPremiered, demographic: aDemographic, episodes: aEpisodes };
@@ -178,7 +183,10 @@ const UpdateAnime = () => {
               onChange={handleInput}
               onClick={handleValue}
             />
-            <ButtonDark text='Update' callback={handleSubmit} />
+            <div className="buttons">
+              <ButtonDark text='Update' callback={handleSubmit} />
+              <ButtonDark text='Images' callback={handleUpdateImg} />
+            </div>
           </>
         )}
         {loading && (

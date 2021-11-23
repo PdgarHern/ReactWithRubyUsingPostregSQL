@@ -16,11 +16,15 @@ export const useHomeFetch = () => {
 
       const animes = await API.fetchAllAnimes();
 
-      setState(prev => ({
-        ...animes,
-        results:
-          [...animes]
-      }))
+
+      if (animes) {
+        setState(prev => ({
+          ...animes,
+          results:
+            [...animes]
+        }))
+      }
+      
 
     } catch (error) {
       setError(true);

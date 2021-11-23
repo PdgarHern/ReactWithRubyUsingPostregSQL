@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // Components
 import Grid from "./Grid";
 import Thumb from "./Thumb";
@@ -14,7 +14,13 @@ import NoImage from "../images/NoThumb.png";
 const BrowseInfo = () => {
   const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } = useBrowseInfoFetch();
 
+  const navigate = useNavigate();
+
   if (error) return <div>Something went wrong...</div>
+
+  const handleAddButton = () => {
+    navigate('/post-anime');
+  }
 
   return (
     <>
@@ -38,9 +44,7 @@ const BrowseInfo = () => {
         <ButtonDark text="Load More" callback={() => setIsLoadingMore(true)} />
       )}
       {!loading && (
-        <Link to={`/post-anime`}>
-          <ButtonDark text="Add Anime" callback={false} />
-        </Link>
+        <ButtonDark text="Add Anime" callback={handleAddButton} />
       )}
     </>
   )

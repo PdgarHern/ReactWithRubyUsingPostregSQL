@@ -3,10 +3,14 @@ import { useNavigate } from "react-router-dom";
 // API
 import API from "../API";
 // Components
+import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Styles
-import { Wrapper } from "./PostAnime.styles";
+import { Wrapper, Content } from "./PostAnime.styles";
+// Image
+import PosterExample from "../images/PosterExample.png";
+import ThumbExample from "../images/ThumbExample.png";
 // Context
 import { Context } from "../context";
 
@@ -19,8 +23,8 @@ const PostAnime = () => {
   const [premiered, setPremiered] = useState('');
   const [demographic, setDemographic] = useState('');
   const [episodes, setEpisodes] = useState('');
-  const [poster, setPoster] = useState(null);
-  const [thumb, setThumb] = useState(null);
+  const [poster, setPoster] = useState();
+  const [thumb, setThumb] = useState();
 
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -68,88 +72,104 @@ const PostAnime = () => {
   }
 
   return (
-    <Wrapper>
-      {error && <div className="error">There was an error...</div>}
-      {!loading && (
-        <>
-          <label>Title</label>
-          <input
-            type='text'
-            value={title}
-            name='title'
-            onChange={handleInput}
-          />
-          <label>Plot</label>
-          <input
-            type='text'
-            value={plot}
-            name='plot'
-            onChange={handleInput}
-          />
-          <label>Genres</label>
-          <input
-            type='text'
-            value={genres}
-            name='genres'
-            onChange={handleInput}
-          />
-          <label>Author</label>
-          <input
-            type='text'
-            value={author}
-            name='author'
-            onChange={handleInput}
-          />
-          <label>Studio</label>
-          <input
-            type='text'
-            value={studio}
-            name='studio'
-            onChange={handleInput}
-          />
-          <label>Premiered</label>
-          <input
-            type='number'
-            value={parseInt(premiered)}
-            name='premiered'
-            onChange={handleInput}
-          />
-          <label>Demographic</label>
-          <input
-            type='text'
-            value={demographic}
-            name='demographic'
-            onChange={handleInput}
-          />
-          <label>Episodes</label>
-          <input
-            type='number'
-            value={parseInt(episodes)}
-            name='episodes'
-            onChange={handleInput}
-          />
-          <label>Poster</label>
-          <input
-            type='file'
-            name='poster_image'
-            onChange={handleInput}
-          />
-          <label>Thumb</label>
-          <input
-            type='file'
-            name='thumb_image'
-            onChange={handleInput}
-          />
+    <>
+      <BreadCrumb animeTitle={'Post Anime'} linkPath={'/browse-info'} />
+      <Wrapper>
+        {error && <div className="error">There was an error...</div>}
+        <Content>
+          {!loading && (
+            <>
+              <div className="column">
+                <label>Title</label>
+                <input
+                  type='text'
+                  value={title}
+                  name='title'
+                  onChange={handleInput}
+                />
+                <label>Plot</label>
+                <input
+                  type='text'
+                  value={plot}
+                  name='plot'
+                  onChange={handleInput}
+                />
+                <label>Genres</label>
+                <input
+                  type='text'
+                  value={genres}
+                  name='genres'
+                  onChange={handleInput}
+                />
+                <label>Author</label>
+                <input
+                  type='text'
+                  value={author}
+                  name='author'
+                  onChange={handleInput}
+                />
+                <label>Studio</label>
+                <input
+                  type='text'
+                  value={studio}
+                  name='studio'
+                  onChange={handleInput}
+                />
+                <label>Premiered</label>
+                <input
+                  type='number'
+                  value={parseInt(premiered)}
+                  name='premiered'
+                  onChange={handleInput}
+                />
+                <label>Demographic</label>
+                <input
+                  type='text'
+                  value={demographic}
+                  name='demographic'
+                  onChange={handleInput}
+                />
+                <label>Episodes</label>
+                <input
+                  type='number'
+                  value={parseInt(episodes)}
+                  name='episodes'
+                  onChange={handleInput}
+                />
+              </div>
+              <div className="column">
+                <label>Poster</label>
+                <input
+                  id="image"
+                  type='file'
+                  name='poster_image'
+                  onChange={handleInput}
+                />
+                <img id="posterImg" src={PosterExample} alt="Not Found" />
+                <label>Thumb</label>
+                <input
+                  id="image"
+                  type='file'
+                  name='thumb_image'
+                  onChange={handleInput}
+                />
+                <img id="thumbImg" src={ThumbExample} alt="Not Found" />
+              </div>
+            </>
+          )}
+        </Content>
+        {!loading && (
           <ButtonDark text='Add' callback={handleSubmit} />
-        </>
-      )}
-      {loading && (
-        <>
-          <Spinner />
-          <div>Processing your request...</div>
-        </>
-      )}
-    </Wrapper>
+        )}
+        {loading && (
+          <>
+            <Spinner />
+            <div>Processing your request...</div>
+          </>
+        )}
+      </Wrapper>
+    </>
+
   )
 }
 

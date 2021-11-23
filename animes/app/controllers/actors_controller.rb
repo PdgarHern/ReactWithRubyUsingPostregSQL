@@ -46,6 +46,6 @@ class ActorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def actor_params
-      params.require(:actor).permit(:name, :gender, :age, :character, :thumb, :anime_id)
+      params.permit(:name, :gender, :age, :character_done, :anime_id, :img)
     end
 end

@@ -8,6 +8,7 @@ import BrowseInfo from "./components/BrowseInfo";
 import Anime from "./components/Anime";
 import PostAnime from "./components/PostAnime";
 import UpdateAnime from "./components/UpdateAnime";
+import UpdateAnimeImgs from "./components/UpdateAnimeImgs";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -28,6 +29,7 @@ function App() {
           <Route path='/browse-info' element={<BrowseInfo />} />
           <Route path='/post-anime' element={<PostAnime />} />
           <Route path='/update-anime/:animeId' element={<UpdateAnime />} />
+          <Route path='/update-anime-imgs/:animeId' element={<UpdateAnimeImgs />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>

@@ -23,6 +23,18 @@ export const Wrapper = styled.div`
     padding: 10px;
   }
 
+  #image {
+    border: 0;
+  }
+
+  #posterImg {
+    max-width: 300px;
+  }
+
+  #thumbImg {
+    max-width: 150px;
+  }
+
   .error {
     color: red;
   }

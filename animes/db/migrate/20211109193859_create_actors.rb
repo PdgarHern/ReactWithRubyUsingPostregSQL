@@ -4,7 +4,7 @@ class CreateActors < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :gender
       t.integer :age
-      t.string :character
+      t.string :character_done
       t.references :anime, foreign_key: true
       t.timestamps
     end
