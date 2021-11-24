@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {
   API_URL,
-  GET_ANIMES
+  ANIMES,
+  ACTORS
 } from './config';
 
 const apiSettings = {
@@ -11,26 +12,32 @@ const apiSettings = {
   },
   fetchAnimes: async (searchTerm, page) => {
     const endpoint = searchTerm
-      ? `${GET_ANIMES}?query=${searchTerm}&page=${page}`
-      : `${GET_ANIMES}?page=${page}`;
+      ? `${ANIMES}?query=${searchTerm}&page=${page}`
+      : `${ANIMES}?page=${page}`;
     return await (await fetch(endpoint)).json();
   },
   fetchAnime: async animeId => {
-    const endpoint = `${GET_ANIMES}/${animeId}`;
+    const endpoint = `${ANIMES}/${animeId}`;
     return await (await fetch(endpoint)).json();
   },
   postAnime: async body => {
-    const endpoint = `${GET_ANIMES}`;
+    const endpoint = `${ANIMES}`;
     return await (await axios.post(endpoint, body));
   },
   deleteAnime: async animeId => {
-    const endpoint = `${GET_ANIMES}/${animeId}`;
+    const endpoint = `${ANIMES}/${animeId}`;
     return await (await axios.delete(endpoint));
   },
   updateAnime: async (animeId, body) => {
-    const endpoint = `${GET_ANIMES}/${animeId}`;
+    const endpoint = `${ANIMES}/${animeId}`;
     return await (await axios.put(endpoint, body));
-  }
+  },
+
+
+  postActor: async body => {
+    const endpoint = `${ACTORS}`;
+    return await (await axios.post(endpoint, body));
+  },
 };
 
 export default apiSettings;
