@@ -24,4 +24,8 @@ export const Image = styled.img`
   object-fit: cover;
   border-radius: 15px;
 
+  :hover {
+    opacity: 0.8;
+  }
+
 `;

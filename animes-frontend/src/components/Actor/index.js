@@ -1,15 +1,25 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { useNavigate } from "react-router-dom";
 // Styles
 import { Wrapper, Image } from "./Actor.styles";
 
-const Actor = ({ name, character, imageUrl }) => (
-  <Wrapper>
-    <Image src={imageUrl} alt='actor-thumb' />
-    <h3>{name}</h3>
-    <p>{character}</p>
-  </Wrapper>
-);
+const Actor = ({ actorId, name, character, imageUrl }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/actor/${actorId}`);
+  }
+
+  return(
+    <Wrapper>
+      <Image src={imageUrl} alt='actor-thumb' onClick={handleClick} />
+      <h3>{name}</h3>
+      <p>{character}</p>
+    </Wrapper>
+  )
+  
+};
 
 Actor.propTypes = {
   name: PropTypes.string,

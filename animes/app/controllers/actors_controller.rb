@@ -5,15 +5,12 @@ class ActorsController < ApplicationController
   def index
     @actors = Actor.all
 
-    @actorsSerialized = ActiveModel::SerializableResource.new(@actors).serializable_hash
-
-    render json: @actorsSerialized
+    render json: @actors
   end
 
   # GET /actors/1
   def show
-    @actorSerialized = ActiveModel::SerializableResource.new(@actor).serializable_hash
-    render json: @actorSerialized
+    render json: @actor
   end
 
   # POST /actors

@@ -10,7 +10,7 @@ import Spinner from "./Spinner";
 // Hook
 import { useAnimeFetch } from "../hooks/useAnimeFetch";
 // Styles
-import { Wrapper, Content } from "./PostActor.styles";
+import { Wrapper, Content } from "./Post.styles";
 // Image
 import ImgExample from "../images/ImgExample.png";
 // Context

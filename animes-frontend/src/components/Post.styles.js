@@ -29,10 +29,17 @@ export const Wrapper = styled.div`
 
   #posterImg {
     max-width: 300px;
+    border-radius: 10px;
   }
 
   #thumbImg {
     max-width: 150px;
+    border-radius: 10px;
+  }
+
+  #img {
+    max-width: 150px;
+    border-radius: 10px;
   }
 
   .error {

@@ -17,7 +17,7 @@ import NoImage from "../images/NoThumb.png";
 const Anime = () => {
   const { animeId } = useParams();
 
-  const {state: anime, loading, error} = useAnimeFetch(animeId);
+  const { state: anime, loading, error } = useAnimeFetch(animeId);
 
   const navigate = useNavigate();
 
@@ -29,29 +29,32 @@ const Anime = () => {
 
   return (
     <>
-      {!loading ? (
+      {!loading && (
         <>
-        <BreadCrumb animeTitle={anime.title} linkPath={'/browse-info'} />
-        <AnimeInfo anime={anime} />
-        <AnimeBar anime={anime} />
-        <Grid header='Actors'>
-          {anime.actors.map(actor => (
-            <Actor
-              key={actor.id}
-              name={actor.name}
-              character={actor.character_done}
-              imageUrl={
-                actor.img
-                ? actor.img.url
-                : NoImage
-              }
-            />
-          ))}
-        </Grid>
-        <ButtonDark text="Add Actor" callback={handleAddButton} />
+          <BreadCrumb animeTitle={anime.title} linkPath={'/browse-info'} />
+          <AnimeInfo anime={anime} />
+          <AnimeBar anime={anime} />
+          <Grid header='Actors'>
+            {anime.actors.map(actor => (
+              <Actor
+                key={actor.id}
+                actorId={actor.id}
+                name={actor.name}
+                character={actor.character_done}
+                imageUrl={
+                  actor.img
+                    ? actor.img.url
+                    : NoImage
+                }
+                anime={anime}
+                clickable
+              />
+            ))}
+          </Grid>
+          <ButtonDark text="Add Actor" callback={handleAddButton} />
         </>
-      ) : null}
-      {loading && <Spinner />}      
+      )}
+      {loading && <Spinner />}
     </>
   )
 }

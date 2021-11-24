@@ -7,7 +7,7 @@ import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Styles
-import { Wrapper, Content } from "./PostAnime.styles";
+import { Wrapper, Content } from "./Post.styles";
 // Image
 import PosterExample from "../images/PosterExample.png";
 import ThumbExample from "../images/ThumbExample.png";
