@@ -28,7 +28,7 @@ const UpdateActor = () => {
   const navigate = useNavigate();
 
   const handleUpdateImg = () => {
-    navigate(`/`);
+    navigate(`/update-actor-img/${actor.id}`);
   }
 
   const handleValue = (e) => {
@@ -125,6 +125,12 @@ const UpdateActor = () => {
               <ButtonDark text='Update' callback={handleSubmit} />
               <ButtonDark text='Image' callback={handleUpdateImg} />
             </div>
+          </>
+        )}
+        {loading && (
+          <>
+            <Spinner />
+            <div>Processing your request...</div>
           </>
         )}
       </Wrapper>

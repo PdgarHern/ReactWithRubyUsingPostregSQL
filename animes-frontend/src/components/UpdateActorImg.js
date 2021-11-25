@@ -8,21 +8,19 @@ import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Hook
-import { useAnimeFetch } from "../hooks/useAnimeFetch";
+import { useActorFetch } from "../hooks/useActorFetch";
 // Styles
 import { Wrapper } from "./UpdateImgs.styles";
 // Image
-import PosterExample from "../images/PosterExample.png";
-import ThumbExample from "../images/ThumbExample.png";
+import ImgExample from "../images/ImgExample.png";
 // Context
 import { Context } from "../context";
 
-const UpdateAnimeImgs = () => {
-  const { animeId } = useParams();
-  const { state: anime, error } = useAnimeFetch(animeId);
+const UpdateActorImg = () => {
+  const { actorId } = useParams();
+  const { state: actor, error } = useActorFetch(actorId);
 
-  const [poster, setPoster] = useState();
-  const [thumb, setThumb] = useState();
+  const [img, setImg] = useState();
 
   const [loading, setLoading] = useState(false);
 
@@ -31,47 +29,37 @@ const UpdateAnimeImgs = () => {
   const handleSubmit = async () => {
     setLoading(true);
     const formData = new FormData();
-    formData.append('poster', poster);
-    formData.append('thumb', thumb);
+    formData.append('img', img);
 
-    await API.updateAnime(animeId, formData);
+    await API.updateActor(actorId, formData);
 
     setLoading(false);
 
-    navigate(`/${animeId}`);
+    navigate(`/actor/${actorId}`);
   }
 
   const handleInput = (e) => {
     const name = e.currentTarget.name;
 
-    if (name === 'poster_image') setPoster(e.currentTarget.files[0]);
-    if (name === 'thumb_image') setThumb(e.currentTarget.files[0]);
+    if (name === 'img') setImg(e.currentTarget.files[0]);
 
   }
-
+  
   return (
     <>
-      <BreadCrumb animeTitle={anime.title} linkPath={`/${animeId}`} />
+      <BreadCrumb animeTitle={actor.name} linkPath={`/actor/${actorId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         {!loading && (
           <>
-            <label>Poster</label>
+            <label>Image</label>
             <input
               id="image"
               type='file'
-              name='poster_image'
+              name='img'
               onChange={handleInput}
             />
-            <img id="posterImg" src={PosterExample} alt="Not Found" />
-            <label>Thumb</label>
-            <input
-              id="image"
-              type='file'
-              name='thumb_image'
-              onChange={handleInput}
-            />
-            <img id="thumbImg" src={ThumbExample} alt="Not Found" />
+            <img id="img" src={ImgExample} alt="Not Found" />
             <ButtonDark text='Update' callback={handleSubmit} />
           </>
         )}
@@ -86,4 +74,4 @@ const UpdateAnimeImgs = () => {
   )
 }
 
-export default UpdateAnimeImgs;
+export default UpdateActorImg;

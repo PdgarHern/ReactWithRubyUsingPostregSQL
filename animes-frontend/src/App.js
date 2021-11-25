@@ -12,6 +12,7 @@ import UpdateAnimeImgs from "./components/UpdateAnimeImgs";
 import Actor from "./components/ActorPage";
 import PostActor from "./components/PostActor";
 import UpdateActor from "./components/UpdateActor";
+import UpdateActorImg from "./components/UpdateActorImg";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -34,6 +35,7 @@ function App() {
           <Route path='/post-actor/:animeId' element={<PostActor />} />
           <Route path='/actor/:actorId' element={<Actor />} />
           <Route path='/update-actor/:actorId' element={<UpdateActor />} />
+          <Route path='/update-actor-img/:actorId' element={<UpdateActorImg />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>

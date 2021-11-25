@@ -34,6 +34,11 @@ export const Wrapper = styled.div`
   #thumbImg {
     max-width: 150px;
   }
+  
+  #img {
+    max-width: 150px;
+    border-radius: 10px;
+  }
 
   .error {
     color: red;
