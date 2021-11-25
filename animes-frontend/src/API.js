@@ -44,6 +44,14 @@ const apiSettings = {
     const endpoint = `${ACTORS}`;
     return await (await axios.post(endpoint, body));
   },
+  deleteActor: async actorId => {
+    const endpoint = `${ACTORS}/${actorId}`;
+    return await (await axios.delete(endpoint));
+  },
+  updateActor: async (actorId, body) => {
+    const endpoint = `${ACTORS}/${actorId}`;
+    return await (await axios.put(endpoint, body));
+  }
 };
 
 export default apiSettings;

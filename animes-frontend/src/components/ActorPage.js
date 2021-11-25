@@ -3,13 +3,14 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // Components
 import BreadCrumb from "./BreadCrumb";
-import ButtonDark from "./ButtonDark";
+import ActorInfo from "./ActorInfo";
+import ActorBar from "./ActorBar";
 import Spinner from "./Spinner";
 // Hook
 import { useAnimeFetch } from "../hooks/useAnimeFetch";
 import { useActorFetch } from "../hooks/useActorFetch";
 // Image
-import NoImage from "../images/NoThumb.png";
+import NoPoster from "../images/NoPoster.png";
 
 const ActorPage = () => {
   const { actorId } = useParams();
@@ -27,6 +28,8 @@ const ActorPage = () => {
       {!loading && (
         <>
           <BreadCrumb animeTitle={anime.title} linkPath={`/${anime.id}`} />
+          <ActorInfo actor={actor} poster={anime.poster} />
+          <ActorBar actor={actor} animeId={actor.anime_id} />
         </>
       )}
       {loading && <Spinner />}

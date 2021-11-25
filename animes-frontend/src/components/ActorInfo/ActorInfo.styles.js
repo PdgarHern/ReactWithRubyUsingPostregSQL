@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     backdrop ? `url(${backdrop})` : '#000'};
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
+  padding: 140px 20px;
   animation: animateMovieInfo 1s;
 
   @keyframes animateMovieInfo {
@@ -44,11 +44,11 @@ export const Text = styled.div`
     justify-content: flex-start;
   }
 
-  .author {
+  .age {
     margin: 0;
   }
 
-  .studio {
+  .character {
     margin: 0 0 0 40px;
 
     p {

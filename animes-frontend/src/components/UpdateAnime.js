@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 // API
 import API from "../API";
 // Components
@@ -11,7 +10,7 @@ import Spinner from "./Spinner";
 // Hook
 import { useAnimeFetch } from "../hooks/useAnimeFetch";
 // Styles
-import { Wrapper } from "./UpdateAnime.styles";
+import { Wrapper } from "./Update.styles";
 // Context
 import { Context } from "../context";
 

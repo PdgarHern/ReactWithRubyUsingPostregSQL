@@ -6,8 +6,6 @@ import API from "../../API";
 // Components
 import Thumb from "../Thumb";
 import ButtonDark from "../ButtonDark";
-// Config
-import { POSTER_SIZE } from "../../config";
 // Image
 import NoImage from "../../images/NoThumb.png";
 import NoPoster from "../../images/NoPoster.png";

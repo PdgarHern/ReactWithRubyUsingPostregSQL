@@ -11,6 +11,7 @@ import UpdateAnime from "./components/UpdateAnime";
 import UpdateAnimeImgs from "./components/UpdateAnimeImgs";
 import Actor from "./components/ActorPage";
 import PostActor from "./components/PostActor";
+import UpdateActor from "./components/UpdateActor";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -18,8 +19,6 @@ import UserProvider from "./context";
 import { GlobalStyle } from './GlobalStyle';
 
 function App() {
-  // let randomNumber = Math.floor(Math.random() * (10 - 1)) + 1;
-
   return (
     <Router>
       <UserProvider>
@@ -34,6 +33,7 @@ function App() {
           <Route path='/update-anime-imgs/:animeId' element={<UpdateAnimeImgs />} />
           <Route path='/post-actor/:animeId' element={<PostActor />} />
           <Route path='/actor/:actorId' element={<Actor />} />
+          <Route path='/update-actor/:actorId' element={<UpdateActor />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>
