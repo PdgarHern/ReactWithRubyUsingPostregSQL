@@ -9,7 +9,7 @@ import Anime from "./components/Anime";
 import PostAnime from "./components/PostAnime";
 import UpdateAnime from "./components/UpdateAnime";
 import UpdateAnimeImgs from "./components/UpdateAnimeImgs";
-import Actor from "./components/Actor";
+import Actor from "./components/ActorPage";
 import PostActor from "./components/PostActor";
 import Header from "./components/Header";
 // Context

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // Styles
 import { Wrapper, Image } from "./Actor.styles";
 
-const Actor = ({ actorId, name, character, imageUrl }) => {
+const ActorC = ({ actorId, name, character, imageUrl }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -21,10 +21,10 @@ const Actor = ({ actorId, name, character, imageUrl }) => {
   
 };
 
-Actor.propTypes = {
+ActorC.propTypes = {
   name: PropTypes.string,
   character: PropTypes.string,
   imageUrl: PropTypes.string,
 }
 
-export default Actor;
+export default ActorC;

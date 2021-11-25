@@ -11,7 +11,7 @@ import { useActorFetch } from "../hooks/useActorFetch";
 // Image
 import NoImage from "../images/NoThumb.png";
 
-const Actor = () => {
+const ActorPage = () => {
   const { actorId } = useParams();
 
   const { state: actor, loading, error } = useActorFetch(actorId);
@@ -34,4 +34,4 @@ const Actor = () => {
   )
 }
 
-export default Actor;
+export default ActorPage;

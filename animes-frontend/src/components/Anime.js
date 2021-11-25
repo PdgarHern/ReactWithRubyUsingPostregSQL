@@ -6,7 +6,7 @@ import BreadCrumb from "./BreadCrumb";
 import AnimeInfo from "./AnimeInfo";
 import AnimeBar from "./AnimeBar";
 import Grid from "./Grid";
-import Actor from "./Actor";
+import Actor from "./ActorC";
 import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Hook
