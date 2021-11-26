@@ -3,7 +3,8 @@ import {
   API_URL,
   ANIMES,
   ACTORS,
-  CHARACTERS
+  CHARACTERS,
+  USERS
 } from './config';
 
 const apiSettings = {
@@ -77,6 +78,12 @@ const apiSettings = {
   updateCharacter: async (characterId, body) => {
     const endpoint = `${CHARACTERS}/${characterId}`;
     return await (await axios.put(endpoint, body));
+  },
+
+  // User
+  createUser: async body => {
+    const endpoint = `${USERS}`;
+    return await (await axios.post(endpoint, body));
   }
 };
 

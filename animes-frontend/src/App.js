@@ -20,6 +20,7 @@ import PostCharacter from "./components/PostCharacter";
 import UpdateCharacter from "./components/UpdateCharacter";
 import UpdateCharacterImg from "./components/UpdateCharacterImg";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -50,6 +51,7 @@ function App() {
           <Route path='/update-character/:characterId' element={<UpdateCharacter />} />
           <Route path='/update-character-img/:characterId' element={<UpdateCharacterImg />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>
