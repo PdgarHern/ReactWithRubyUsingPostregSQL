@@ -21,7 +21,7 @@ const ActorPage = () => {
 
   const navigate = useNavigate();
 
-  if (error) return <div>Something went wrong...</div>
+  if (error) return <div>Something went wrong...</div>;
 
   return (
     <>

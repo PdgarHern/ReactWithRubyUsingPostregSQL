@@ -14,15 +14,15 @@ import { Wrapper, Content } from "./Post.styles";
 // Image
 import ImgExample from "../images/ImgExample.png";
 
-const PostActor = () => {
+const PostCharacter = () => {
   const { animeId } = useParams();
 
-  const {state: anime, error} = useAnimeFetch(animeId);
+  const { state: anime, error } = useAnimeFetch(animeId);
 
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
-  const [character, setCharacter] = useState('');
+  const [role, setRole] = useState('');
   const [img, setImg] = useState('');
 
   const [loading, setLoading] = useState(false);
@@ -35,15 +35,15 @@ const PostActor = () => {
     formData.append('name', name);
     formData.append('gender', gender);
     formData.append('age', age);
-    formData.append('character_done', character);
+    formData.append('role', role);
     formData.append('anime_id', animeId);
     formData.append('img', img);
 
-    await API.postActor(formData);
+    await API.postCharacter(formData);
 
     setLoading(false);
 
-    navigate(`/${animeId}`);
+    navigate(`/characters/${animeId}`);
 
   }
 
@@ -54,7 +54,7 @@ const PostActor = () => {
     if (name === 'name') setName(value);
     if (name === 'gender') setGender(value);
     if (name === 'age') setAge(value);
-    if (name === 'character') setCharacter(value);
+    if (name === 'role') setRole(value);
     if (name === 'img') setImg(e.currentTarget.files[0]);
 
   }
@@ -89,11 +89,11 @@ const PostActor = () => {
                   name='age'
                   onChange={handleInput}
                 />
-                <label>Character</label>
+                <label>Role</label>
                 <input
                   type='text'
-                  value={character}
-                  name='character'
+                  value={role}
+                  name='role'
                   onChange={handleInput}
                 />
               </div>
@@ -124,4 +124,4 @@ const PostActor = () => {
   )
 }
 
-export default PostActor;
+export default PostCharacter;

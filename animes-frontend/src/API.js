@@ -2,7 +2,8 @@ import axios from 'axios';
 import {
   API_URL,
   ANIMES,
-  ACTORS
+  ACTORS,
+  CHARACTERS
 } from './config';
 
 const apiSettings = {
@@ -50,6 +51,31 @@ const apiSettings = {
   },
   updateActor: async (actorId, body) => {
     const endpoint = `${ACTORS}/${actorId}`;
+    return await (await axios.put(endpoint, body));
+  },
+
+
+  // Character
+  fetchCharacters: async (searchTerm, page) => {
+    const endpoint = searchTerm
+      ? `${CHARACTERS}?query=${searchTerm}&page=${page}`
+      : `${CHARACTERS}?page=${page}`;
+    return await (await fetch(endpoint)).json();
+  },
+  fetchCharacter: async characterId => {
+    const endpoint = `${CHARACTERS}/${characterId}`;
+    return await (await fetch(endpoint)).json();
+  },
+  postCharacter: async body => {
+    const endpoint = `${CHARACTERS}`;
+    return await (await axios.post(endpoint, body));
+  },
+  deleteCharacter: async characterId => {
+    const endpoint = `${CHARACTERS}/${characterId}`;
+    return await (await axios.delete(endpoint));
+  },
+  updateCharacter: async (characterId, body) => {
+    const endpoint = `${CHARACTERS}/${characterId}`;
     return await (await axios.put(endpoint, body));
   }
 };

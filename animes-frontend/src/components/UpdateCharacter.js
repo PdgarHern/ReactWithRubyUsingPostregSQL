@@ -8,27 +8,27 @@ import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Hook
-import { useActorFetch } from "../hooks/useActorFetch";
+import { useCharacterFetch } from "../hooks/useCharacterFetch";
 // Styles
 import { Wrapper } from "./Update.styles";
 // Context
 import { Context } from "../context";
 
-const UpdateActor = () => {
-  const { actorId } = useParams();
-  const { state: actor, error } = useActorFetch(actorId);
+const UpdateCharacter = () => {
+  const { characterId } = useParams();
+  const { state: character, error } = useCharacterFetch(characterId);
 
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
-  const [character, setCharacter] = useState('');
+  const [role, setRole] = useState('');
 
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleUpdateImg = () => {
-    navigate(`/update-actor-img/${actorId}`);
+    navigate(`/update-character-img/${characterId}`);
   }
 
   const handleValue = (e) => {
@@ -39,7 +39,7 @@ const UpdateActor = () => {
     if (name === 'name' && value === '') setName(placeholder);
     if (name === 'gender' && value === '') setGender(placeholder);
     if (name === 'age' && value === '') setAge(placeholder);
-    if (name === 'character' && value === '') setCharacter(placeholder);
+    if (name === 'role' && value === '') setRole(placeholder);
   }
 
   const handleInput = (e) => {
@@ -49,7 +49,7 @@ const UpdateActor = () => {
     if (name === 'name') setName(value);
     if (name === 'gender') setGender(value);
     if (name === 'age') setAge(value);
-    if (name === 'character') setCharacter(value);
+    if (name === 'role') setRole(value);
 
   }
 
@@ -58,29 +58,29 @@ const UpdateActor = () => {
     let aName = '';
     let aGender = '';
     let aAge = '';
-    let aCharacter = '';
+    let aRole = '';
 
-    if (name === '') { aName = actor.name; }
+    if (name === '') { aName = character.name; }
     else { aName = name; }
-    if (gender === '') { aGender = actor.gender; }
+    if (gender === '') { aGender = character.gender; }
     else { aGender = gender; }
-    if (age === '') { aAge = actor.age; }
+    if (age === '') { aAge = character.age; }
     else { aAge = age; }
-    if (character === '') { aCharacter = actor.character_done; }
-    else { aCharacter = character; }
+    if (role === '') { aRole = character.role; }
+    else { aRole = role; }
 
-    const body = { name: aName, gender: aGender, age: aAge, character_done: aCharacter };
+    const body = { name: aName, gender: aGender, age: aAge, role: aRole };
 
-    await API.updateActor(actorId, body);
+    await API.updateCharacter(characterId, body);
 
     setLoading(false);
 
-    navigate(`/actor/${actorId}`);
+    navigate(`/character/info/${characterId}`);
   }
 
   return (
     <>
-      <BreadCrumb animeTitle={actor.name} linkPath={`/actor/${actorId}`} />
+      <BreadCrumb animeTitle={character.name} linkPath={`/character/info/${characterId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         {!loading && (
@@ -88,7 +88,7 @@ const UpdateActor = () => {
             <label>Name</label>
             <input
               type='text'
-              placeholder={actor.name}
+              placeholder={character.name}
               value={name}
               name='name'
               onChange={handleInput}
@@ -97,7 +97,7 @@ const UpdateActor = () => {
             <label>Gender</label>
             <input
               type='text'
-              placeholder={actor.gender}
+              placeholder={character.gender}
               value={gender}
               name='gender'
               onChange={handleInput}
@@ -106,18 +106,18 @@ const UpdateActor = () => {
             <label>Age</label>
             <input
               type='number'
-              placeholder={actor.age}
+              placeholder={character.age}
               value={parseInt(age)}
               name='age'
               onChange={handleInput}
               onClick={handleValue}
             />
-            <label>Character</label>
+            <label>Role</label>
             <input
               type='text'
-              placeholder={actor.character_done}
-              value={character}
-              name='character'
+              placeholder={character.role}
+              value={role}
+              name='role'
               onChange={handleInput}
               onClick={handleValue}
             />
@@ -127,15 +127,9 @@ const UpdateActor = () => {
             </div>
           </>
         )}
-        {loading && (
-          <>
-            <Spinner />
-            <div>Processing your request...</div>
-          </>
-        )}
       </Wrapper>
     </>
   )
 }
 
-export default UpdateActor;
+export default UpdateCharacter;

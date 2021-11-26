@@ -13,6 +13,13 @@ import Actor from "./components/ActorPage";
 import PostActor from "./components/PostActor";
 import UpdateActor from "./components/UpdateActor";
 import UpdateActorImg from "./components/UpdateActorImg";
+import Characters from "./components/CharacterPage";
+import AnimeCharacters from "./components/AnimeCharacters";
+import CharacterInfo from "./components/CharacterInfoPage";
+import PostCharacter from "./components/PostCharacter";
+import UpdateCharacter from "./components/UpdateCharacter";
+import UpdateCharacterImg from "./components/UpdateCharacterImg";
+import Login from "./components/Login";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -36,6 +43,13 @@ function App() {
           <Route path='/actor/:actorId' element={<Actor />} />
           <Route path='/update-actor/:actorId' element={<UpdateActor />} />
           <Route path='/update-actor-img/:actorId' element={<UpdateActorImg />} />
+          <Route path='/characters' element={<Characters />} />
+          <Route path='/characters/:animeId' element={<AnimeCharacters />} />
+          <Route path='/character/info/:characterId' element={<CharacterInfo />} />
+          <Route path='/post-character/:animeId' element={<PostCharacter />} />
+          <Route path='/update-character/:characterId' element={<UpdateCharacter />} />
+          <Route path='/update-character-img/:characterId' element={<UpdateCharacterImg />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>

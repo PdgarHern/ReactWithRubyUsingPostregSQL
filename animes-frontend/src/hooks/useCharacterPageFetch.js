@@ -1,31 +1,31 @@
 import { useState, useEffect } from "react";
 // API
-import API from '../API';
+import API from "../API";
 
 const initialState = {
-  page: 0,
-  results: [],
-  total_pages: 0
+    page: 0,
+    results: [],
+    total_pages: 0
 }
 
-export const useBrowseInfoFetch = () => {
+export const useCharacterPageFetch = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [state, setState] = useState(initialState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const fetchAnimes = async (page, searchTerm = '') => {
+  const fetchCharacters = async (page, searchTerm = '') => {
     try {
       setError(false);
       setLoading(true);
 
-      const animes = await API.fetchAnimes(searchTerm, page);
+      const characters = await API.fetchCharacters(searchTerm, page);
 
       setState(prev => ({
-        ...animes,
+        ...characters,
         results:
-          page > 1 ? [...prev.results, ...animes.results] : [...animes.results]
+          page > 1 ? [...prev.results, ...characters.results] : [...characters.results]
       }))
 
     } catch (error) {
@@ -37,19 +37,17 @@ export const useBrowseInfoFetch = () => {
   // Initial and Search
   useEffect(() => {
     setState(initialState);
-    fetchAnimes(1, searchTerm);
+    fetchCharacters(1, searchTerm);
   }, [searchTerm]);
 
   // Load More
   useEffect(() => {
     if (!isLoadingMore) return;
 
-    fetchAnimes(state.page + 1, searchTerm);
+    fetchCharacters(state.page + 1, searchTerm);
     setIsLoadingMore(false);
   }, [isLoadingMore, searchTerm, state.page])
 
   return { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
 
 }
-
-

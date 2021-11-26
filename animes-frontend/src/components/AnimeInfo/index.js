@@ -26,6 +26,10 @@ const AnimeInfo = ({ anime }) => {
     navigate('/browse-info');
   }
 
+  const handleCharacters = () => {
+    navigate(`/characters/${anime.id}`);
+  }
+
   return (
     <Wrapper backdrop={
               anime.poster == "" || anime.poster == null
@@ -53,7 +57,7 @@ const AnimeInfo = ({ anime }) => {
               <h3>AUTHOR</h3>
               <div className="author">{anime.author}</div>
               <ButtonDark text="Update" callback={handleUpdate} />
-              <ButtonDark text="Characters" callback={false} />
+              <ButtonDark text="Characters" callback={handleCharacters} />
             </div>
             <div className="studio">
               <h3>STUDIO</h3>

@@ -38,12 +38,10 @@ const ActorInfo = ({ actor, poster }) => (
             <div>
               <h3>AGE</h3>
               <div className="age">{actor.age}</div>
-              {/* <ButtonDark text="Update" callback={handleUpdate} /> */}
             </div>
             <div className="character">
               <h3>CHARACTER</h3>
               <p>{actor.character_done}</p>
-              {/* <ButtonDark text="Delete" callback={handleDelete} /> */}
             </div>
           </div>
         </Text>

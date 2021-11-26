@@ -3,9 +3,12 @@ class CharactersController < ApplicationController
 
   # GET /characters
   def index
-    @characters = Character.all
+    @q = Character.ransack(name_cont: params[:query])
+    @characters = @q.result(distinct: true).all.page params[:page]
 
-    render json: @characters
+    @charactersSerialized = ActiveModel::SerializableResource.new(@characters).serializable_hash
+
+    render json: {page: Integer(params[:page]), results: @charactersSerialized, total_page: @characters.total_pages}
   end
 
   # GET /characters/1
@@ -46,6 +49,6 @@ class CharactersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def character_params
-      params.require(:character).permit(:name, :gender, :age, :role, :thumb, :anime_id)
+      params.permit(:name, :gender, :age, :role, :img, :anime_id)
     end
 end

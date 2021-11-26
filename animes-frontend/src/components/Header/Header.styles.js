@@ -20,6 +20,17 @@ export const Content = styled.div`
     text-decoration: none;
   }
 
+  .leftImgs {
+    #loginImg {
+      padding-right: 10px;
+      width: 50px;
+
+      @media screen and (max-width: 500px) {
+        width: 40px;
+      }
+    }
+  }
+
 `;
 
 export const LogoImg = styled.img`
@@ -38,4 +49,6 @@ export const SecondLogoImg = styled.img`
     width: 80px;
   }
 
-`
+`;
+
+export const LoginImg = styled.img``;
