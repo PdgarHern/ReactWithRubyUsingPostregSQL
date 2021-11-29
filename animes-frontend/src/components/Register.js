@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// API
+import API from "../API";
 // Components
 import ButtonDark from "./ButtonDark";
 // Styles
@@ -11,12 +13,26 @@ const Register = () => {
   const [passConfirmation, setPassConfirmation] = useState('');
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    // setLoading(true);
-    // const body = {authenticity_token: }
+    try {
+      setLoading(true);
+      const body = {authenticity_token: process.env.REACT_APP_AUTHENTICITY_TOKEN, user: {email: email, password: password, password_confirmation: passConfirmation}, commit: "Sign Up"};
+      
+      await API.createUser(body);
+
+      setLoading(false);
+      
+      console.log("Todo bien");
+
+      navigate('/');
+    } catch (error) {
+      setError(true);
+    }
+    
   }
 
   const handleInput = async (e) => {
@@ -28,6 +44,8 @@ const Register = () => {
     if (name === 'passConfirmation') setPassConfirmation(value);
 
   }
+
+  if (error == true) return <div className="error">Something went wrong...</div>
 
   return (
     <>
@@ -41,14 +59,14 @@ const Register = () => {
         />
         <label>Password</label>
         <input
-          type='text'
+          type='password'
           value={password}
           name='password'
           onChange={handleInput}
         />
         <label>Password Confirmation</label>
         <input
-          type='text'
+          type='password'
           value={passConfirmation}
           name='passConfirmation'
           onChange={handleInput}
