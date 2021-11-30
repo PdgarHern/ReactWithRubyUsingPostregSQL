@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../API";
 // Components
 import ButtonDark from "./ButtonDark";
+import Spinner from "./Spinner";
 // Styles
 import { Wrapper } from "./UserForms.styles";
 
@@ -52,30 +53,40 @@ const Register = () => {
 
   return (
     <>
-      <Wrapper>
-        <label>Email</label>
-        <input
-          type='text'
-          value={email}
-          name='email'
-          onChange={handleInput}
-        />
-        <label>Password</label>
-        <input
-          type='password'
-          value={password}
-          name='password'
-          onChange={handleInput}
-        />
-        <label>Password Confirmation</label>
-        <input
-          type='password'
-          value={passConfirmation}
-          name='passConfirmation'
-          onChange={handleInput}
-        />
-      </Wrapper>
-      <ButtonDark text='Register' callback={handleSubmit} />
+      {!loading && (
+        <>
+          <Wrapper>
+            <label>Email</label>
+            <input
+              type='text'
+              value={email}
+              name='email'
+              onChange={handleInput}
+            />
+            <label>Password</label>
+            <input
+              type='password'
+              value={password}
+              name='password'
+              onChange={handleInput}
+            />
+            <label>Password Confirmation</label>
+            <input
+              type='password'
+              value={passConfirmation}
+              name='passConfirmation'
+              onChange={handleInput}
+            />
+          </Wrapper>
+          <ButtonDark text='Register' callback={handleSubmit} />
+        </>
+      )}
+      {loading && (
+        <>
+          <Spinner />
+          <div>Processing your request...</div>
+        </>
+      )}
     </>
   )
 }

@@ -84,6 +84,10 @@ const apiSettings = {
   createUser: async body => {
     const endpoint = `${USERS}`;
     return await (await axios.post(endpoint, body));
+  },
+  login: async body => {
+    const endpoint = `${USERS}/sign_in`;
+    return await (await axios.post(endpoint, body));
   }
 };
 
