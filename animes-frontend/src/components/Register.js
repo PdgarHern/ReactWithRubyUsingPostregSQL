@@ -20,9 +20,12 @@ const Register = () => {
   const handleSubmit = async () => {
     try {
       setLoading(true);
-      const body = {authenticity_token: process.env.REACT_APP_AUTHENTICITY_TOKEN, user: {email: email, password: password, password_confirmation: passConfirmation}, commit: "Sign Up"};
+      const formData = new FormData();
+
+      formData.append('user[email]', email);
+      formData.append('user[password]', password);
       
-      // await API.createUser(body);
+      await API.createUser(formData);
 
       setLoading(false);
       

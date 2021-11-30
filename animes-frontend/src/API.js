@@ -81,10 +81,10 @@ const apiSettings = {
   },
 
   // User
-  // createUser: async body => {
-  //   const endpoint = `${USERS}`;
-  //   return await (await axios.post(endpoint, body));
-  // }
+  createUser: async body => {
+    const endpoint = `${USERS}`;
+    return await (await axios.post(endpoint, body));
+  }
 };
 
 export default apiSettings;
