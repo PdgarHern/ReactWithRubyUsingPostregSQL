@@ -85,6 +85,19 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-jwt (0.9.0)
+      devise (~> 4.0)
+      warden-jwt_auth (~> 0.6)
+    dry-auto_inject (0.8.0)
+      dry-container (>= 0.3.4)
+    dry-configurable (0.13.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.6)
+    dry-container (0.9.0)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.13, >= 0.13.0)
+    dry-core (0.7.1)
+      concurrent-ruby (~> 1.0)
     erubi (1.10.0)
     execjs (2.8.1)
     figaro (1.2.0)
@@ -94,6 +107,7 @@ GEM
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jsonapi-renderer (0.2.2)
+    jwt (2.3.0)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -186,6 +200,11 @@ GEM
       tzinfo (>= 1.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
+    warden-jwt_auth (0.6.0)
+      dry-auto_inject (~> 0.8)
+      dry-configurable (~> 0.13)
+      jwt (~> 2.1)
+      warden (~> 1.2)
     webpacker (4.3.0)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -202,7 +221,8 @@ DEPENDENCIES
   active_model_serializers
   bootsnap (>= 1.4.4)
   byebug
-  devise (~> 4.8)
+  devise
+  devise-jwt
   figaro
   kaminari
   pg (~> 1.1)

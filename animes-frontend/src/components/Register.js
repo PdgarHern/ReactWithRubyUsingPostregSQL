@@ -22,13 +22,13 @@ const Register = () => {
       setLoading(true);
       const body = {authenticity_token: process.env.REACT_APP_AUTHENTICITY_TOKEN, user: {email: email, password: password, password_confirmation: passConfirmation}, commit: "Sign Up"};
       
-      await API.createUser(body);
+      // await API.createUser(body);
 
       setLoading(false);
       
       console.log("Todo bien");
 
-      navigate('/');
+      navigate('/user_page');
     } catch (error) {
       setError(true);
     }

@@ -14,7 +14,8 @@ gem 'rack-cors'
 gem 'ransack'
 gem 'kaminari'
 gem 'active_model_serializers'
-gem 'devise', '~> 4.8'
+gem 'devise'
+gem 'devise-jwt'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

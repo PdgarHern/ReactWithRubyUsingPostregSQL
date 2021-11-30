@@ -1,6 +1,7 @@
 class AnimesController < ApplicationController
   before_action :set_anime, only: [:show, :update, :destroy]
   before_action :set_models, only: [ :index, :show ]
+  before_action :authenticate_user!, except: [ :index, :show ]
 
   # GET /animes
   def index

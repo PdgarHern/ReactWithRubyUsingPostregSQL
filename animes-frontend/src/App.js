@@ -21,6 +21,7 @@ import UpdateCharacter from "./components/UpdateCharacter";
 import UpdateCharacterImg from "./components/UpdateCharacterImg";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import UserPage from "./components/UserPage";
 import Header from "./components/Header";
 // Context
 import UserProvider from "./context";
@@ -52,6 +53,7 @@ function App() {
           <Route path='/update-character-img/:characterId' element={<UpdateCharacterImg />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/user_page' element={<UserPage />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>
