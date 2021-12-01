@@ -22,19 +22,34 @@ const Register = () => {
     try {
       setLoading(true);
       const formData = new FormData();
+      const infoData = new FormData();
 
       formData.append('user[email]', email);
       formData.append('user[password]', password);
       
       await API.createUser(formData);
+      await API.login(formData);
+
+      infoData.append('user_id', localStorage.userId);
+      infoData.append('profile_pic', Image);
+      infoData.append('profile_img', Image);
+
+      await API.createInfo(infoData);
 
       setLoading(false);
       
       console.log("Todo bien");
 
-      navigate('/user_page');
+      navigate(`/user-page/${localStorage.userId}`);
     } catch (error) {
       setError(true);
+      setTimeout(() => {
+        setError(false); 
+        setLoading(false); 
+        setEmail('');
+        setPassword('');
+        setPassConfirmation('');
+        navigate('/login');}, 2000);
     }
     
   }

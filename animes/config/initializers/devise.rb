@@ -21,6 +21,7 @@ Devise.setup do |config|
     jwt.dispatch_requests = [
       ['POST', %r{^/signin$}],
     ]
+    jwt.expiration_time = 14.days.to_i
   end
 
   # ==> Controller configuration

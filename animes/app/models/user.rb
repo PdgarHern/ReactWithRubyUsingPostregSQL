@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :jwt_authenticatable,
          :registerable,
          jwt_revocation_strategy: JwtDenylist
+  has_one :user_info
 end

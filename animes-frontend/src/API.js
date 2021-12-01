@@ -4,7 +4,8 @@ import {
   ANIMES,
   ACTORS,
   CHARACTERS,
-  USERS
+  USERS,
+  USERS_INFO
 } from './config';
 
 const saveInLocalStorage = userDetails => {
@@ -103,6 +104,24 @@ const apiSettings = {
   logout: async () => {
     const endpoint = `${USERS}/sign_out`;
     return await (await axios.delete(endpoint, {headers: {'Authorization': localStorage.userToken}}))
+  },
+
+  // User Info
+  fetchInfo: async userId => {
+    const endpoint = `${USERS_INFO}?id=${userId}`;
+    return await (await fetch(endpoint)).json();
+  },
+  createInfo: async body => {
+    const endpoint = `${USERS_INFO}`;
+    return await (await axios.post(endpoint, body));
+  },
+  deleteInfo: async infoId => {
+    const endpoint = `${USERS_INFO}/${infoId}`;
+    return await (await axios.delete(endpoint));
+  },
+  updateInfo: async (infoId, body) => {
+    const endpoint = `${USERS_INFO}/${infoId}`;
+    return await (await axios.put(endpoint, body));
   }
 };
 
