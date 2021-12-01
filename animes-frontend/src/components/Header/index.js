@@ -51,7 +51,7 @@ const Header = () => {
 						</Link>
 					)}
 					{localStorage.userToken && (
-						<LoginImg src={Logout} alt="ª" id="loginImg" onClick={handleLogOut} />
+						<LoginImg src={Logout} alt="ª" id="loginImg" clickable onClick={handleLogOut} />
 					)}
 					<Link to="/browse-info">
 						<SecondLogoImg src={SecondLogo} alt="anime-database" />

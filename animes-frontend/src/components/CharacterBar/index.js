@@ -26,12 +26,16 @@ const CharacterBar = ({ character, animeId }) => {
   return (
     <Wrapper>
       <Content>
-      <div className="column">
-          <Button text='Update' callback={handleUpdate} />
-        </div>
-        <div className="column">
-          <Button text='Delete' callback={handleDelete} />
-        </div>
+        {localStorage.userToken && (
+          <>
+            <div className="column">
+              <Button text='Update' callback={handleUpdate} />
+            </div>
+            <div className="column">
+              <Button text='Delete' callback={handleDelete} />
+            </div>
+          </>
+        )}
         <div className="column">
           <Button text='Browse Animes' callback={handleBrowseAnimes} />
         </div>

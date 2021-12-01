@@ -45,7 +45,9 @@ const AnimeCharacters = () => {
               />
             ))}
           </Grid>
-          <ButtonDark text="Add Character" callback={handleAddButton} />
+          {localStorage.userToken && (
+            <ButtonDark text="Add Character" callback={handleAddButton} />
+          )}
         </>
       )}
       {loading && <Spinner />}

@@ -56,13 +56,17 @@ const AnimeInfo = ({ anime }) => {
             <div>
               <h3>AUTHOR</h3>
               <div className="author">{anime.author}</div>
-              <ButtonDark text="Update" callback={handleUpdate} />
+              {localStorage.userToken && (
+                <ButtonDark text="Update" callback={handleUpdate} />
+              )}
               <ButtonDark text="Characters" callback={handleCharacters} />
             </div>
             <div className="studio">
               <h3>STUDIO</h3>
               <p>{anime.studio}</p>
-              <ButtonDark text="Delete" callback={handleDelete} />
+              {localStorage.userToken && (
+                <ButtonDark text="Delete" callback={handleDelete} />
+              )}
             </div>
           </div>
         </Text>

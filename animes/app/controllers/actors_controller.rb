@@ -1,5 +1,6 @@
 class ActorsController < ApplicationController
   before_action :set_actor, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, except: [ :index, :show ]
 
   # GET /actors
   def index

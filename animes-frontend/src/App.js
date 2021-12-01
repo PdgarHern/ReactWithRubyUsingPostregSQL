@@ -53,7 +53,7 @@ function App() {
           <Route path='/update-character-img/:characterId' element={<UpdateCharacterImg />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/user_page' element={<UserPage />} />
+          <Route path='/user-page/:userId' element={<UserPage />} />
         </Routes>
         <GlobalStyle />
       </UserProvider>

@@ -24,6 +24,7 @@ export const Content = styled.div`
     #loginImg {
       padding-right: 10px;
       width: 50px;
+      cursor: pointer;
 
       @media screen and (max-width: 500px) {
         width: 40px;

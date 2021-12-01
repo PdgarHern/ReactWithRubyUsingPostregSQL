@@ -35,14 +35,19 @@ const Login = () => {
       formData.append('user[password]', password);
 
       await API.login(formData);
-
-
       
       setLoading(false);
 
-      // navigate('/');
+      navigate(`/user-page/${localStorage.userId}`);
     } catch (error) {
       setError(true);
+      setTimeout(() => {
+        setError(false); 
+        setLoading(false); 
+        setEmail('');
+        setPassword('');
+        navigate('/login');}, 2000);
+      
     }
   }
 

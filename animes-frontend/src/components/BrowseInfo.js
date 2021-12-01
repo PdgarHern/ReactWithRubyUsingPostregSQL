@@ -43,7 +43,7 @@ const BrowseInfo = () => {
       {state.page < state.total_pages && !loading && (
         <ButtonDark text="Load More" callback={() => setIsLoadingMore(true)} />
       )}
-      {!loading && (
+      {!loading && localStorage.userToken && (
         <ButtonDark text="Add Anime" callback={handleAddButton} />
       )}
     </>
