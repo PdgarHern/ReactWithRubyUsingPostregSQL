@@ -7,6 +7,11 @@ import {
   USERS
 } from './config';
 
+const saveInLocalStorage = userDetails => {
+  localStorage.setItem('userId', userDetails.data.message.id);
+  localStorage.setItem('userToken', userDetails.headers.authorization);
+}
+
 const apiSettings = {
   // Anime
   fetchAllAnimes: async () => {
@@ -87,7 +92,13 @@ const apiSettings = {
   },
   login: async body => {
     const endpoint = `${USERS}/sign_in`;
-    return await (await axios.post(endpoint, body));
+    return await (await axios.post(endpoint, body).then((response) => {
+      saveInLocalStorage(response);
+    }));
+  },
+  logout: async () => {
+    const endpoint = `${USERS}/sign_out`;
+    return await (await axios.delete(endpoint, {headers: {'Authorization': localStorage.userToken}}))
   }
 };
 

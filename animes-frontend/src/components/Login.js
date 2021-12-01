@@ -35,10 +35,12 @@ const Login = () => {
       formData.append('user[password]', password);
 
       await API.login(formData);
+
+
       
       setLoading(false);
 
-      navigate('/');
+      // navigate('/');
     } catch (error) {
       setError(true);
     }
