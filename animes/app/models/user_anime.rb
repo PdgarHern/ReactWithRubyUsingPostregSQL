@@ -1,0 +1,2 @@
+class UserAnime < ApplicationRecord
+end

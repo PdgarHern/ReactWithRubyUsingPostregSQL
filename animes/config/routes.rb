@@ -1,4 +1,6 @@
 Rails.application.routes.draw do  
+  resources :user_characters
+  resources :user_animes
   resources :user_infos
   default_url_options :host => "localhost:3000"
   devise_for :users,
