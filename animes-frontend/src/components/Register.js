@@ -7,8 +7,12 @@ import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Styles
 import { Wrapper } from "./UserForms.styles";
+// Images
+import UserPic from "../images/userpic.png";
+import UserBanner from "../images/userbanner.png";
 
 const Register = () => {
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passConfirmation, setPassConfirmation] = useState('');
@@ -30,9 +34,8 @@ const Register = () => {
       await API.createUser(formData);
       await API.login(formData);
 
+      infoData.append('user_name', userName);
       infoData.append('user_id', localStorage.userId);
-      infoData.append('profile_pic', Image);
-      infoData.append('profile_img', Image);
 
       await API.createInfo(infoData);
 
@@ -49,7 +52,7 @@ const Register = () => {
         setEmail('');
         setPassword('');
         setPassConfirmation('');
-        navigate('/login');}, 2000);
+        navigate('/register');}, 2000);
     }
     
   }
@@ -58,6 +61,7 @@ const Register = () => {
     const name = e.currentTarget.name;
     const value = e.currentTarget.value;
 
+    if (name === 'userName') setUserName(value);
     if (name === 'email') setEmail(value);
     if (name === 'password') setPassword(value);
     if (name === 'passConfirmation') setPassConfirmation(value);
@@ -71,6 +75,13 @@ const Register = () => {
       {!loading && (
         <>
           <Wrapper>
+            <label>User Name</label>
+            <input
+              type='text'
+              value={userName}
+              name='userName'
+              onChange={handleInput}
+            />
             <label>Email</label>
             <input
               type='text'

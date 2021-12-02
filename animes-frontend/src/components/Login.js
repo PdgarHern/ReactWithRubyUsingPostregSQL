@@ -60,26 +60,26 @@ const Login = () => {
   return (
     <>
       {!loading && (
-        <>
-          <Wrapper>
-          <label>Email</label>
-            <input
-              type='text'
-              value={email}
-              name='email'
-              onChange={handleInput}
-            />
-            <label>Password</label>
-            <input
-              type='password'
-              value={password}
-              name='password'
-              onChange={handleInput}
-            />
-          </Wrapper>
-          <ButtonDark text='Login' callback={handleSubmit} />
+        <Wrapper>
+        <label>Email</label>
+          <input
+            type='text'
+            value={email}
+            name='email'
+            onChange={handleInput}
+          />
+          <label>Password</label>
+          <input
+            type='password'
+            value={password}
+            name='password'
+            onChange={handleInput}
+          />
+          <ButtonDark id="login" text='Login' callback={handleSubmit} />
+          <p/>
+          <h1>You don't have an account?</h1>
           <ButtonDark text='Register' callback={handleRegister} />
-        </>
+        </Wrapper>
       )}
       {loading && (
         <>

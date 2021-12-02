@@ -18,6 +18,16 @@ const Header = () => {
 
 	const navigate = useNavigate();
 
+	const handleLogIn = () => {
+		if (localStorage.userId) {
+			navigate(`/user-page/${localStorage.userId}`);
+
+		} else {
+			navigate('/login');
+		}
+
+	}
+
 	const handleLogOut = async () => {
 		try {
 			setError(false);
@@ -45,11 +55,7 @@ const Header = () => {
 					<LogoImg src={LogoAnime} alt="anime-logo" />
 				</Link>
 				<div className="leftImgs">
-					{!localStorage.userToken && (
-						<Link to="/login">
-						<LoginImg src={Login} alt="login" id="loginImg" />
-						</Link>
-					)}
+					<LoginImg src={Login} alt="login" id="loginImg" onClick={handleLogIn} />
 					{localStorage.userToken && (
 						<LoginImg src={Logout} alt="ª" id="loginImg" clickable onClick={handleLogOut} />
 					)}
