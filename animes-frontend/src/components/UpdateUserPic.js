@@ -6,6 +6,8 @@ import API from "../API";
 // Components
 import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
+// Hook
+import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
 import { Wrapper } from "./UpdateImgs.styles";
 // Image
@@ -13,6 +15,7 @@ import ThumbExample from "../images/ThumbExample.png";
 
 const UpdateUserPic = () => {
   const { userId } = useParams();
+  const { state: info, error } = useUserInfoFetch(userId);
 
   const [pic, setPic] = useState();
 
@@ -25,7 +28,7 @@ const UpdateUserPic = () => {
     const formData = new FormData();
     formData.append('profile_pic', pic);
 
-    // await API.updateInfo(userId, formData);
+    await API.updateInfo(info[0].id, formData);
 
     setLoading(false);
 

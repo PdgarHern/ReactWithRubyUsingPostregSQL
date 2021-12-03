@@ -86,9 +86,11 @@ export const Image = styled.img`
   z-index: 100;
   width: 100%;
   max-width: 200px;
+  max-height: 200px;
   transition: all 0.3s;
   object-fit: cover;
-  border-radius: 50px;
+  border-radius: 100px;
+  cursor: pointer;
   animation: animateThumb 0.5s;
 
   @keyframes animateThumb {

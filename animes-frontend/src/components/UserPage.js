@@ -19,10 +19,6 @@ const UserPage = () => {
 
   if (error) return <div className="error">Something went wrong...</div>;
 
-  const handleEditButton = () => {
-    navigate('/');
-  }
-
   return (
     <>
       {userInfo[0] != null ? (
@@ -30,8 +26,10 @@ const UserPage = () => {
           <UserHeroImage
             banner={userInfo[0].profile_img == null
               ? UserBanner
-              : userInfo.profile_img.url}
-            pic={UserPic}
+              : userInfo[0].profile_img.url}
+            pic={userInfo[0].profile_pic == null
+              ? UserPic
+              : userInfo[0].profile_pic.url}
             name={userInfo[0].user_name}
           />
           <UserBar />
