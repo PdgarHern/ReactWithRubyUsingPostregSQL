@@ -5,8 +5,12 @@ import Button from "../Button";
 // Styles
 import { Wrapper, Content, Text, Image } from "./UserHeroImage.styles";
 
-const UserHeroImage = ({ banner, pic, name }) => {
+const UserHeroImage = ({ userId, banner, pic, name }) => {
   const navigate = useNavigate();
+
+  const handleEditButton = () => {
+    navigate(`/update-user-info/${userId}`);
+  }
 
   const handlePic = () => {
     navigate(`/update-user-pic/${localStorage.userId}`);
@@ -22,7 +26,7 @@ const UserHeroImage = ({ banner, pic, name }) => {
           </Text>
         </div>
         <div className="configButton">
-          <Button text='Edit Profile' callback={false} />
+          <Button text='Edit Profile' callback={handleEditButton} />
         </div>
       </Content>
     </Wrapper>

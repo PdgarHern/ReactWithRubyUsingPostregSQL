@@ -72,6 +72,14 @@ export const Content = styled.div`
       margin-right: 0;
     }
 
+    h1 {
+      color: var(--darkGrey);
+    }
+
+    strong {
+      font-size: var(--fontBig);
+    }
+
     @media screen and (max-width: 768px) {
       display: flex;
 
@@ -79,6 +87,38 @@ export const Content = styled.div`
         margin: 20px 0;
       }
     }
+  }
+
+  .infoColumn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin: 0;
+      flex: 1;
+
+      :first-child {
+        margin-left: 0;
+      }
+
+      :last-child {
+        margin-right: 0;
+      }
+
+      strong {
+        font-size: var(--fontBig);
+        padding-bottom: 20px;
+
+        @media screen and (max-width: 1000px) {
+          font-size: var(--fontMed);
+        }
+
+      }
+
+      @media screen and (max-width: 768px) {
+        padding-bottom: 20px;
+      }
+
   }
 
   @media screen and (max-width: 768px) {

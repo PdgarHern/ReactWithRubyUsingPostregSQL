@@ -34,6 +34,11 @@ export const Wrapper = styled.div`
   #thumbImg {
     max-width: 150px;
   }
+
+  #profilePic {
+    max-width: 200px;
+    border-radius: 100%;
+  }
   
   #img {
     max-width: 150px;

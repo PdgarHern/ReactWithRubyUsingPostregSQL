@@ -89,7 +89,7 @@ export const Image = styled.img`
   max-height: 200px;
   transition: all 0.3s;
   object-fit: cover;
-  border-radius: 100px;
+  border-radius: 100%;
   cursor: pointer;
   animation: animateThumb 0.5s;
 
@@ -104,6 +104,7 @@ export const Image = styled.img`
 
   @media screen and (max-width: 768px) {
     max-width: 100px;
+    max-height: 100px;
   }
 
 `

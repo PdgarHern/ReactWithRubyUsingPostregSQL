@@ -11,7 +11,7 @@ import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
 import { Wrapper } from "./UpdateImgs.styles";
 // Image
-import ThumbExample from "../images/ThumbExample.png";
+import ImgExample from "../images/ImgExample.png";
 
 const UpdateUserPic = () => {
   const { userId } = useParams();
@@ -41,7 +41,9 @@ const UpdateUserPic = () => {
 
   return (
     <>
-      <BreadCrumb linkPath={`/user-page/${userId}`} />
+      {info[0] ? (
+        <BreadCrumb animeTitle={info[0].user_name} linkPath={`/user-page/${userId}`} />
+      ) : null}
       <Wrapper>
         {/* {error && <div className="error">There was an error...</div>} */}
         {!loading && (
@@ -53,7 +55,7 @@ const UpdateUserPic = () => {
               name='pic'
               onChange={handleInput}
             />
-            <img id="thumbImg" src={ThumbExample} alt="Not Found" />
+            <img id="profilePic" src={ImgExample} alt="Not Found" />
             <ButtonDark text='Update' callback={handleSubmit} />
           </>
         )}

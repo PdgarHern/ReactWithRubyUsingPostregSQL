@@ -7,6 +7,8 @@ import UserBar from "./UserBar";
 import ButtonDark from "./ButtonDark";
 // Hook
 import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
+// Styles
+import { Content } from "./Post.styles";
 // Images
 import UserPic from "../images/userpic.png";
 import UserBanner from "../images/userbanner.png";
@@ -17,6 +19,10 @@ const UserPage = () => {
 
   const navigate = useNavigate();
 
+  const handleAnimeSearcher = () => {
+    navigate('/browse-info');
+  }
+
   if (error) return <div className="error">Something went wrong...</div>;
 
   return (
@@ -24,6 +30,7 @@ const UserPage = () => {
       {userInfo[0] != null ? (
         <>
           <UserHeroImage
+            userId={userId}
             banner={userInfo[0].profile_img == null
               ? UserBanner
               : userInfo[0].profile_img.url}
@@ -33,10 +40,21 @@ const UserPage = () => {
             name={userInfo[0].user_name}
           />
           <UserBar />
-          <ButtonDark text="Go to Anime Searcher" callback={false} />
+          <ButtonDark text="Go to Anime Searcher" callback={handleAnimeSearcher} />
+          <Content>
+            <div className="infoColumn">
+              <strong>Name: {userInfo[0].name}</strong>
+              <p/>
+              <strong>Surname: {userInfo[0].surname}</strong>
+            </div>
+            <div className="infoColumn">
+              <strong>Age: {userInfo[0].age}</strong>
+              <p/>
+              <strong>Favourite Demographic: {userInfo[0].fav_demograph}</strong>
+            </div>
+          </Content>
         </>
       ) : null}
-
     </>
   )
 }

@@ -36,6 +36,7 @@ const Register = () => {
 
       infoData.append('user_name', userName);
       infoData.append('user_id', localStorage.userId);
+      infoData.append('is_admin', false);
 
       await API.createInfo(infoData);
 
