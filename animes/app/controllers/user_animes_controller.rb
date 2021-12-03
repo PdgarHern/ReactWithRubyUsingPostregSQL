@@ -3,7 +3,9 @@ class UserAnimesController < ApplicationController
 
   # GET /user_animes
   def index
-    @user_animes = UserAnime.all
+    @q = UserAnime.ransack(user_identificator_eq: params[:id]);
+
+    @user_animes = @q.result(distinct: true).all
 
     render json: @user_animes
   end
@@ -46,6 +48,6 @@ class UserAnimesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_anime_params
-      params.require(:user_anime).permit(:user_identificator, :anime_identificator)
+      params.permit(:user_identificator, :anime_identificator)
     end
 end

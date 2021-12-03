@@ -3,7 +3,9 @@ class UserCharactersController < ApplicationController
 
   # GET /user_characters
   def index
-    @user_characters = UserCharacter.all
+    @q = UserCharacter.ransack(user_identificator_eq: params[:id]);
+
+    @user_characters = @q.result(distinct: true).all
 
     render json: @user_characters
   end
@@ -46,6 +48,6 @@ class UserCharactersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_character_params
-      params.require(:user_character).permit(:user_identificator, :character_identificator)
+      params.permit(:user_identificator, :character_identificator)
     end
 end
