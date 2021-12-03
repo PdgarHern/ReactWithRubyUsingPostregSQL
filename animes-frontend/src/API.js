@@ -5,7 +5,9 @@ import {
   ACTORS,
   CHARACTERS,
   USERS,
-  USERS_INFO
+  USERS_INFO,
+  FAV_ANIMES,
+  FAV_CHARACTERS
 } from './config';
 
 const saveInLocalStorage = userDetails => {
@@ -122,6 +124,34 @@ const apiSettings = {
   updateInfo: async (infoId, body) => {
     const endpoint = `${USERS_INFO}/${infoId}`;
     return await (await axios.put(endpoint, body));
+  },
+
+  // User Favourite Animes
+  fetchFavouriteAnimes: async userId => {
+    const endpoint = `${FAV_ANIMES}?id=${userId}`;
+    return await (await fetch(endpoint)).json();
+  },
+  createFavAnime: async body => {
+    const endpoint = `${FAV_ANIMES}`;
+    return await (await axios.post(endpoint, body));
+  },
+  deleteFavAnime: async favAnimeId => {
+    const endpoint = `${FAV_ANIMES}/${favAnimeId}`;
+    return await (await axios.delete(endpoint));
+  },
+
+  // User Favourite Characters
+  fetchFavouriteCharacters: async userId => {
+    const endpoint = `${FAV_CHARACTERS}?id=${userId}`;
+    return await (await fetch(endpoint)).json();
+  },
+  createFavCharacter: async body => {
+    const endpoint = `${FAV_CHARACTERS}`;
+    return await (await axios.post(endpoint, body));
+  },
+  deleteFavCharacter: async favCharacterId => {
+    const endpoint = `${FAV_CHARACTERS}/${favCharacterId}`;
+    return await (await axios.delete(endpoint));
   }
 };
 
