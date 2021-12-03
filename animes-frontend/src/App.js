@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // Routing
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components
@@ -24,35 +25,63 @@ import Register from "./components/Register";
 import UserPage from "./components/UserPage";
 import UpdateUserInfo from "./components/UpdateUserInfo";
 import UpdateUserPic from "./components/UpdateUserPic";
+import FavouriteAnimes from "./components/FavouriteAnimes";
+import FavouriteCharacters from "./components/FavouriteCharacters";
 import Header from "./components/Header";
+// Hook
+import { useUserInfoFetch } from "./hooks/useUserInfoFetch";
 // Context
 import UserProvider from "./context";
 // Styles
 import { GlobalStyle } from './GlobalStyle';
 
 function App() {
+  const { state: info } = useUserInfoFetch(localStorage.userId);
+
+  let admin = false;
+
+  const handleAdmin = () => {
+    if (info[0].is_admin) {
+      admin = true;
+    }
+  }
+
   return (
+    <>
+    {info[0] && (
+      handleAdmin()
+    )}
     <Router>
       <UserProvider>
         <Header />
         <Routes>
+          {admin ? (
+            <>
+              <Route path='/post-anime' element={<PostAnime />} />
+              <Route path='/update-anime/:animeId' element={<UpdateAnime />} />
+              <Route path='/update-anime-imgs/:animeId' element={<UpdateAnimeImgs />} />
+              <Route path='/post-actor/:animeId' element={<PostActor />} />
+              <Route path='/update-actor/:actorId' element={<UpdateActor />} />
+              <Route path='/update-actor-img/:actorId' element={<UpdateActorImg />} />
+              <Route path='/post-character/:animeId' element={<PostCharacter />} />
+              <Route path='/update-character/:characterId' element={<UpdateCharacter />} />
+              <Route path='/update-character-img/:characterId' element={<UpdateCharacterImg />} />
+            </>
+          ) : <Link to='/login' />}
+          {localStorage.userId && (
+            <>
+              <Route path='/favourite-animes/:userId' element={<FavouriteAnimes />} />
+              <Route path='/favourite-characters/:userId' element={<FavouriteCharacters />} />
+            </>
+          )}
           <Route path='/' element={<Home />} />
           <Route path='/:animeId' element={<Anime />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/browse-info' element={<BrowseInfo />} />
-          <Route path='/post-anime' element={<PostAnime />} />
-          <Route path='/update-anime/:animeId' element={<UpdateAnime />} />
-          <Route path='/update-anime-imgs/:animeId' element={<UpdateAnimeImgs />} />
-          <Route path='/post-actor/:animeId' element={<PostActor />} />
           <Route path='/actor/:actorId' element={<Actor />} />
-          <Route path='/update-actor/:actorId' element={<UpdateActor />} />
-          <Route path='/update-actor-img/:actorId' element={<UpdateActorImg />} />
           <Route path='/characters' element={<Characters />} />
           <Route path='/characters/:animeId' element={<AnimeCharacters />} />
           <Route path='/character/info/:characterId' element={<CharacterInfo />} />
-          <Route path='/post-character/:animeId' element={<PostCharacter />} />
-          <Route path='/update-character/:characterId' element={<UpdateCharacter />} />
-          <Route path='/update-character-img/:characterId' element={<UpdateCharacterImg />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/user-page/:userId' element={<UserPage />} />
@@ -62,6 +91,7 @@ function App() {
         <GlobalStyle />
       </UserProvider>
     </Router>
+    </>
   );
 }
 

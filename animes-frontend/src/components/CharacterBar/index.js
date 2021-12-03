@@ -4,11 +4,17 @@ import { useNavigate } from "react-router-dom";
 import API from "../../API";
 // Component
 import Button from "../Button";
+// Hook
+import { useUserInfoFetch } from "../../hooks/useUserInfoFetch";
 // Styles
 import { Wrapper, Content } from "./CharacterBar.styles";
 
 const CharacterBar = ({ character, animeId }) => {
+  const { state: info } = useUserInfoFetch(localStorage.userId);
+
   const navigate = useNavigate();
+
+  let admin = false;
 
   const handleUpdate = () => {
     navigate(`/update-character/${character.id}`);
@@ -23,10 +29,20 @@ const CharacterBar = ({ character, animeId }) => {
     navigate('/browse-info');
   }
 
+  const handleAdmin = () => {
+    if (info[0].is_admin) {
+      admin = true;
+    }
+  }
+
   return (
+    <>
+    {info[0] && (
+      handleAdmin()
+    )}
     <Wrapper>
       <Content>
-        {localStorage.userToken && (
+        {localStorage.userToken && admin && (
           <>
             <div className="column">
               <Button text='Update' callback={handleUpdate} />
@@ -41,6 +57,7 @@ const CharacterBar = ({ character, animeId }) => {
         </div>
       </Content>
     </Wrapper>
+    </>
   )
 }
 

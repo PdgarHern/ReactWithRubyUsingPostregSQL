@@ -6,6 +6,8 @@ import API from "../../API";
 // Components
 import Thumb from "../Thumb";
 import ButtonDark from "../ButtonDark";
+// Hook
+import { useUserInfoFetch } from "../../hooks/useUserInfoFetch";
 // Image
 import NoImage from "../../images/NoThumb.png";
 import NoPoster from "../../images/NoPoster.png";
@@ -15,7 +17,11 @@ import { Wrapper, Content, Text } from "./AnimeInfo.styles";
 import { Context } from "../../context";
 
 const AnimeInfo = ({ anime }) => {
+  const { state: info } = useUserInfoFetch(localStorage.userId);
+
   const navigate = useNavigate();
+
+  let admin = false;
 
   const handleUpdate = () => {
     navigate(`/update-anime/${anime.id}`);
@@ -30,7 +36,17 @@ const AnimeInfo = ({ anime }) => {
     navigate(`/characters/${anime.id}`);
   }
 
+  const handleAdmin = () => {
+    if (info[0].is_admin) {
+      admin = true;
+    }
+  }
+
   return (
+    <>
+    {info[0] && (
+      handleAdmin()
+    )}
     <Wrapper backdrop={
               anime.poster == "" || anime.poster == null
                 ? NoPoster
@@ -56,7 +72,7 @@ const AnimeInfo = ({ anime }) => {
             <div>
               <h3>AUTHOR</h3>
               <div className="author">{anime.author}</div>
-              {localStorage.userToken && (
+              {localStorage.userToken && admin && (
                 <ButtonDark text="Update" callback={handleUpdate} />
               )}
               <ButtonDark text="Characters" callback={handleCharacters} />
@@ -64,7 +80,7 @@ const AnimeInfo = ({ anime }) => {
             <div className="studio">
               <h3>STUDIO</h3>
               <p>{anime.studio}</p>
-              {localStorage.userToken && (
+              {localStorage.userToken && admin && (
                 <ButtonDark text="Delete" callback={handleDelete} />
               )}
             </div>
@@ -72,6 +88,7 @@ const AnimeInfo = ({ anime }) => {
         </Text>
       </Content>
     </Wrapper>
+    </>
   )
 }
 

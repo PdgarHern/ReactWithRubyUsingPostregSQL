@@ -9,6 +9,7 @@ import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Hooks
 import { useAnimeFetch } from "../hooks/useAnimeFetch";
+import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Image
 import NoImage from "../images/NoThumb.png";
 
@@ -16,8 +17,11 @@ const AnimeCharacters = () => {
   const { animeId } = useParams();
 
   const { state: anime, loading, error } = useAnimeFetch(animeId);
+  const { state: info } = useUserInfoFetch(localStorage.userId);
 
   const navigate = useNavigate();
+
+  let admin = false;
 
   if (error) return <div>Something went wrong...</div>;
 
@@ -25,8 +29,17 @@ const AnimeCharacters = () => {
     navigate(`/post-character/${animeId}`);
   }
 
+  const handleAdmin = () => {
+    if (info[0].is_admin) {
+      admin = true;
+    }
+  }
+
   return (
     <>
+      {info[0] && (
+        handleAdmin()
+      )}
       {!loading && (
         <>
           <BreadCrumb animeTitle={anime.title} linkPath={`/${animeId}`} />
@@ -45,7 +58,7 @@ const AnimeCharacters = () => {
               />
             ))}
           </Grid>
-          {localStorage.userToken && (
+          {localStorage.userToken && admin && (
             <ButtonDark text="Add Character" callback={handleAddButton} />
           )}
         </>

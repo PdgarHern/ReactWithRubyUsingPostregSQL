@@ -72,6 +72,14 @@ export const Content = styled.div`
       margin-right: 0;
     }
 
+    .checkBox {
+      display: flex;
+      align-items: center;
+      input {
+        width: 60px;
+      }
+    }
+
     h1 {
       color: var(--darkGrey);
     }

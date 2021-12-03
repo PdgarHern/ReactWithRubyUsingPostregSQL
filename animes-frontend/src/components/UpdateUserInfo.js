@@ -23,7 +23,7 @@ const UpdateUserInfo = () => {
   const [surname, setSurname] = useState('');
   const [age, setAge] = useState('');
   const [favDemographic, setFavDemographic] = useState('');
-  const [isAdmin, setIsAdmin] = useState();
+  const [isAdmin, setIsAdmin] = useState(false);
   const [profileImg, setProfileImg] = useState(null);
 
   const [error, setError] = useState(false);
@@ -57,6 +57,11 @@ const UpdateUserInfo = () => {
 
   }
 
+  const handleAdminMode = (e) => {
+    setIsAdmin(!isAdmin);
+    e.currentTarget.value = isAdmin;
+  }
+
   const handleSubmit = async () => {
     try {
       setError(false);
@@ -70,6 +75,7 @@ const UpdateUserInfo = () => {
         if (surname != '') { formNoImg.append('surname', surname) }
         if (age != '') { formNoImg.append('age', age) }
         if (favDemographic != '') { formNoImg.append('fav_demograph', favDemographic) }
+        formNoImg.append('is_admin', isAdmin);
 
         await API.updateInfo(info[0].id, formNoImg);
 
@@ -81,6 +87,7 @@ const UpdateUserInfo = () => {
         if (surname != '') { formImg.append('surname', surname) }
         if (age != '') { formImg.append('age', age) }
         if (favDemographic != '') { formImg.append('fav_demograph', favDemographic) }
+        formImg.append('is_admin', isAdmin);
         formImg.append('profile_img', profileImg);
 
         await API.updateInfo(info[0].id, formImg);
@@ -152,6 +159,15 @@ const UpdateUserInfo = () => {
                   onClick={handleValue}
                   onChange={handleInput}
                 />
+                <div className="checkBox">
+                  <input 
+                    type='checkbox' 
+                    name='is_admin'
+                    checked={isAdmin}
+                    onChange={handleAdminMode}
+                  />
+                  <label>Admin Mode</label>
+                </div>
               </div>
               <div className="column">
                 <label>Profile Banner</label>

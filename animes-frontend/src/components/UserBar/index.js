@@ -9,11 +9,11 @@ const HomeBar = () => {
   const navigate = useNavigate();
 
   const handleFirstButton = () => {
-    navigate('/about-us');
+    navigate(`/favourite-animes/${localStorage.userId}`);
   }
   
   const handleSecondButton = () => {
-    navigate('/browse-info');
+    navigate(`/favourite-characters/${localStorage.userId}`);
   }
   
   return (
