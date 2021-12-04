@@ -99,12 +99,12 @@ const UpdateAnime = () => {
     
     setLoading(false);
 
-    navigate(`/${animeId}`);
+    navigate(`/anime/${animeId}`);
   }
 
   return (
     <>
-      <BreadCrumb animeTitle={anime.title} linkPath={`/${anime.id}`} />
+      <BreadCrumb animeTitle={anime.title} linkPath={`/anime/${anime.id}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         {!loading && (

@@ -27,7 +27,7 @@ const ActorPage = () => {
     <>
       {!loading && (
         <>
-          <BreadCrumb animeTitle={anime.title} linkPath={`/${anime.id}`} />
+          <BreadCrumb animeTitle={anime.title} linkPath={`/anime/${anime.id}`} />
           <ActorInfo actor={actor} poster={anime.poster} />
           <ActorBar actor={actor} animeId={actor.anime_id} />
         </>

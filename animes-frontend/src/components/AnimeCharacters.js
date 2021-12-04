@@ -42,7 +42,7 @@ const AnimeCharacters = () => {
       )}
       {!loading && (
         <>
-          <BreadCrumb animeTitle={anime.title} linkPath={`/${animeId}`} />
+          <BreadCrumb animeTitle={anime.title} linkPath={`/anime/${animeId}`} />
           <Grid header="Characters">
             {anime.characters.map(character => (
               <Character

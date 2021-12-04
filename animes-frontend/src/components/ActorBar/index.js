@@ -22,7 +22,7 @@ const ActorBar = ({ actor, animeId }) => {
 
   const handleDelete = async () => {
     await API.deleteActor(actor.id);
-    navigate(`/${animeId}`);
+    navigate(`/anime/${animeId}`);
   }
 
   const handleBrowseAnimes = () => {

@@ -75,7 +75,7 @@ function App() {
             </>
           )}
           <Route path='/' element={<Home />} />
-          <Route path='/:animeId' element={<Anime />} />
+          <Route path='/anime/:animeId' element={<Anime />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/browse-info' element={<BrowseInfo />} />
           <Route path='/actor/:actorId' element={<Actor />} />

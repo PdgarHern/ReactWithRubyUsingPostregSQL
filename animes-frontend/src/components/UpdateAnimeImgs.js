@@ -38,7 +38,7 @@ const UpdateAnimeImgs = () => {
 
     setLoading(false);
 
-    navigate(`/${animeId}`);
+    navigate(`/anime/${animeId}`);
   }
 
   const handleInput = (e) => {
@@ -51,7 +51,7 @@ const UpdateAnimeImgs = () => {
 
   return (
     <>
-      <BreadCrumb animeTitle={anime.title} linkPath={`/${animeId}`} />
+      <BreadCrumb animeTitle={anime.title} linkPath={`/anime/${animeId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         {!loading && (

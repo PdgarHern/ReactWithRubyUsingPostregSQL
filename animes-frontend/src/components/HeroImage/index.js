@@ -7,7 +7,7 @@ import { Wrapper, Content, Text } from "./HeroImage.styles";
 const HeroImage = ({ clickable, image, title, text, animeId }) => (
   <Wrapper image={image}>
     {clickable ? (
-      <Link to={`/${animeId}`}>
+      <Link to={`/anime/${animeId}`}>
         <Content>
           <Text>
             <h1>{title}</h1>

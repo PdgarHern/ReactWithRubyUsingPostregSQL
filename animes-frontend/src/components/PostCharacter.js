@@ -61,7 +61,7 @@ const PostCharacter = () => {
 
   return (
     <>
-      <BreadCrumb animeTitle={anime.title} linkPath={`/${animeId}`} />
+      <BreadCrumb animeTitle={anime.title} linkPath={`/anime/${animeId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         <Content>

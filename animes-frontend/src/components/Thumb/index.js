@@ -7,7 +7,7 @@ import { Image } from "./Thumb.styles";
 const Thumb = ({ image, animeId, clickable }) => (
   <div>
     {clickable ? (
-      <Link to={`/${animeId}`}>
+      <Link to={`/anime/${animeId}`}>
         <Image src={image} alt='anime-thumb' />
       </Link>
     ) : (
