@@ -28,6 +28,7 @@ const AnimeInfo = ({ anime }) => {
 
   let admin = false;
   let fav = false;
+  let favId = null;
 
   const handleUpdate = () => {
     navigate(`/update-anime/${anime.id}`);
@@ -55,7 +56,24 @@ const AnimeInfo = ({ anime }) => {
 
       setLoading(false);
 
-      handleFav();
+      window.location.reload(false);
+    } catch (error) {
+      setError(true);
+    }
+  }
+
+  const handleDelFav = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+
+      await API.deleteFavAnime(favId);
+
+      console.log(favId);
+
+      setLoading(false);
+
+      window.location.reload(false);
     } catch (error) {
       setError(true);
     }
@@ -69,8 +87,9 @@ const AnimeInfo = ({ anime }) => {
 
   const handleFav = () => {
     for (const i in favAnimes) {
-      if (anime.id === i.anime_identificator) {
+      if (anime.id === favAnimes[i].anime_identificator) {
         fav = true;
+        favId = favAnimes[i].id;
         break;
       }
     }
@@ -122,6 +141,9 @@ const AnimeInfo = ({ anime }) => {
               )}
               {localStorage.userToken && fav == false && (
                 <ButtonDark text="Add Fav" callback={handleAddFav} />
+              )}
+              {localStorage.userToken && fav && (
+                <ButtonDark text="Delete Fav" callback={handleDelFav} />
               )}
             </div>
           </div>

@@ -86,6 +86,7 @@ export const Image = styled.img`
   z-index: 100;
   width: 100%;
   max-width: 200px;
+  height: 100%;
   max-height: 200px;
   transition: all 0.3s;
   object-fit: cover;

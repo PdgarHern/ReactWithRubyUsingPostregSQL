@@ -26,12 +26,17 @@ const FavouriteAnimes = () => {
 
   const getFavAnimes = () => {
     state.results.map((anime) => {
-      
+      for (const f in favAnimes) {
+        if (anime.id === favAnimes[f].anime_identificator) {
+          animes.push(anime);
+          break;
+        }
+      }
     })
 
-    for (const f in favAnimes) {
-      console.log(f);
-    }
+    // for (const f in favAnimes) {
+    //   console.log(f);
+    // }
   }
 
   return (
