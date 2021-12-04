@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 // API
@@ -8,6 +8,7 @@ import Thumb from "../Thumb";
 import ButtonDark from "../ButtonDark";
 // Hook
 import { useUserInfoFetch } from "../../hooks/useUserInfoFetch";
+import { useFavAnimeFetch } from "../../hooks/useFavAnimeFetch";
 // Image
 import NoImage from "../../images/NoThumb.png";
 import NoPoster from "../../images/NoPoster.png";
@@ -18,10 +19,15 @@ import { Context } from "../../context";
 
 const AnimeInfo = ({ anime }) => {
   const { state: info } = useUserInfoFetch(localStorage.userId);
+  const { state: favAnimes } = useFavAnimeFetch(localStorage.userId);
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   let admin = false;
+  let fav = false;
 
   const handleUpdate = () => {
     navigate(`/update-anime/${anime.id}`);
@@ -36,9 +42,37 @@ const AnimeInfo = ({ anime }) => {
     navigate(`/characters/${anime.id}`);
   }
 
+  const handleAddFav = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+
+      const formData = new FormData();
+      formData.append('user_identificator', localStorage.userId);
+      formData.append('anime_identificator', anime.id);
+
+      await API.createFavAnime(formData);
+
+      setLoading(false);
+
+      handleFav();
+    } catch (error) {
+      setError(true);
+    }
+  }
+
   const handleAdmin = () => {
     if (info[0].is_admin) {
       admin = true;
+    }
+  }
+
+  const handleFav = () => {
+    for (const i in favAnimes) {
+      if (anime.id === i.anime_identificator) {
+        fav = true;
+        break;
+      }
     }
   }
 
@@ -46,6 +80,9 @@ const AnimeInfo = ({ anime }) => {
     <>
     {info[0] && (
       handleAdmin()
+    )}
+    {favAnimes && (
+      handleFav()
     )}
     <Wrapper backdrop={
               anime.poster == "" || anime.poster == null
@@ -82,6 +119,9 @@ const AnimeInfo = ({ anime }) => {
               <p>{anime.studio}</p>
               {localStorage.userToken && admin && (
                 <ButtonDark text="Delete" callback={handleDelete} />
+              )}
+              {localStorage.userToken && fav == false && (
+                <ButtonDark text="Add Fav" callback={handleAddFav} />
               )}
             </div>
           </div>
