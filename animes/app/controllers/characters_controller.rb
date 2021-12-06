@@ -5,11 +5,11 @@ class CharactersController < ApplicationController
   # GET /characters
   def index
     @q = Character.ransack(name_cont: params[:query])
-    @characters = @q.result(distinct: true).all.page params[:page]
+    @characters = @q.result(distinct: true).all
 
     @charactersSerialized = ActiveModel::SerializableResource.new(@characters).serializable_hash
 
-    render json: {page: Integer(params[:page]), results: @charactersSerialized, total_page: @characters.total_pages}
+    render json: {results: @charactersSerialized}
   end
 
   # GET /characters/1

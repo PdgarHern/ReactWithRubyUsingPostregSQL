@@ -33,10 +33,7 @@ const FavouriteAnimes = () => {
         }
       }
     })
-
-    // for (const f in favAnimes) {
-    //   console.log(f);
-    // }
+    
   }
 
   return (
