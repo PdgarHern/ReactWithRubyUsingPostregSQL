@@ -6,6 +6,7 @@ import API from "../API";
 // Components
 import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
+import Spinner from "./Spinner";
 // Hook
 import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
@@ -15,24 +16,32 @@ import ImgExample from "../images/ImgExample.png";
 
 const UpdateUserPic = () => {
   const { userId } = useParams();
-  const { state: info, error } = useUserInfoFetch(userId);
+  const { state: info } = useUserInfoFetch(userId);
 
   const [pic, setPic] = useState();
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('profile_pic', pic);
+    try {
+      setLoading(true);
+      const formData = new FormData();
+      if (pic != null) formData.append('profile_pic', pic);
 
-    await API.updateInfo(info[0].id, formData);
+      await API.updateInfo(info[0].id, formData);
 
-    setLoading(false);
+      setLoading(false);
 
-    navigate(`/user-page/${userId}`);
+      navigate(`/user-page/${userId}`);
+    } catch (error) {
+      setError(true);
+      setTimeout(() => {
+        window.location.reload(false)}, 2000);
+    }
+    
   }
 
   const handleInput = (e) => {
@@ -45,8 +54,9 @@ const UpdateUserPic = () => {
         <BreadCrumb animeTitle={info[0].user_name} linkPath={`/user-page/${userId}`} />
       ) : null}
       <Wrapper>
+        {error && <div className="error">There was an error...</div>}
         {/* {error && <div className="error">There was an error...</div>} */}
-        {!loading && (
+        {!loading && !error && (
           <>
             <label>User Picture</label>
             <input
@@ -58,6 +68,9 @@ const UpdateUserPic = () => {
             <img id="profilePic" src={ImgExample} alt="Not Found" />
             <ButtonDark text='Update' callback={handleSubmit} />
           </>
+        )}
+        {loading && !error && (
+          <Spinner />
         )}
       </Wrapper>
     </>

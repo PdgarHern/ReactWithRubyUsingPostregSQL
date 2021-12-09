@@ -17,33 +17,40 @@ import ImgExample from "../images/ImgExample.png";
 const PostCharacter = () => {
   const { animeId } = useParams();
 
-  const { state: anime, error } = useAnimeFetch(animeId);
+  const { state: anime } = useAnimeFetch(animeId);
 
   const [name, setName] = useState('');
   const [gender, setGender] = useState('');
   const [age, setAge] = useState('');
   const [role, setRole] = useState('');
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState();
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('gender', gender);
-    formData.append('age', age);
-    formData.append('role', role);
-    formData.append('anime_id', animeId);
-    formData.append('img', img);
+    try {
+      setLoading(true);
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('gender', gender);
+      formData.append('age', age);
+      formData.append('role', role);
+      formData.append('anime_id', animeId);
+      if (img != null) formData.append('img', img);
 
-    await API.postCharacter(formData);
+      await API.postCharacter(formData);
 
-    setLoading(false);
+      setLoading(false);
 
-    navigate(`/characters/${animeId}`);
+      navigate(`/characters/${animeId}`);
+    } catch (error) {
+      setError(true);
+      setTimeout(() => {
+        window.location.reload(false)}, 2000);
+    }
 
   }
 
@@ -65,7 +72,7 @@ const PostCharacter = () => {
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         <Content>
-          {!loading && (
+          {!loading && !error && (
             <>
               <div className="column">
                 <label>Name</label>
@@ -110,10 +117,10 @@ const PostCharacter = () => {
             </>
           )}
         </Content>
-        {!loading && (
+        {!loading && !error && (
           <ButtonDark text='Add' callback={handleSubmit} />
         )}
-        {loading && (
+        {loading && !error && (
           <>
             <Spinner />
             <div>Processing your request...</div>

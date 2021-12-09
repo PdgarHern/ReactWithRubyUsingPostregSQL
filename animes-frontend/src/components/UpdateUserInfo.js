@@ -110,83 +110,81 @@ const UpdateUserInfo = () => {
       ) : null}
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
-        <Content>
-          {!loading && info[0] ? (
-            <>
-              <div className="column">
-                <label>User Name</label>
+        {!loading && info[0] ? (
+          <Content>
+            <div className="column">
+              <label>User Name</label>
+              <input
+                type='text'
+                placeholder={info[0].user_name}
+                value={userName}
+                name='user_name'
+                onClick={handleValue}
+                onChange={handleInput}
+              />
+              <label>Name</label>
+              <input
+                type='text'
+                placeholder={info[0].name}
+                value={name}
+                name='name'
+                onClick={handleValue}
+                onChange={handleInput}
+              />
+              <label>Surname</label>
+              <input
+                type='text'
+                placeholder={info[0].surname}
+                value={surname}
+                name='surname'
+                onClick={handleValue}
+                onChange={handleInput}
+              />
+              <label>Age</label>
+              <input
+                type='number'
+                placeholder={info[0].age}
+                value={age}
+                name='age'
+                onClick={handleValue}
+                onChange={handleInput}
+              />
+              <label>Favourite Demographic</label>
+              <input
+                type='text'
+                placeholder={info[0].fav_demograph}
+                value={favDemographic}
+                name='fav_demograph'
+                onClick={handleValue}
+                onChange={handleInput}
+              />
+              <div className="checkBox">
                 <input
-                  type='text'
-                  placeholder={info[0].user_name}
-                  value={userName}
-                  name='user_name'
-                  onClick={handleValue}
-                  onChange={handleInput}
+                  type='checkbox'
+                  name='is_admin'
+                  checked={isAdmin}
+                  onChange={handleAdminMode}
                 />
-                <label>Name</label>
-                <input
-                  type='text'
-                  placeholder={info[0].name}
-                  value={name}
-                  name='name'
-                  onClick={handleValue}
-                  onChange={handleInput}
-                />
-                <label>Surname</label>
-                <input
-                  type='text'
-                  placeholder={info[0].surname}
-                  value={surname}
-                  name='surname'
-                  onClick={handleValue}
-                  onChange={handleInput}
-                />
-                <label>Age</label>
-                <input
-                  type='number'
-                  placeholder={info[0].age}
-                  value={age}
-                  name='age'
-                  onClick={handleValue}
-                  onChange={handleInput}
-                />
-                <label>Favourite Demographic</label>
-                <input
-                  type='text'
-                  placeholder={info[0].fav_demograph}
-                  value={favDemographic}
-                  name='fav_demograph'
-                  onClick={handleValue}
-                  onChange={handleInput}
-                />
-                <div className="checkBox">
-                  <input 
-                    type='checkbox' 
-                    name='is_admin'
-                    checked={isAdmin}
-                    onChange={handleAdminMode}
-                  />
-                  <label>Admin Mode</label>
-                </div>
+                <label>Admin Mode</label>
               </div>
-              <div className="column">
-                <label>Profile Banner</label>
-                <input
-                  id="image"
-                  type='file'
-                  name='profile_img'
-                  onChange={handleInput}
-                />
-                <img id="posterImg" src={PosterExample} alt="Not Found" />
-              </div>
-            </>
-          ) : (
-            <>
-              <Spinner />
-              <div>Processing your request...</div>
-            </>
-          )}
-        </Content>
+            </div>
+            <div className="column">
+              <label>Profile Banner</label>
+              <input
+                id="image"
+                type='file'
+                name='profile_img'
+                onChange={handleInput}
+              />
+              <img id="posterImg" src={PosterExample} alt="Not Found" />
+            </div>
+          </Content>
+        ) : (
+          <>
+            <Spinner />
+            <div>Processing your request...</div>
+          </>
+        )}
         {!loading && (
           <ButtonDark text='Update' callback={handleSubmit} />
         )}

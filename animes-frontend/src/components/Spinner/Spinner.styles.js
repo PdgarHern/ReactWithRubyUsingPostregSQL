@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Spinner = styled.div`
-  margin-left: 45%;
+  /* margin-left: 45%; */
   margin-top: 20px;
   border: 5px solid var(--lightGrey);
   border-top: 5px solid var(--medGrey);

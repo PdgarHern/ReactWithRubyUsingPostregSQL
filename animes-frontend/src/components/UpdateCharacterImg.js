@@ -18,24 +18,32 @@ import { Context } from "../context";
 
 const UpdateCharacterImg = () => {
   const { characterId } = useParams();
-  const { state: character, error } = useCharacterFetch(characterId);
+  const { state: character } = useCharacterFetch(characterId);
 
   const [img, setImg] = useState();
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('img', img);
+    try {
+      setLoading(true);
+      const formData = new FormData();
+      if (img != null) formData.append('img', img);
 
-    await API.updateCharacter(characterId, formData);
+      await API.updateCharacter(characterId, formData);
 
-    setLoading(false);
+      setLoading(false);
 
-    navigate(`/character/info/${characterId}`);
+      navigate(`/character/info/${characterId}`);
+    } catch (error) {
+      setError(true);
+      setTimeout(() => {
+        window.location.reload(false)}, 2000);
+    }
+    
   }
 
   const handleInput = (e) => {
@@ -50,7 +58,7 @@ const UpdateCharacterImg = () => {
       <BreadCrumb animeTitle={character.name} linkPath={`/character/info/${characterId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
-        {!loading && (
+        {!loading && !error && (
           <>
             <label>Image</label>
             <input
@@ -63,7 +71,7 @@ const UpdateCharacterImg = () => {
             <ButtonDark text='Update' callback={handleSubmit} />
           </>
         )}
-        {loading && (
+        {loading && !error && (
           <>
             <Spinner />
             <div>Processing your request...</div>
