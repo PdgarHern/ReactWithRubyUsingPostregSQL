@@ -30,7 +30,7 @@ const Register = () => {
 
       formData.append('user[email]', email);
       formData.append('user[password]', password);
-      
+
       await API.createUser(formData);
       await API.login(formData);
 
@@ -41,21 +41,22 @@ const Register = () => {
       await API.createInfo(infoData);
 
       setLoading(false);
-      
+
       console.log("Todo bien");
 
       navigate(`/user-page/${localStorage.userId}`);
     } catch (error) {
       setError(true);
       setTimeout(() => {
-        setError(false); 
-        setLoading(false); 
+        setError(false);
+        setLoading(false);
         setEmail('');
         setPassword('');
         setPassConfirmation('');
-        navigate('/register');}, 2000);
+        navigate('/register');
+      }, 2000);
     }
-    
+
   }
 
   const handleInput = async (e) => {
@@ -69,13 +70,12 @@ const Register = () => {
 
   }
 
-  if (error == true) return <div className="error">Something went wrong...</div>
-
   return (
     <>
-      {!loading && (
-        <>
-          <Wrapper>
+      <Wrapper>
+        {error && <div className="error">Something went wrong...</div>}
+        {!loading && !error && (
+          <>
             <label>User Name</label>
             <input
               type='text'
@@ -104,16 +104,15 @@ const Register = () => {
               name='passConfirmation'
               onChange={handleInput}
             />
-          </Wrapper>
-          <ButtonDark text='Register' callback={handleSubmit} />
-        </>
-      )}
-      {loading && (
-        <>
+            <ButtonDark text='Register' callback={handleSubmit} />
+          </>
+        )}
+      </Wrapper>
+      {loading && !error && 
+        <div className="spinner">
           <Spinner />
-          <div>Processing your request...</div>
-        </>
-      )}
+        </div>
+      }
     </>
   )
 }

@@ -54,7 +54,7 @@ const BrowseInfo = () => {
           />
         ))}
       </Grid>
-      {loading && <Spinner />}
+      {loading && <div className="spinner"><Spinner /></div>}
       {state.page < state.total_pages && !loading && (
         <ButtonDark text="Load More" callback={() => setIsLoadingMore(true)} />
       )}

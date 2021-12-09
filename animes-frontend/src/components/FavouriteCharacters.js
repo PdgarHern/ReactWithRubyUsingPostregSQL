@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import BreadCrumb from "./BreadCrumb";
 import Grid from "./Grid";
 import Character from "./CharacterC";
+import Spinner from "./Spinner";
 // Hook
 import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 import { useCharacterPageFetch } from "../hooks/useCharacterPageFetch";
@@ -54,6 +55,7 @@ const FavouriteCharacters = () => {
           />
         ))}
       </Grid>
+      {loading && <div className="spinner"><Spinner /></div>}
     </>
   )
 }

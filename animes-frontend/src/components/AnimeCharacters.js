@@ -63,7 +63,7 @@ const AnimeCharacters = () => {
           )}
         </>
       )}
-      {loading && <Spinner />}
+      {loading && <div className="spinner"><Spinner /></div>}
     </>
   )
 }

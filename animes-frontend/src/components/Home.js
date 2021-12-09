@@ -88,7 +88,7 @@ const Home = () => {
           </div>
         </HomeContent>
       ) : null}
-      {loading && <Spinner />}
+      {loading && <div className="spinner"><Spinner /></div>}
     </>
   )
 }

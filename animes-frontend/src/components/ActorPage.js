@@ -32,7 +32,7 @@ const ActorPage = () => {
           <ActorBar actor={actor} animeId={actor.anime_id} />
         </>
       )}
-      {loading && <Spinner />}
+      {loading && <div className="spinner"><Spinner /></div>}
     </>
   )
 }

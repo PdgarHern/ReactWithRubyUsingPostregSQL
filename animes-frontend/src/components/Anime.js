@@ -69,7 +69,7 @@ const Anime = () => {
           )}
         </>
       )}
-      {loading && <Spinner />}
+      {loading && <div className="spinner"><Spinner /></div>}
     </>
   )
 }

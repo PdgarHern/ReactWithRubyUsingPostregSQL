@@ -32,6 +32,9 @@ const CharacterInfoPage = () => {
           <CharacterBar character={character} animeId={character.anime_id} />
         </>
       )}
+      {loading && (
+        <div className="spinner"><Spinner /></div>
+      )}
     </>
   )
 }

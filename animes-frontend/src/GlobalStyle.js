@@ -39,6 +39,11 @@ export const GlobalStyle = createGlobalStyle`
             color: var(--white);
         }
 
+        .spinner {
+            display: flex;
+            justify-content: center;
+        }
+
     }
 
 `;
