@@ -32,25 +32,33 @@ const PostAnime = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('plot', plot);
-    formData.append('genres', genres);
-    formData.append('author', author);
-    formData.append('studio', studio);
-    formData.append('premiered', premiered);
-    formData.append('demographic', demographic);
-    formData.append('episodes', episodes);
-    formData.append('poster', poster);
-    formData.append('thumb', thumb);
+    try {
+      setLoading(true);
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('plot', plot);
+      formData.append('genres', genres);
+      formData.append('author', author);
+      formData.append('studio', studio);
+      formData.append('premiered', premiered);
+      formData.append('demographic', demographic);
+      formData.append('episodes', episodes);
+      if (poster != null) formData.append('poster', poster);
+      if (thumb != null) formData.append('thumb', thumb);
 
 
-    await API.postAnime(formData);
+      await API.postAnime(formData);
 
-    setLoading(false);
+      setLoading(false);
 
-    navigate(`/browse-info`);
+      navigate(`/browse-info`);
+    } catch (error) {
+      setError(true);
+      setLoading(false);
+      setTimeout(() => {
+        window.location.reload(false)}, 2000);
+      
+    }
 
   }
 
@@ -77,7 +85,7 @@ const PostAnime = () => {
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
         <Content>
-          {!loading && (
+          {!loading && !error && (
             <>
               <div className="column">
                 <label>Title</label>
@@ -158,10 +166,10 @@ const PostAnime = () => {
             </>
           )}
         </Content>
-        {!loading && (
+        {!loading && !error && (
           <ButtonDark text='Add' callback={handleSubmit} />
         )}
-        {loading && (
+        {loading && !error && (
           <>
             <Spinner />
             <div>Processing your request...</div>
