@@ -54,7 +54,6 @@ const PostAnime = () => {
       navigate(`/browse-info`);
     } catch (error) {
       setError(true);
-      setLoading(false);
       setTimeout(() => {
         window.location.reload(false)}, 2000);
       

@@ -19,26 +19,34 @@ import { Context } from "../context";
 
 const UpdateAnimeImgs = () => {
   const { animeId } = useParams();
-  const { state: anime, error } = useAnimeFetch(animeId);
+  const { state: anime } = useAnimeFetch(animeId);
 
   const [poster, setPoster] = useState();
   const [thumb, setThumb] = useState();
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    setLoading(true);
-    const formData = new FormData();
-    formData.append('poster', poster);
-    formData.append('thumb', thumb);
+    try {
+      setLoading(true);
+      const formData = new FormData();
+      if (poster != null) formData.append('poster', poster);
+      if (thumb != null) formData.append('thumb', thumb);
 
-    await API.updateAnime(animeId, formData);
+      await API.updateAnime(animeId, formData);
 
-    setLoading(false);
+      setLoading(false);
 
-    navigate(`/anime/${animeId}`);
+      navigate(`/anime/${animeId}`);
+    } catch (error) {
+      setError(true);
+      setTimeout(() => {
+        window.location.reload(false)}, 2000);
+    }
+    
   }
 
   const handleInput = (e) => {
@@ -75,7 +83,7 @@ const UpdateAnimeImgs = () => {
             <ButtonDark text='Update' callback={handleSubmit} />
           </>
         )}
-        {loading && (
+        {loading && !error && (
           <>
             <Spinner />
             <div>Processing your request...</div>
