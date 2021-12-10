@@ -9,7 +9,7 @@
 </div>
 
 <details>
-  <h3>Index</h3>
+  <summary>Index</summary>
   <ol>
     <li>
       <a href="#react-and-ruby-on-rails-web-app">React and Ruby on Rails Web App</a>
