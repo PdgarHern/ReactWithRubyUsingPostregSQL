@@ -15,6 +15,8 @@
       <a href="#react-and-ruby-on-rails-web-app">React and Ruby on Rails Web App</a>
       <ul>
         <li><a href="#need-source">Need Source</a></li>
+        <li><a href="#demanding-company">Demanding Company</a></li>
+        <li><a href="#summarized-idea">Summarized idea</a></li>
       </ul>
     </li>
   </ol>
@@ -27,6 +29,14 @@ This is an app where you can store and check data about your favourite series, t
 With its design and search engine, it makes incredibly easy looking up for what you're looking for. It comes with a register and login system, where you can create your own user, modify your profile and, by becoming and admin, administrate all the info in the database.
 
 ### Need Source
+Anime's popularity has grown so much in recent times, and the demand for fast answers its even bigger.<br/>
+Therefore, is logical to think of the possible usage of a fast and user firendly web app where you can store all this information that everyone is talking about at this moment.
+
+### Demanding Company
+This is a personal project *(The technologies used where demanded by Usabi)*
+
+### Summarized idea
+So, the idea of the project is to create a place to store and easily find information about animes, actors and characters, giving the tools to make it as comfortable as possible.
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
