@@ -13,17 +13,22 @@
   <ol>
     <li>
       <a href="#react-and-ruby-on-rails-web-app">React and Ruby on Rails Web App</a>
+      <ul>
+        <li><a href="#need-source">Need Source</a></li>
+      </ul>
     </li>
   </ol>
 </details>
 
-## React and Ruby on Rails Web App
+# React and Ruby on Rails Web App
 Welcome to -*Your Anime Database*-, a web Anime info based app made up using React for the client and a Ruby on Rails API.<br/>
-This is an app where you can store and checked data about your favourite series, their actors and characters, and even create a 'Favourite' list for either the animes and characters.<br/>
+This is an app where you can store and check data about your favourite series, their actors and characters, and even create a 'Favourite' list for either the animes and characters.<br/>
 <br/>
 With its design and search engine, it makes incredibly easy looking up for what you're looking for. It comes with a register and login system, where you can create your own user, modify your profile and, by becoming and admin, administrate all the info in the database.
 
-### First of all
+### Need Source
+
+<!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
 Here you have some links:<br/>
 [NodeJS Download](https://nodejs.org/es/)<br/>
@@ -65,4 +70,4 @@ The *Frontend* preparation is easy. You just have to run ```npm install```.
 Both *Ruby on Rails* and *React* uses port 3000.<br/>
 However, run the *Backend* with ```rails s``` and then, when you run *React* using ```npm start``` it will auto select another port.<br/><br/>
 Is possible that running ```rails s``` throughs you an error the first time. The terminal will require you to run ```yarn install --check-files```. Do so and then you should be able to run the server as normally.<br/><br/>
-In further commits, the installation guide may be updated if necessary.
+In further commits, the installation guide may be updated if necessary. -->
