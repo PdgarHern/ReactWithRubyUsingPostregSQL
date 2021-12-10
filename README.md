@@ -1,3 +1,9 @@
+<br />
+<div align="center">
+  <a href="https://github.com/PdgarHern/ReactWithRubyUsingPostregSQL">
+    <img src="documentation/images/Anime.png" alt="Logo" width="200" />
+  </a>
+</div>
 # React and Ruby on Rails Web App
 Just a litle Anime info app using these technologies.
 
