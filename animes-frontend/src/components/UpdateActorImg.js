@@ -9,6 +9,7 @@ import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Hook
 import { useActorFetch } from "../hooks/useActorFetch";
+import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
 import { Wrapper } from "./UpdateImgs.styles";
 // Image
@@ -19,6 +20,7 @@ import { Context } from "../context";
 const UpdateActorImg = () => {
   const { actorId } = useParams();
   const { state: actor } = useActorFetch(actorId);
+  const { state: info } = useUserInfoFetch(localStorage.userId);
 
   const [img, setImg] = useState();
 
@@ -52,9 +54,25 @@ const UpdateActorImg = () => {
     if (name === 'img') setImg(e.currentTarget.files[0]);
 
   }
+
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
+  const handleAdmin = () => {
+    if (!info[0].is_admin) {
+      navigate(`/user-page/${localStorage.userId}`);
+    }
+  }
   
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
+      {info[0] && (
+        handleAdmin()
+      )}
       <BreadCrumb animeTitle={actor.name} linkPath={`/actor/${actorId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}

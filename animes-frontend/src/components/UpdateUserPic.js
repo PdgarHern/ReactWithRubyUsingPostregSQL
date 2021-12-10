@@ -48,8 +48,15 @@ const UpdateUserPic = () => {
     setPic(e.currentTarget.files[0]);
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
       {info[0] ? (
         <BreadCrumb animeTitle={info[0].user_name} linkPath={`/user-page/${userId}`} />
       ) : null}

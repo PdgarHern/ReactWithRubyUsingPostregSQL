@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // Components
 import BreadCrumb from "./BreadCrumb";
 import Grid from "./Grid";
@@ -19,6 +20,8 @@ const FavouriteCharacters = () => {
   const { state: info } = useUserInfoFetch(userId);
   const { state: favCharacters } = useFavCharacterFetch(userId);
 
+  const navigate = useNavigate();
+
   let characters = [];
 
   const getFavCharacters = () => {
@@ -32,8 +35,15 @@ const FavouriteCharacters = () => {
     })
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
       {info[0] && (
         <BreadCrumb animeTitle={info[0].user_name} linkPath={`/user-page/${userId}`} />
       )}

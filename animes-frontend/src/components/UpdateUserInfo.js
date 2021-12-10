@@ -103,8 +103,15 @@ const UpdateUserInfo = () => {
     }
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
       {info[0] != null ? (
         <BreadCrumb animeTitle={info[0].user_name} linkPath={`/user-page/${userId}`} />
       ) : null}

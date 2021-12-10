@@ -23,10 +23,17 @@ const UserPage = () => {
     navigate('/browse-info');
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
   if (error) return <div className="error">Something went wrong...</div>;
 
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
       {userInfo[0] != null ? (
         <>
           <UserHeroImage

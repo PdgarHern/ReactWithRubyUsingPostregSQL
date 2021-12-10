@@ -36,8 +36,15 @@ const FavouriteAnimes = () => {
     
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
       {info[0] && (
         <BreadCrumb animeTitle={info[0].user_name} linkPath={`/user-page/${userId}`} />
       )}

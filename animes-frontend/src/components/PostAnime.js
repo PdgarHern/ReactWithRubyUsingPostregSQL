@@ -6,6 +6,8 @@ import API from "../API";
 import BreadCrumb from "./BreadCrumb";
 import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
+// Hook
+import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
 import { Wrapper, Content } from "./Post.styles";
 // Image
@@ -15,6 +17,8 @@ import ThumbExample from "../images/ThumbExample.png";
 import { Context } from "../context";
 
 const PostAnime = () => {
+  const { state: info } = useUserInfoFetch(localStorage.userId);
+
   const [title, setTitle] = useState('');
   const [plot, setPlot] = useState('');
   const [genres, setGenres] = useState('');
@@ -78,8 +82,24 @@ const PostAnime = () => {
 
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
+  const handleAdmin = () => {
+    if (!info[0].is_admin) {
+      navigate(`/user-page/${localStorage.userId}`);
+    }
+  }
+
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
+      {info[0] && (
+        handleAdmin()
+      )}
       <BreadCrumb animeTitle={'Post Anime'} linkPath={'/browse-info'} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}

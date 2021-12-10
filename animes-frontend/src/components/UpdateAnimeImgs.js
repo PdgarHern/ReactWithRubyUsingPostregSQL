@@ -9,6 +9,7 @@ import ButtonDark from "./ButtonDark";
 import Spinner from "./Spinner";
 // Hook
 import { useAnimeFetch } from "../hooks/useAnimeFetch";
+import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
 import { Wrapper } from "./UpdateImgs.styles";
 // Image
@@ -20,6 +21,7 @@ import { Context } from "../context";
 const UpdateAnimeImgs = () => {
   const { animeId } = useParams();
   const { state: anime } = useAnimeFetch(animeId);
+  const { state: info } = useUserInfoFetch(localStorage.userId);
 
   const [poster, setPoster] = useState();
   const [thumb, setThumb] = useState();
@@ -57,8 +59,24 @@ const UpdateAnimeImgs = () => {
 
   }
 
+  const handleAuth = () => {
+    navigate('/login');
+  }
+
+  const handleAdmin = () => {
+    if (!info[0].is_admin) {
+      navigate(`/user-page/${localStorage.userId}`);
+    }
+  }
+
   return (
     <>
+      {!localStorage.userId && (
+        handleAuth()
+      )}
+      {info[0] && (
+        handleAdmin()
+      )}
       <BreadCrumb animeTitle={anime.title} linkPath={`/anime/${animeId}`} />
       <Wrapper>
         {error && <div className="error">There was an error...</div>}
