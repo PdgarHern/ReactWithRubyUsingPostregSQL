@@ -44,6 +44,23 @@ export const GlobalStyle = createGlobalStyle`
             justify-content: center;
         }
 
+        .error {
+            color: red;
+            font-size: 1.5rem;
+        }
+
+        .formError {
+            color: red;
+            font-size: 1.2rem;
+        }
+
+        .logout {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            font-size: 2.5rem;
+        }
+
     }
 
 `;

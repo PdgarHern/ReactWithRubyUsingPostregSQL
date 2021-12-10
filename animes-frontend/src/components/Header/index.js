@@ -39,7 +39,7 @@ const Header = () => {
 			localStorage.removeItem('userToken');
 
 			setLoading(false);
-			navigate('/');
+			navigate('/logout');
 		} catch (error) {
 			setError(true);
 		}

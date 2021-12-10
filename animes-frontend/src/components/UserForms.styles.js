@@ -28,8 +28,6 @@ export const Wrapper = styled.div`
     padding: 10px;
   }
 
-  .error {
-    color: red;
-  }
+  
 
 `;

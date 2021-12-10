@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import validator from 'validator';
 // API
 import API from "../API";
 // Components
@@ -19,32 +20,59 @@ const Register = () => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [notEmail, setNotEmail] = useState(false);
+  const [passError, setPassError] = useState(false);
+  const [nameError, setNameError] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
-      setLoading(true);
-      const formData = new FormData();
-      const infoData = new FormData();
+      if (validator.isEmail(email)) {
+        if (password == passConfirmation && password != '') {
+          if (userName != '') {
+            setLoading(true);
+            const formData = new FormData();
+            const infoData = new FormData();
 
-      formData.append('user[email]', email);
-      formData.append('user[password]', password);
+            formData.append('user[email]', email);
+            formData.append('user[password]', password);
 
-      await API.createUser(formData);
-      await API.login(formData);
+            await API.createUser(formData);
+            await API.login(formData);
 
-      infoData.append('user_name', userName);
-      infoData.append('user_id', localStorage.userId);
-      infoData.append('is_admin', false);
+            infoData.append('user_name', userName);
+            infoData.append('user_id', localStorage.userId);
+            infoData.append('is_admin', false);
 
-      await API.createInfo(infoData);
+            await API.createInfo(infoData);
 
-      setLoading(false);
+            setLoading(false);
 
-      console.log("Todo bien");
+            console.log("Todo bien");
 
-      navigate(`/user-page/${localStorage.userId}`);
+            navigate(`/user-page/${localStorage.userId}`);
+          } else {
+            setNameError(true);
+            setTimeout(() => {
+              setNameError(false)
+            }, 3500);
+          }
+
+        } else {
+          setPassError(true);
+          setTimeout(() => {
+            setPassError(false)
+          }, 3500);
+        }
+
+      } else {
+        setNotEmail(true);
+        setTimeout(() => {
+          setNotEmail(false)
+        }, 3500);
+      }
+
     } catch (error) {
       setError(true);
       setTimeout(() => {
@@ -83,6 +111,7 @@ const Register = () => {
               name='userName'
               onChange={handleInput}
             />
+            {nameError && <div className="formError">*Please insert a name</div>}
             <label>Email</label>
             <input
               type='text'
@@ -90,6 +119,7 @@ const Register = () => {
               name='email'
               onChange={handleInput}
             />
+            {notEmail && <div className="formError">*Invalid email provided</div>}
             <label>Password</label>
             <input
               type='password'
@@ -104,11 +134,12 @@ const Register = () => {
               name='passConfirmation'
               onChange={handleInput}
             />
+            {passError && <div className="formError">*Password doesn't match</div>}
             <ButtonDark text='Register' callback={handleSubmit} />
           </>
         )}
       </Wrapper>
-      {loading && !error && 
+      {loading && !error &&
         <div className="spinner">
           <Spinner />
         </div>
