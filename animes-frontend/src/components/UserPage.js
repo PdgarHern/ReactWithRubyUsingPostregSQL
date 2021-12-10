@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import UserHeroImage from "./UserHeroImage";
 import UserBar from "./UserBar";
 import ButtonDark from "./ButtonDark";
+import Footer from "./Footer";
 // Hook
 import { useUserInfoFetch } from "../hooks/useUserInfoFetch";
 // Styles
@@ -60,6 +61,7 @@ const UserPage = () => {
               <strong>Favourite Demographic: {userInfo[0].fav_demograph}</strong>
             </div>
           </Content>
+          <Footer />
         </>
       ) : null}
     </>
