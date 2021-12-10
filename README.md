@@ -1,11 +1,11 @@
-<br />
+<br/>
 <div align="center">
   <a href="https://github.com/PdgarHern/ReactWithRubyUsingPostregSQL">
-    <img src="documentation/images/Anime.png" alt="Logo" width="200" />
+    <img src="documentation/images/Anime.png" alt="Logo" width="400" />
   </a>
 
   <h3 align="center">Anime info web using React, Ruby and PostreSQL</h3>
-  <br />
+  <br/>
 </div>
 
 <details>
@@ -19,7 +19,9 @@
 
 ### React and Ruby on Rails Web App
 Welcome to -*Your Anime Database*-, a web Anime info based app made up using React for the client and a Ruby on Rails API.<br/>
-This is an app where you can store and checked data about your favourite series, their actors and characters, and even create a 'Favourite' list for either the animes and characters.
+This is an app where you can store and checked data about your favourite series, their actors and characters, and even create a 'Favourite' list for either the animes and characters.<br/>
+<br/>
+With its design and search engine, it makes incredibly easy looking up for what you're looking for. It comes with a register and login system, where you can create your own user, modify your profile and, by becoming and admin, administrate all the info in the database.
 
 ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
