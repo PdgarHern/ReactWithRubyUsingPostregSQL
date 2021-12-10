@@ -17,7 +17,7 @@
   </ol>
 </details>
 
-### React and Ruby on Rails Web App
+## React and Ruby on Rails Web App
 Welcome to -*Your Anime Database*-, a web Anime info based app made up using React for the client and a Ruby on Rails API.<br/>
 This is an app where you can store and checked data about your favourite series, their actors and characters, and even create a 'Favourite' list for either the animes and characters.<br/>
 <br/>
