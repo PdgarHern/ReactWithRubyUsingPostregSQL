@@ -6,8 +6,8 @@
 
   <h3 align="center">Anime info web using React, Ruby and PostreSQL</h3>
   <div flex-direction="row">
-    <img src="documentation/images/ruby.png" alt="Ruby" width="50" margin-right="20" />
-    <img src="documentation/images/rails.png" alt="Rails" width="100" margin-right="20" />
+    <img src="documentation/images/ruby.png" alt="Ruby" width="50" />
+    <img src="documentation/images/rails.png" alt="Rails" width="100" />
     <img src="documentation/images/react.png" alt="React" width="50" />
   </div>
   <br/>
@@ -22,6 +22,12 @@
         <li><a href="#need-source">Need Source</a></li>
         <li><a href="#demanding-company">Demanding Company</a></li>
         <li><a href="#summarized-idea">Summarized idea</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#data-model">Data Model</a>
+      <ul>
+        <li><a href="#entities">Entities</a></li>
       </ul>
     </li>
   </ol>
@@ -42,6 +48,13 @@ This is a personal project *(The technologies used where demanded by Usabi)*
 
 ### Summarized idea
 So, the idea of the project is to create a place to store and easily find information about animes, actors and characters, giving the tools to make it as comfortable as possible.
+<br/>
+
+# Data Model
+Next, I will describe how the database is made, the entities and relathionships that exist and all the atributes.
+
+### Entities
+For this app, I created four entities: *Anime*, *Actor*, *Character* and *User*.
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
