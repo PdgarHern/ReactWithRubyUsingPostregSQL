@@ -6,8 +6,8 @@
 
   <h3 align="center">Anime info web using React, Ruby and PostreSQL</h3>
   <div flex-direction="row">
-    <img src="documentation/images/ruby.png" alt="Ruby" width="50" />
-    <img src="documentation/images/rails.png" alt="Rails" width="100" />
+    <img src="documentation/images/ruby.png" alt="Ruby" width="50" margin-right="20" />
+    <img src="documentation/images/rails.png" alt="Rails" width="100" margin-right="20" />
     <img src="documentation/images/react.png" alt="React" width="50" />
   </div>
   <br/>
