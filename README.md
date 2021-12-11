@@ -63,7 +63,7 @@ The rest of the attributes are mostly strings, except from the following:<br/>
   <li>
     Anime:
     <ul>
-      <li>Premiered: Integer</li>
+      <li>Premiered: *Integer*</li>
       <li>Episodes: Integer</li>
       <li>Poster: Image</li>
       <li>Thumb: Image</li>
@@ -92,6 +92,11 @@ The rest of the attributes are mostly strings, except from the following:<br/>
     </ul>
   </li>
 </ol>
+<br/>
+For the first three entities, you don't have too much restrictions. You just need a title or a name to create an entry.<br/>
+For the rest attributes you just have to put the correct data and there you go.<br/>
+<br/>
+For the *User* you have to sign up with a valid email, and the password has to have at list six characters. You also need to provide a *user_name*.
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
