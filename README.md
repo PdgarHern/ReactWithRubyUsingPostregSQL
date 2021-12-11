@@ -60,10 +60,37 @@ For this app, I created four entities: *Anime*, *Actor*, *Character* and *User*.
 They all have a unique *id*, base of an auto-incrising integer assigned by the database.<br/>
 The rest of the attributes are mostly strings, except from the following:<br/>
 <ol>
-  <li>Anime</li>
-  <li>Actor</li>
-  <li>Character</li>
-  <li>User</li>
+  <li>
+    Anime:
+    <ul>
+      <li>Premiered: Integer</li>
+      <li>Episodes: Integer</li>
+      <li>Poster: Image</li>
+      <li>Thumb: Image</li>
+    </ul>
+  </li>
+  <li>
+    Actor:
+    <ul>
+      <li>Age: Integer</li>
+      <li>Img: Image</li>
+    </ul>
+  </li>
+  <li>
+    Character:
+    <ul>
+      <li>Age: Integer</li>
+      <li>Img: Image</li>
+    </ul>
+  </li>
+  <li>
+    User:
+    <ul>
+      <li>Age: Integer</li>
+      <li>Profile_picture: Image</li>
+      <li>Profile_image: Image</li>
+    </ul>
+  </li>
 </ol>
 
 <!-- ### First of all
