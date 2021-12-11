@@ -173,7 +173,9 @@ We could say that this project is divided in three parts:<br/>
 When using the app, you interact directly with the *Web Client*.<br/>
 This provides a good looking, easy way to manage and check the information from the *database* in a way that everyone can understand.<br/>
 However, there is still one step in between the *Web Client* and the *database*. And that is the *API*.<br/>
-The *API* acts like an interpreter between the other two parts of the project. It communicates with the *database* in a certain way it understands (SQL sentences) and also transforms all what have to do with the tables and the relathionships between them into objects to make it easier for the *Web Client* to understand.<br/>
+The *API* acts like an interpreter between the other two parts of the project.<br/> 
+It communicates with the *database* in a certain way it understands (SQL sentences) and also transforms all what have to do with the tables and the relathionships between them into objects to make it easier for the *Web Client* to understand.<br/>
+<br/>
 <img src="documentation/images/function.PNG" alt="Function-Diagram" />
 
 <!-- ### First of all
