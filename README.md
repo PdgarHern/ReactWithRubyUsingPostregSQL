@@ -37,6 +37,9 @@
         <li><a href="#user-cases">User Cases</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#system-requirements-and-functioning">System requirements and functioning</a>
+    </li>
   </ol>
 </details>
 
@@ -157,6 +160,8 @@ Lastly, you would have a *Home page* and an *About Us* page with some informatio
 
 ### User Cases
 <img src="documentation/images/userCase.PNG" alt="User-Cases" />
+
+# System requirements and functioning
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
