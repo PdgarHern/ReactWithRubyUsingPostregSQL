@@ -33,6 +33,9 @@
     </li>
     <li>
       <a href="#user-requirements">User Requirements</a>
+      <ul>
+        <li><a href="#user-cases">User Cases</a></li>
+      </ul>
     </li>
   </ol>
 </details>
@@ -130,6 +133,30 @@ We add these:
 To see the postgre database generation code, head to <a href="animes/db/schema.rb">animes/db/schema.rb</a>
 
 # User Requirements
+The main objective of the project was to create a web app for storing, managing and checking *anime* and related information.<br/>
+The app needed to have an *anime* searching engine, a place where you could either see every *anime* in the database or to search the one that you want to check.<br/>
+Every *anime* had to have to more lists related to them.<br/>
+The first one had to be the *actors*, and you would see that in the same page where you would check all the information of an *anime*.<br/>
+The second list would be a *character* list. This list would be in a different page that you could access from the *anime info page*.<br/>
+Also, *actors* and *characters* would also have an individual info page.<br/><br/>
+For the *users*, they would have three related pages.<br/>
+The first one would be a personal page. It would be a page where every *user* could see and change their own personal info.<br/>
+The other two would be lists, like the ones that we already had.<br/>
+One of those lists would be for the *'Favourite Animes'* list, and the second one would be for the *'Favourite Characters'*.<br/>
+The routes and links would work like in the normal lists and every *user* could add or delete entries on this lists.<br/>
+There would be two *user roles*:
+<ol>
+  <li>Normal Users</li>
+  <li>Admin Users</li>
+</ol>
+
+###
+Only the *Admin Users* could create, update or delete registers of the main tables.<br/>
+<br/>
+Lastly, you would have a *Home page* and an *About Us* page with some information about the app.
+
+### User Cases
+<img src="documentation/images/userCase.PNG" alt="User-Cases" />
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
