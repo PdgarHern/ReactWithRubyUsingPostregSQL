@@ -40,6 +40,9 @@
     <li>
       <a href="#system-requirements-and-functioning">System requirements and functioning</a>
     </li>
+    <li>
+      <a href="#interfaces">Interfaces</a>
+    </li>
   </ol>
 </details>
 
@@ -177,6 +180,12 @@ The *API* acts like an interpreter between the other two parts of the project.<b
 It communicates with the *database* in a certain way it understands (SQL sentences) and also transforms all what have to do with the tables and the relathionships between them into objects to make it easier for the *Web Client* to understand.<br/>
 <br/>
 <img src="documentation/images/function.PNG" alt="Function-Diagram" />
+
+###
+To run this app you can use whatever computer you have and having the necessary tools installed.<br/>
+Then you can access the *Web Client* with your same computer or using even your phone.
+
+# Interfaces
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
