@@ -31,6 +31,9 @@
         <li><a href="#relathionships">Relathionships</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#user-requirements">User Requirements</a>
+    </li>
   </ol>
 </details>
 
@@ -122,6 +125,11 @@ We add these:
 </ol>
 <img src="documentation/images/uml.PNG" alt="UML" />
 <img src="documentation/images/relational.PNG" alt="Relational">
+
+###
+To see the postgre database generation code, head to ```animes/db/schema.rb```
+
+# User Requirements
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
