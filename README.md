@@ -192,6 +192,42 @@ Now, you can see some screenshots of the project mockups and prototype:<br/>
   <ul>
     <img src="documentation/images/home.PNG" alt="Home" />
   </ul>
+  <li>About Us</li>
+  <ul>
+    <img src="documentation/images/aboutus.PNG" alt="About-Us" />
+  </ul>
+  <li>Browse Info</li>
+  <ul>
+    <img src="documentation/images/browseinfo.PNG" alt="Browse-Info" />
+  </ul>
+  <li>Anime</li>
+  <ul>
+    <img src="documentation/images/animepage.PNG" alt="Anime-Page" />
+  </ul>
+  <li>Characters</li>
+  <ul>
+    <img src="documentation/images/characters.PNG" alt="Characters" />
+  </ul>
+  <li>Login</li>
+  <ul>
+    <img src="documentation/images/login.PNG" alt="Login" />
+  </ul>
+  <li>Register</li>
+  <ul>
+    <img src="documentation/images/register.PNG" alt="Register" />
+  </ul>
+  <li>User Page</li>
+  <ul>
+    <img src="documentation/images/userpage.PNG" alt="User-Page" />
+  </ul>
+  <li>Posts Pages</li>
+  <ul>
+    <img src="documentation/images/posts.PNG" alt="Posts" />
+  </ul>
+  <li>Update Pages</li>
+  <ul>
+    <img src="documentation/images/update.PNG" alt="Update" />
+  </ul>
 </ol>
 
 <!-- ### First of all
