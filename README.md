@@ -28,6 +28,7 @@
       <a href="#data-model">Data Model</a>
       <ul>
         <li><a href="#entities">Entities</a></li>
+        <li><a href="#relathionships">Relathionships</a></li>
       </ul>
     </li>
   </ol>
@@ -92,14 +93,13 @@ The rest of the attributes are mostly strings, except from the following:<br/>
     </ul>
   </li>
 </ol>
-<br/>
 
 ###
 
 For the first three entities, you don't have too much restrictions. You just need a title or a name to create an entry.<br/>
 For the rest attributes you just have to put the correct data and there you go.<br/>
 <br/>
-For the *User* you have to sign up with a valid email, and the password has to have at list six characters. You also need to provide a user_name.
+For the *User* you have to sign up with a valid email, and the password has to have at list six characters. You also need to provide a *user_name*.
 
 ### Relathionships
 
