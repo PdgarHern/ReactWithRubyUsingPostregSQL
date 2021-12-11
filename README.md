@@ -189,44 +189,63 @@ Then you can access the *Web Client* with your same computer or using even your 
 Now, you can see some screenshots of the project mockups and prototype:<br/>
 <ol>
   <li>Home</li>
+  <br/>
   <ul>
     <img src="documentation/images/home.PNG" alt="Home" />
   </ul>
+  <br/>
   <li>About Us</li>
+  <br/>
   <ul>
     <img src="documentation/images/aboutus.PNG" alt="About-Us" />
   </ul>
+  <br/>
   <li>Browse Info</li>
+  <br/>
   <ul>
     <img src="documentation/images/browseinfo.PNG" alt="Browse-Info" />
   </ul>
+  <br/>
   <li>Anime</li>
+  <br/>
   <ul>
     <img src="documentation/images/animepage.PNG" alt="Anime-Page" />
   </ul>
+  <br/>
   <li>Characters</li>
+  <br/>
   <ul>
     <img src="documentation/images/characters.PNG" alt="Characters" />
   </ul>
+  <br/>
   <li>Login</li>
+  <br/>
   <ul>
     <img src="documentation/images/login.PNG" alt="Login" />
   </ul>
+  <br/>
   <li>Register</li>
+  <br/>
   <ul>
     <img src="documentation/images/register.PNG" alt="Register" />
   </ul>
+  <br/>
   <li>User Page</li>
+  <br/>
   <ul>
     <img src="documentation/images/userpage.PNG" alt="User-Page" />
   </ul>
+  <br/>
   <li>Posts Pages</li>
+  <br/>
   <ul>
     <img src="documentation/images/posts.PNG" alt="Posts" />
   </ul>
+  <br/>
   <li>Update Pages</li>
+  <br/>
   <ul>
-    <img src="documentation/images/update.PNG" alt="Update" />
+    <img src="documentation/images/updates.PNG" alt="Update" />
   </ul>
 </ol>
 
