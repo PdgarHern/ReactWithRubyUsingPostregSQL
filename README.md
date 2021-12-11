@@ -59,6 +59,12 @@ For this app, I created four entities: *Anime*, *Actor*, *Character* and *User*.
 <br/><br/>
 They all have a unique *id*, base of an auto-incrising integer assigned by the database.<br/>
 The rest of the attributes are mostly strings, except from the following:<br/>
+<ol>
+  <li>Anime</li>
+  <li>Actor</li>
+  <li>Character</li>
+  <li>User</li>
+</ol>
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
