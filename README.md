@@ -54,7 +54,8 @@ So, the idea of the project is to create a place to store and easily find inform
 Next, I will describe how the database is made, the entities and relathionships that exist and all the atributes.
 
 ### Entities
-For this app, I created four entities: *Anime*, *Actor*, *Character* and *User*.
+For this app, I created four entities: *Anime*, *Actor*, *Character* and *User*.<br/>
+<img src="documentation/images/er.PNG" alt="E-R" widht="50" />
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
