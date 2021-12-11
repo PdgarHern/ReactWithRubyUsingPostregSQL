@@ -128,6 +128,7 @@ We add these:
 
 ###
 To see the postgre database generation code, head to ```animes/db/schema.rb```
+<a href="animes/db/schema.rb">here</a>
 
 # User Requirements
 
