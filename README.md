@@ -38,7 +38,7 @@
       </ul>
     </li>
     <li>
-      <a href="#system-requirements-and-functioning">System requirements and functioning</a>
+      <a href="#system-functioning-and-requirements">System requirements and functioning</a>
     </li>
     <li>
       <a href="#interfaces">Interfaces</a>
