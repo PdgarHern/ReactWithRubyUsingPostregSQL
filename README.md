@@ -95,13 +95,31 @@ The rest of the attributes are mostly strings, except from the following:<br/>
 </ol>
 
 ###
-
 For the first three entities, you don't have too much restrictions. You just need a title or a name to create an entry.<br/>
 For the rest attributes you just have to put the correct data and there you go.<br/>
 <br/>
 For the *User* you have to sign up with a valid email, and the password has to have at list six characters. You also need to provide a *user_name*.
 
 ### Relathionships
+As seen before, there are four relathionships between the four entities.<br/>
+They are the following:<br/>
+<ol>
+  <li>Anime-Actor: One Anime has many Actors / One Actor belongs to one Anime</li>
+  <li>Anime-Character: One Anime has many Characters / One Character belongs to one Anime</li>
+  <li>User-Anime: One User has many Animes / One Anime has many Users (this is used for the 'Favourite' list)</li>
+  <li>User-Character: One User has many Characters / One Character has many Users (this is used for the 'Favourite' list)</li>
+</ol>
+
+###
+Here we can see that we have two One to many and two Many to many relathionships.<br/>
+As you would now, we then have to add one more attribute to *Actor* and *Character*. The *id* of the *Anime* they belong to.<br/>
+<br/>
+We also then have to create two more tables. One for each Many to many relathionship.<br/>
+We add these:
+<ol>
+  <li>User-Anime: With the User Id and the Anime Id</li>
+  <li>User-Character: With the User Id and the Character Id</li>
+</ol>
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
