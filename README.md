@@ -127,8 +127,7 @@ We add these:
 <img src="documentation/images/relational.PNG" alt="Relational">
 
 ###
-To see the postgre database generation code, head to ```animes/db/schema.rb```
-<a href="animes/db/schema.rb">here</a>
+To see the postgre database generation code, head to <a href="animes/db/schema.rb">animes/db/schema.rb</a>
 
 # User Requirements
 
