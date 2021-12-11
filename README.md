@@ -120,9 +120,7 @@ We add these:
   <li>User-Anime: With the User Id and the Anime Id</li>
   <li>User-Character: With the User Id and the Character Id</li>
 </ol>
-<br/>
 <img src="documentation/images/uml.PNG" alt="UML" />
-<br/>
 <img src="documentation/images/relational.PNG" alt="Relational">
 
 <!-- ### First of all
