@@ -56,7 +56,7 @@ Next, I will describe how the database is made, the entities and relathionships 
 
 ### Entities
 For this app, I created four entities: *Anime*, *Actor*, *Character* and *User*.<br/><br/>
-<img src="documentation/images/er.PNG" alt="E-R" widht="50" />
+<img src="documentation/images/er.PNG" alt="E-R" />
 <br/><br/>
 They all have a unique *id*, base of an auto-incrising integer assigned by the database.<br/>
 The rest of the attributes are mostly strings, except from the following:<br/>
@@ -120,6 +120,10 @@ We add these:
   <li>User-Anime: With the User Id and the Anime Id</li>
   <li>User-Character: With the User Id and the Character Id</li>
 </ol>
+<br/>
+<img src="documentation/images/uml.PNG" alt="UML" />
+<br/>
+<img src="documentation/images/relational.PNG" alt="Relational">
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
