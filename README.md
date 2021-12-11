@@ -186,6 +186,13 @@ To run this app you can use whatever computer you have and having the necessary 
 Then you can access the *Web Client* with your same computer or using even your phone.
 
 # Interfaces
+Now, you can see some screenshots of the project mockups and prototype:<br/>
+<ol>
+  <li>Home</li>
+  <ul>
+    <img src="documentation/images/home.PNG" alt="Home" />
+  </ul>
+</ol>
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
