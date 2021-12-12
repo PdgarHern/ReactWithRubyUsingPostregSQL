@@ -464,7 +464,7 @@ It is a complete framework, and it normally doesn't need any aditional libraries
 On the other hand, from *React* can be harder to comunicate with your API, yo most probably end up using *axios*. For the routing, you'll need something like *React Router*. And the list continues.<br/>
 <br/>
 All this process however, is easy to learn. No hard functions, no templates. It has what it has and you get on with it. It's "simple" (Big quotation marks there).<br/>
-*Angular* has *a lot* of things. Learn everything about *Angular* is challenging. But, it is well organized. So, it is easy to look for some component or whatever while developing an app.<br/>
+*Angular* has *a lot* of things. To learn everything about *Angular* is challenging. But, it is well organized. So, it is easy to look for some component or whatever while developing an app.<br/>
 *React* is also beaten in this aspect, as you can put your files however you want and, if you are not careful, that can end up being quite of a mess.<br/>
 <br/>
 Having all in consideration, I prefer *React*.<br/>
