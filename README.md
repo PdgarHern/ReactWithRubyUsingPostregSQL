@@ -74,7 +74,7 @@
       <a href="#conclusion-and-opinion">Conclusion and opinion</a>
     </li>
     <li>
-      <a href="#repositories-and-links-used">
+      <a href="#repositories-and-links-used">Repositories and links used</a>
     </li>
   </ol>
 </details>
