@@ -376,6 +376,8 @@ development:
 ```
 This is done this way for security reasons, keeping all your *PostgreSQL* information in private.<br/>
 <br/>
+Lastly, run ```rails db:setup``` and it will generate the entire database for you. It will be empty, though.<br/>
+<br/>
 If you want to insert some test data into the database (Not necessary) I recomend using Postman.<br/>
 <br/>
 [ - Postman Download](https://www.postman.com/downloads/)<br/>
