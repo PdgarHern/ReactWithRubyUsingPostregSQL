@@ -284,7 +284,7 @@ However, and as seen before, these are correctly controlled and notified to the 
 <br/>
 The project also notifies the user in other cases, like when some information is incorrect during a sign up, or when you log out, for example.<br/>
 <div flex-direction="row" justify-content="center" align="center">
-  <img src="documentation/images/signUpFail.PNG" alt="sign-up-fail" width="400" />
+  <img src="documentation/images/signUpFail.PNG" alt="sign-up-fail" width="800" />
   <img src="documentation/images/logout.PNG" alt="logout" width="800" />
 </div>
 
