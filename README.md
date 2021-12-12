@@ -361,8 +361,10 @@ You can generate that secret code of your own by running that same command in th
 ```
 rails secret
 ```
+To save and close the file, press *Ctrl+X*, *Y* and *Enter*.<br/>
 <br/>
-Also, you will have to create a file called *application.yml* inside the *config* folder.<br/>
+Also, you will have to create a file called ```application.yml``` inside the <a href="animes/config">config</a> folder.<br/>
+To do so run the command ```bundle exec figaro install```.<br/>
 In that file, you will have to write the following:<br/>
 ```
 development:
