@@ -61,6 +61,11 @@
     </li>
     <li>
       <a href="#technologies-comparison">Technologies comparison</a>
+      <ul>
+        <li><a href="#react">React</a></li>
+        <li><a href="#ruby-on-rails">Ruby on Rails</a></li>
+        <li><a href="#postgresql">PostgreSQL</a></li>
+      </ul>
     </li>
   </ol>
 </details>
@@ -442,4 +447,13 @@ Everything is there for the user. Nothing is hidden or out of view.<br/>
 Just enjoy yourself.
 
 # Technologies comparison
+In this part, I'm going to compare the three technologies that I use with other ones similar to them and / or with the same purpose.
+
+### React
+
+
+### Ruby on Rails
+
+
+### PostgreSQL
 
