@@ -52,6 +52,9 @@
         <li><a href="#installation-guide">Installation guide</a></li>
         <ul>
           <li><a href="#first-of-all">First of all</a></li>
+          <li><a href="#backend">Backend</a></li>
+          <li><a href="#frontend">Frontend</a></li>
+          <li><a href="#starting-the-app">Starting the app</a></li>
         </ul>
       </ul>
     </li>
