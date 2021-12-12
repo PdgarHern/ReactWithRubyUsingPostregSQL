@@ -349,7 +349,7 @@ The Backend is created with *Ruby on Rails* and uses *PostgreSQL* for the databa
 *PostgreSQL* is one of the biggest relational database management systems. It emphasizes extensibility and SQL compliance.<br/>
 <br/>
 In the <a href="animes">animes</a> folder you need to run ```bundle install```.<br/>
-If the bash doesn't recognize *bundle*, try running ```gem install bundler``` first.
+If the bash doesn't recognize *bundle*, try running ```gem install bundler``` first.<br/>
 <br/>
 Then, head to <a href="animes/config">config</a> and delete ```credentials.yml.enc```.<br/>
 Now, run the command ```EDITOR=nano rails credentials:edit``` and add the next code:<br/>
