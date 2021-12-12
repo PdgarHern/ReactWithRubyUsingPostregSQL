@@ -70,6 +70,9 @@
     <li>
       <a href="#work-planning">Work Planning<a>
     </li>
+    <li>
+      <a href="conclusion-and-opinion">Conclusion and opinion</a>
+    </li>
   </ol>
 </details>
 
@@ -529,3 +532,6 @@ Following these rules, I was able to carry all this project and make it to where
 <div align="center">
   <img src="documentation/images/trello.PNG" alt="trello" width="600" />
 </div>
+
+# Conclusion and opinion
+
