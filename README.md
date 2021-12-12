@@ -283,10 +283,14 @@ Talking about errors, these have been kwnown to *not* happen in the normal execu
 However, and as seen before, these are correctly controlled and notified to the user whenever they happen and don't produce any internal error that isn't shown on the screen.<br/>
 <br/>
 The project also notifies the user in other cases, like when some information is incorrect during a sign up, or when you log out, for example.<br/>
-<div flex-direction="row" justify-content="center" align="center">
+<div flex-direction="row" align="center">
   <img src="documentation/images/signUpFail.PNG" alt="sign-up-fail" width="800" />
   <img src="documentation/images/logout.PNG" alt="logout" width="800" />
 </div>
+
+###
+The project also has a loading feature so the user can always know what's happening.<br/>
+<img src="documentation/images/spinner.PNG" alt="spinner" />
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
