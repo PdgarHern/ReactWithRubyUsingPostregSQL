@@ -73,6 +73,9 @@
     <li>
       <a href="#conclusion-and-opinion">Conclusion and opinion</a>
     </li>
+    <li>
+      <a href="#repositories-and-links-used">
+    </li>
   </ol>
 </details>
 
@@ -534,4 +537,21 @@ Following these rules, I was able to carry all this project and make it to where
 </div>
 
 # Conclusion and opinion
+It's been fun to work on this project.<br/>
+Luckily, I could do it almost completely free, so I did it how I felt and about a topic I like.<br/>
+I hadn't used *any* of the technologies before so, I had some really hard moments trying to do something seemingly imposible, just to end up achiving it in the end.<br/>
+I've learnt a lot doing this project and I'm already looking forward on the next one. So yeah, that's it.
 
+# Repositories and links used
+<ol>
+  <li><a href="https://youtu.be/nTeuhbP7wdE">React tutorial</a></li>
+  <li><a href="https://youtu.be/fmyvWz5TUWg">Rails tutorial</a></li>
+  <li><a href="https://www.youtube.com/watch?v=bUYMWalNSEA&list=PLtcYUXSfqSIdbbaa_ruHh0p_Nntidd_FR&ab_channel=CodeTuts">More Rails and React tutorial</a></li>
+  <li><a href="https://github.com/activerecord-hackery/ransack">Ransack GitHub</a></li>
+  <li><a href="https://github.com/kaminari/kaminari">Kaminari GitHub</a></li>
+  <li><a href="https://edgeguides.rubyonrails.org/active_storage_overview.html">Active Storage page</a></li>
+  <li><a href="https://medium.com/swlh/upload-images-to-your-rails-api-from-react-the-easy-way-241bbe71ea85">Active Storage tutorial</a></li>
+  <li><a href="https://github.com/waiting-for-dev/devise-jwt">Devise-jwt GitHub</a></li>
+  <li><a href="https://medium.com/ruby-daily/a-devise-jwt-tutorial-for-authenticating-users-in-ruby-on-rails-ca214898318e">Devise-jwt tutorial</a></li>
+  <li>Countless Stack Overflow pages</li>
+</ol>
