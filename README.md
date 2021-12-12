@@ -56,7 +56,7 @@
           <li><a href="#frontend">Frontend</a></li>
           <li><a href="#starting-the-app">Starting the app</a></li>
         </ul>
-        <li><a href="use-guide">Use guide</a></li>
+        <li><a href="#use-guide">Use guide</a></li>
       </ul>
     </li>
   </ol>
