@@ -42,6 +42,9 @@
     </li>
     <li>
       <a href="#interfaces">Interfaces</a>
+      <ul>
+        <li><a href="#usability">Usability</a></li>
+      </ul>
     </li>
   </ol>
 </details>
@@ -248,6 +251,32 @@ Now, you can see some screenshots of the project mockups and prototype:<br/>
     <img src="documentation/images/updates.PNG" alt="Update" />
   </ul>
 </ol>
+
+### Usability
+Is all about *simplicity*. Its visual design and elements were made with the idea of making it easy.<br/>
+Easy to read, easy to interact... easy to use.<br/>
+<br/>
+The *navigation* is easy to learn and remember for the user.<br/>
+The information shown is displayed in a way that it's easy to found what you are looking for in a short period of time.<br/>
+<br/>
+The visual design as a whole is minimalistic.<br/>
+The app goes on with four main colors:<br/>
+<ol>
+  <li>White (#fff)</li>
+  <li>Light Grey (#eee)</li>
+  <li>Medium Grey (#353535)</li>
+  <li>Dark Grey (#1c1c1c)</li>
+</ol>
+<br/>
+<img src="documentation/images/colors.PNG" alt="colors" />
+
+###
+I really like to use these kind of soft colors, which I think to be elegant and not disturbing in any way to the eyes of the user.<br/>
+The app also makes use of *red* some times (for the logo and error messages).<br/>
+<div flex-direction="row" align="center">
+  <img src="documentation/images/logoColor.png" alt="logo-is-red" width="50" />
+  <img src="documentation/images/errorMessage.PNG" alt="error" width="50" />
+</div>
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
