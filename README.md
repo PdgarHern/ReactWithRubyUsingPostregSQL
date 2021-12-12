@@ -50,6 +50,9 @@
       <a href="#guides">Guides</a>
       <ul>
         <li><a href="#installation-guide">Installation guide</a></li>
+        <ul>
+          <li><a href="#first-of-all">First of all</a></li>
+        </ul>
       </ul>
     </li>
   </ol>
