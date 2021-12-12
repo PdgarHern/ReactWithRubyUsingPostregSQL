@@ -388,7 +388,7 @@ This is a *React* frontend.<br/>
 <br/>
 The *frontend* preparation is easy. You just have to access <a href="animes-frontend">animes-frontend</a> and run ```npm install```.<br/>
 <br/>
-You don't have any data already in the *database* to run the *frontend*, you will be able to do every action since the beginning from here.
+You don't need to have any data already in the *database* you will be able to do every action since the beginning from here.
 
 
 ### Starting the app
