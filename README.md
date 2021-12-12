@@ -383,10 +383,13 @@ If you want to insert some test data into the database (Not necessary) I recomen
 [ - Postman Download](https://www.postman.com/downloads/)<br/>
 
 ### Frontend
-This is an early version of the project so, for now there is not much to see here really.<br/>
-However you can see some information displaying on the screen and some routes are already created.<br/>
+This is a *React* frontend.<br/>
+*React* is a JavaScript library for building user interfaces based on UI components.<br/>
 <br/>
-The *Frontend* preparation is easy. You just have to run ```npm install```.
+The *frontend* preparation is easy. You just have to access <a href="animes-fronted">animes-frontend</a> run ```npm install```.<br/>
+<br/>
+You don't have any data already in the *database* to run the *frontend*, you will be able to do every action since the beginning from here.
+
 
 ### Starting the app
 Both *Ruby on Rails* and *React* uses port 3000.<br/>
