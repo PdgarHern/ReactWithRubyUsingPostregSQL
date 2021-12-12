@@ -349,6 +349,7 @@ The Backend is created with *Ruby on Rails* and uses *PostgreSQL* for the databa
 *PostgreSQL* is one of the biggest relational database management systems. It emphasizes extensibility and SQL compliance.<br/>
 <br/>
 In the <a href="animes">animes</a> folder you need to run ```bundle install```.<br/>
+If the bash doesn't recognize *bundle*, try running ```gem install bundler``` first.
 <br/>
 Then, head to <a href="animes/config">config</a> and delete ```credentials.yml.enc```.<br/>
 Now, run the command ```EDITOR=nano rails credentials:edit``` and add the next code:<br/>
@@ -361,7 +362,7 @@ You can generate that secret code of your own by running that same command in th
 ```
 rails secret
 ```
-To save and close the file, press *Ctrl+X*, *Y* and *Enter*.<br/>
+To save and close the file, press *Ctrl+X*, *Y* and then *Enter*.<br/>
 <br/>
 Also, you will have to create a file called ```application.yml``` inside the <a href="animes/config">config</a> folder.<br/>
 To do so run the command ```bundle exec figaro install```.<br/>
