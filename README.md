@@ -525,7 +525,7 @@ I also followed some rules:
 </ol>
 
 ###
-Following these rules, I was able to carry all this project and make to where we are now, which is this point, actually:<br/>
+Following these rules, I was able to carry all this project and make it to where we are now, which is *this* point, actually:<br/>
 <div align="center">
   <img src="documentation/images/trello.PNG" alt="trello" width="600" />
 </div>
