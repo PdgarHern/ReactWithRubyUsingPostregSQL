@@ -59,6 +59,9 @@
         <li><a href="#use-guide">Use guide</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#technologies-comparison">Technologies comparison</a>
+    </li>
   </ol>
 </details>
 
@@ -409,5 +412,22 @@ Then, run *React* using ```npm start```. It will ask to auto-select another port
 ## Use guide
 When you first enter the app (If you didn't insert any data) you will see an empty page.<br/>
 To start filling it up, you will first need to create an account and give yourself the *Admin role*.<br/>
+<br/>
 <img src="documentation/images/register.PNG" alt="register" />
 <img src="documentation/images/admin.PNG" alt="admin" />
+
+###
+From this point, you can start creating and updating the information that you want to add to your database as well as navigating in all this easy to use application.<br/>
+It's really that simple. You go to the *Anime browser* and feel that something is missing. Go ahead an press the *Add Anime* button.<br/>
+The same goes to the *Actors* and *Characters*.<br/>
+<br/>
+If the database already has some data, you may as well start as a normal user, and take advantage of the benefits of having an account by adding some animes to your *favourites* with that big *Add Fav*.<br/>
+Maybe do the same with some *characters*.<br/>
+<br/>
+You also may want to just enter an search some information. You don't even need to sign up for that.<br/>
+<br/>
+Everything is there for the user. Nothing is hidden or out of view.<br/>
+Just enjoy yourself.
+
+# Technologies comparison
+
