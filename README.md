@@ -348,7 +348,10 @@ The Backend is created with *Ruby on Rails* and uses *PostgreSQL* for the databa
 *Rails* is a model-view-controller framework for *Ruby*. It is used to create server-side web applications.<br/>
 *PostgreSQL* is one of the biggest relational database management systems. It emphasizes extensibility and SQL compliance.<br/>
 <br/>
-In the *Backend* you need to run ```bundle install``` and ```rails db:setup```.<br/>
+In the <a href="anime">anime</a> folder you need to run ```bundle install``` and ```rails db:setup```.<br/>
+<br/>
+But, before this we are going to do two more things.<br/>
+
 <br/>
 Also, you will have to create a file called *application.yml* inside the *config* folder.<br/>
 In that file, you will have to write the following:<br/>
