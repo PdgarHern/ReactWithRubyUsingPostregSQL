@@ -274,8 +274,8 @@ The app goes on with four main colors:<br/>
 I really like to use these kind of soft colors, which I think to be elegant and not disturbing in any way to the eyes of the user.<br/>
 The app also makes use of *red* some times (for the logo and error messages).<br/>
 <div flex-direction="row" align="center">
-  <img src="documentation/images/logoColor.png" alt="logo-is-red" width="50" />
-  <img src="documentation/images/errorMessage.PNG" alt="error" width="50" />
+  <img src="documentation/images/logoColor.png" alt="logo-is-red" width="2000" />
+  <img src="documentation/images/errorMessage.PNG" alt="error" width="2000" />
 </div>
 
 <!-- ### First of all
