@@ -348,10 +348,19 @@ The Backend is created with *Ruby on Rails* and uses *PostgreSQL* for the databa
 *Rails* is a model-view-controller framework for *Ruby*. It is used to create server-side web applications.<br/>
 *PostgreSQL* is one of the biggest relational database management systems. It emphasizes extensibility and SQL compliance.<br/>
 <br/>
-In the <a href="animes">animes</a> folder you need to run ```bundle install``` and ```rails db:setup```.<br/>
+In the <a href="animes">animes</a> folder you need to run ```bundle install```.<br/>
 <br/>
-But, before this we are going to do two more things.<br/>
-First, head to <a href="animes/config">config</a> and delete ```credentials.ymc.enc```.
+Then, head to <a href="animes/config">config</a> and delete ```credentials.yml.enc```.<br/>
+Now, run the command ```EDITOR=nano rails credentials:edit``` and add the next code:<br/>
+```
+devise:
+  jwt_secret_key: <rails secret>
+```
+Where it says *rails secret* you have to put the secret code that the API will use in the encryptation of user credentials.<br/>
+You can generate that secret code of your own by running that same command in the bash:<br/>
+```
+rails secret
+```
 <br/>
 Also, you will have to create a file called *application.yml* inside the *config* folder.<br/>
 In that file, you will have to write the following:<br/>
