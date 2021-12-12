@@ -380,6 +380,11 @@ This is done this way for security reasons, keeping all your *PostgreSQL* inform
 Lastly, run ```rails db:setup``` and it will generate the entire database for you. It will be empty, though.<br/>
 <br/>
 If you want to insert some test data into the database (Not necessary) I recomend using Postman.<br/>
+To do almost every request to the database, you need to have an *auth token*. So, you'll have to sign up and sign in first.<br/>
+Check the following document to see some useful screenshots:<br/>
+<li>
+  <a href="documentation/insert-data-guide.pdf">Insert data guide</a>
+</li>
 <br/>
 [ - Postman Download](https://www.postman.com/downloads/)<br/>
 
@@ -401,4 +406,5 @@ It is possible that running ```rails s``` throughs you an error the first time. 
 Then, run *React* using ```npm start```. It will ask to auto-select another port. Press *Y* and the app should start.
 
 ## Use guide
-
+When you first enter the app (If you didn't insert any data) you will an empty page.<br/>
+To start filling it app, you will first need to create an account and give yourself the *Admin role*.
