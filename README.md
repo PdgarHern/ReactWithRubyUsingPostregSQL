@@ -331,7 +331,8 @@ After installing *NodeJS*, run the following command to install *Yarn*:<br/>
 ```
 npm install -g yarn
 ```
-<br/>
+
+###
 Once you have everything downloaded and installed you'll need to run a few things in the command prompt.<br/>
 I recommend using the *Git Bash*. It's comfortable and shouldn't give you any problem.<br/>
 [Git Download](https://git-scm.com/downloads)
