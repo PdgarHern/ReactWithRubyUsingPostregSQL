@@ -278,6 +278,16 @@ The app also makes use of *red* some times (for the logo and error messages).<br
   <img src="documentation/images/errorMessage.PNG" alt="error" width="300" />
 </div>
 
+###
+Talking about errors, these have been kwnown to *not* happen in the normal execution of the program.<br/>
+However, and as seen before, these are correctly controlled and notified to the user whenever they happen and don't produce any internal error that isn't shown on the screen.<br/>
+<br/>
+The project also notifies the user in other cases, like when some information is incorrect during a sign up, or when you log out, for example.<br/>
+<div flex-direction="row" justify-content="center" align="center">
+  <img src="documentation/images/signUpFail.PNG" alt="sign-up-fail" width="200" />
+  <img src="documentation/images/logout.PNG" alt="logout" width="200" />
+</div>
+
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
 Here you have some links:<br/>
