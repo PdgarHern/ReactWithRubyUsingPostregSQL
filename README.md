@@ -507,3 +507,25 @@ I could not tell any significant difference between *Postgre* and *MySQL*. They 
 I would recommend both if they case was given.
 
 # Work Planning
+My idea was to divide everything in more specific tasks.<br/>
+I also followed some rules:
+<ol>
+  <li>From general to detail</li>
+  <ul>
+    <li>This means that first I do a working CRUD and then I validate the forms, do the searcher engine, pagination...</li>
+  </ul>
+  <li>What I already know first</li>
+  <ul>
+    <li>Instead of thinking of what I don't know how to do, I just started on what I did know and leave the rest for when it was time.</li>
+  </ul>
+  <li>Make it work, then refine it</li>
+  <ul>
+    <li>Do your code, make it work. Efficiency comes later.</li>
+  </ul>
+</ol>
+
+###
+Following these rules, I was able to carry all this project and make to where we are now, which is this point, actually:<br/>
+<div align="center">
+  <img src="documentation/images/trello.PNG" alt="trello" width="600" />
+</div>
