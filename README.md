@@ -373,10 +373,11 @@ development:
   username_postgres: your_user
   password_postgres: your_password
 ```
-This is done this way for security reasons.<br/>
+This is done this way for security reasons, keeping all your *PostgreSQL* information in private.<br/>
 <br/>
 If you want to insert some test data into the database I recomend using Postman.<br/>
-[Postman Download](https://www.postman.com/downloads/)<br/>
+<br/>
+[ - Postman Download](https://www.postman.com/downloads/)<br/>
 
 ### Frontend
 This is an early version of the project so, for now there is not much to see here really.<br/>
