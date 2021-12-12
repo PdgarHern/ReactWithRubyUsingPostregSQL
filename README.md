@@ -322,10 +322,10 @@ Next, I will address the guides necessary to install and get the project running
 To get this app running you'll need to install *NodeJS*, *Yarn*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
 <br/>
 Here you have some links:<br/>
-[NodeJS Download](https://nodejs.org/es/)<br/>
-[Ruby Download](https://rubyinstaller.org/downloads/)<br/>
-[Ruby on Rails Installation Tutorial](https://guides.rubyonrails.org/getting_started.html)<br/>
-[PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)<br/>
+[ - NodeJS Download](https://nodejs.org/es/)<br/>
+[ - Ruby Download](https://rubyinstaller.org/downloads/)<br/>
+[ - Ruby on Rails Installation Tutorial](https://guides.rubyonrails.org/getting_started.html)<br/>
+[ - PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)<br/>
 <br/>
 After installing *NodeJS*, run the following command to install *Yarn*:<br/>
 ```
@@ -335,7 +335,8 @@ npm install -g yarn
 ###
 Once you have everything downloaded and installed you'll need to run a few things in the command prompt.<br/>
 I recommend using the *Git Bash*. It's comfortable and shouldn't give you any problem.<br/>
-[Git Download](https://git-scm.com/downloads)
+<br/>
+[ - Git Download](https://git-scm.com/downloads)
 
 ### Backend
 The Backend is created with Ruby on Rails and uses PostgreSQL for the database.<br/>
