@@ -392,7 +392,9 @@ You don't need to have any data already in the *database* you will be able to do
 
 
 ### Starting the app
-Both *Ruby on Rails* and *React* uses port 3000.<br/>
-However, run the *Backend* with ```rails s``` and then, when you run *React* using ```npm start``` it will auto select another port.<br/><br/>
-Is possible that running ```rails s``` throughs you an error the first time. The terminal will require you to run ```yarn install --check-files```. Do so and then you should be able to run the server as normally.<br/><br/>
-In further commits, the installation guide may be updated if necessary.
+Both *Ruby on Rails* and *React* uses port 3000. However, this is not a problem.<br/>
+<br/>
+Run the *backend* with ```rails s```.<br/>
+Is possible that running ```rails s``` throughs you an error the first time. The terminal will require you to run ```yarn install --check-files```. Do so and then you should be able to run the server as normally.<br/>
+<br/>
+Then, run *React* using ```npm start```. It will ask to auto-select another port. Press *Y* and the app should start.
