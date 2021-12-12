@@ -375,7 +375,7 @@ development:
 ```
 This is done this way for security reasons, keeping all your *PostgreSQL* information in private.<br/>
 <br/>
-If you want to insert some test data into the database I recomend using Postman.<br/>
+If you want to insert some test data into the database (Not necessary) I recomend using Postman.<br/>
 <br/>
 [ - Postman Download](https://www.postman.com/downloads/)<br/>
 
