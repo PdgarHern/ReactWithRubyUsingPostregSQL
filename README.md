@@ -327,12 +327,11 @@ Here you have some links:<br/>
 [Ruby on Rails Installation Tutorial](https://guides.rubyonrails.org/getting_started.html)<br/>
 [PostgreSQL Download](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)<br/>
 <br/>
-Once you've installed *NodeJS*, run the following command to install *Yarn*:<br/>
+After installing *NodeJS*, run the following command to install *Yarn*:<br/>
 ```
 npm install -g yarn
 ```
-
-### Get the app running
+<br/>
 Once you have everything downloaded and installed you'll need to run a few things in the command prompt.<br/>
 I recommend using the *Git Bash*. It's comfortable and shouldn't give you any problem.<br/>
 [Git Download](https://git-scm.com/downloads)
