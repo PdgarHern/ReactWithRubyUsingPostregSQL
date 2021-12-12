@@ -46,6 +46,9 @@
         <li><a href="#usability">Usability</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#guides">Guides</a>
+    </li>
   </ol>
 </details>
 
@@ -293,6 +296,18 @@ The project also has a loading feature so the user can always know what's happen
 <div align="center">
   <img src="documentation/images/spinner.PNG" alt="spinner" width="500" />
 </div>
+
+###
+The user also has a *customizable page* where they can check their personal info, and the famous *'Favourite'* lists.
+<div align="center">
+  <img src="documentation/images/usercustom.PNG" alt="custom" width="550" />
+  <img src="documentation/images/favouriteanimes.PNG" alt="fav" width="550" />
+</div>
+
+###
+Again, all these things were made with simplicity in mind. Looking for an esay and fast way to do everything while keeping good aesthetic.
+
+# Guides
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
