@@ -385,7 +385,8 @@ Check the following document to see some useful screenshots:<br/>
 <li>
   <a href="documentation/insert-data-guide.pdf">Insert data guide</a>
 </li>
-<br/>
+
+###
 [ - Postman Download](https://www.postman.com/downloads/)<br/>
 
 ### Frontend
@@ -406,5 +407,7 @@ It is possible that running ```rails s``` throughs you an error the first time. 
 Then, run *React* using ```npm start```. It will ask to auto-select another port. Press *Y* and the app should start.
 
 ## Use guide
-When you first enter the app (If you didn't insert any data) you will an empty page.<br/>
-To start filling it app, you will first need to create an account and give yourself the *Admin role*.
+When you first enter the app (If you didn't insert any data) you will see an empty page.<br/>
+To start filling it up, you will first need to create an account and give yourself the *Admin role*.<br/>
+<img src="documentation/images/register.PNG" alt="register" />
+<img src="documentation/images/admin.PNG" alt="admin" />
