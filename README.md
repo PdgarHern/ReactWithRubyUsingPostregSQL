@@ -342,7 +342,11 @@ I recommend using the *Git Bash*. It's comfortable and shouldn't give you any pr
 [ - Git Download](https://git-scm.com/downloads)
 
 ### Backend
-The Backend is created with Ruby on Rails and uses PostgreSQL for the database.<br/>
+The Backend is created with *Ruby on Rails* and uses *PostgreSQL* for the database.<br/>
+<br/>
+*Ruby* is an interpreted, high-level programming language designed with an emphasis on programming productivity and simplicity.<br/>
+*Rails* is a model-view-controller framework for *Ruby*. It is used to create server-side web applications.<br/>
+*PostgreSQL* is one of the biggest relational database management systems. It emphasizes extensibility and SQL compliance.<br/>
 <br/>
 In the *Backend* you need to run ```bundle install``` and ```rails db:setup```.<br/>
 <br/>
