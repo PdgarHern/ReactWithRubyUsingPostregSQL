@@ -67,6 +67,9 @@
         <li><a href="#postgresql">PostgreSQL</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#work-planning">Work Planning<a>
+    </li>
   </ol>
 </details>
 
@@ -471,7 +474,36 @@ Having all in consideration, I prefer *React*.<br/>
 I found it really fun to use and with a lot of potencial.
 
 ### Ruby on Rails
+*Ruby on Rails* is complicated. It is *easy to use* but really *hard to learn*.<br/>
+As we used it to create an API with an ORM, we could compare it with *Spring Boot*.<br/>
+<br/>
+There are some similarities between how these kind of tools operate when creating API.<br/>
+You will always need to establish the *database* information, controllers, models...<br/>
+<br/>
+The main thing here is that *you* have to create those in *Spring Boot*.<br/>
+But, with *Rails* you just have to *run a command* and it'll do the rest for you.<br/>
+Create a model, create a controller, create the migration for the *database*... everything.<br/>
+Speaking of which, *Rails* also creates the *database* for you. The Schema is in one of the *Ruby* files and you don't even have to export and import the *database* or do manual changes. You just *run a command*.<br/>
+<br/>
+If I had to think about negative points for *Rails*, I'll found a bunch of them. But, the most important being this a comparison are these:<br/>
+<ol>
+  <li>It's hard to learn</li>
+  <li>It's slower</li>
+</ol>
 
+###
+*Rails* is hard to learn. It gives you everything done, which is great. But, if you want to change or custom something, you just don' know how.<br/>
+Also, *Ruby* (As we said before) is an interpreted language, and not a fast one.<br/>
+*Spring* is based on *Java*, a compiled language. This means that it takes a few seconds to start but, when it does, it is super fast.<br/>
+*Rails* just isn't.<br/>
+Don't get me wrong, is fast. A human can nowadays barely tell the diference between these things. But it is inevitable that, being interpreted, is going to be a bit slower.
 
 ### PostgreSQL
+*PostgreSQL* is mostly like *MySQL*, which I found really easy to use.<br/>
+Though you won't need to use it very much if you are using *Rails* as I did.<br/>
+<br/>
+I could not tell any significant difference between *Postgre* and *MySQL*. They have some syntax differences, but they work almost equaly.<br/>
+<br/>
+I would recommend both if they case was given.
 
+# Work Planning
