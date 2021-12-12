@@ -386,7 +386,7 @@ If you want to insert some test data into the database (Not necessary) I recomen
 This is a *React* frontend.<br/>
 *React* is a JavaScript library for building user interfaces based on UI components.<br/>
 <br/>
-The *frontend* preparation is easy. You just have to access <a href="animes-fronted">animes-frontend</a> run ```npm install```.<br/>
+The *frontend* preparation is easy. You just have to access <a href="animes-frontend">animes-frontend</a> run ```npm install```.<br/>
 <br/>
 You don't have any data already in the *database* to run the *frontend*, you will be able to do every action since the beginning from here.
 
