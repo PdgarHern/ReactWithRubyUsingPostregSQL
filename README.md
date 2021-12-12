@@ -56,6 +56,7 @@
           <li><a href="#frontend">Frontend</a></li>
           <li><a href="#starting-the-app">Starting the app</a></li>
         </ul>
+        <li><a href="use-guide">Use guide</a></li>
       </ul>
     </li>
   </ol>
@@ -398,3 +399,6 @@ Run the *backend* with ```rails s```.<br/>
 It is possible that running ```rails s``` throughs you an error the first time. The terminal will require you to run ```yarn install --check-files```. Do so and then you should be able to run the server as normally.<br/>
 <br/>
 Then, run *React* using ```npm start```. It will ask to auto-select another port. Press *Y* and the app should start.
+
+## Use guide
+
