@@ -290,7 +290,9 @@ The project also notifies the user in other cases, like when some information is
 
 ###
 The project also has a loading feature so the user can always know what's happening.<br/>
-<img src="documentation/images/spinner.PNG" alt="spinner" align="center" width="500" />
+<div align="center">
+  <img src="documentation/images/spinner.PNG" alt="spinner" width="500" />
+</div>
 
 <!-- ### First of all
 To get this app running you'll need to *NodeJS*, *Ruby 2.6.8* with *Rails 6.1* and *PostgreSQL* (I use PostgreSQL 14).<br/>
