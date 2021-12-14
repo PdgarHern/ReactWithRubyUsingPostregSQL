@@ -366,6 +366,11 @@ The project also has a loading feature so the user can always know what's happen
   <img src="documentation/images/spinner.PNG" alt="spinner" width="500" />
 </div>
 
+#### Font
+For this project I used *Abel* (A Google Font).<br/>
+This is a modern interpretation of sans serif.<br/>
+It was originally used for newspaper headlines and posters. Its angled terminals and spiked stems give it enough style to be unique at display sizes, while its mono-weight still works well at smaller text sizes.
+
 ###
 The user also has a *customizable page* where they can check their personal info, and the famous *'Favourite'* lists.
 <div align="center">
