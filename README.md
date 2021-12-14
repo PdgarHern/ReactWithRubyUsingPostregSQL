@@ -173,13 +173,11 @@ To see the postgre database generation code, head to <a href="animes/db/schema.r
 
 # User Requirements
 <ol>
-  <li>
-  
-### Platform
-  </li>
+  <li>Platform
     <ul>
       <li>The project will be a web app</li>
     </ul>
+  </li>
 </ol>
 The main objective of the project was to create a web app for storing, managing and checking *anime* and related information.<br/>
 The app needed to have an *anime* searching engine, a place where you could either see every *anime* in the database or to search the one that you want to check.<br/>
