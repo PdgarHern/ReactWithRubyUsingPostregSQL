@@ -391,7 +391,7 @@ As an app about TV series, you can spect to see a lot of posters and images.<br/
 However, these images don't overcharge the page, are easily distinguishable and, most times, are your way in to the information stored in the database.<br/>
 Again, using the minimalistic design of the app, we can display all these different images and still looks nice and elegant.
 
-### Summary
+#### Summary
 Again, all these things were made with simplicity in mind. Looking for an esay and fast way to do everything while keeping good aesthetic.
 
 # Guides
