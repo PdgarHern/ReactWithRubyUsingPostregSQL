@@ -225,12 +225,14 @@ There would be two *user roles*:
 <ol>
   <li>Normal Users</li>
   <li>Admin Users</li>
-</ol>
+</ol> -->
 
-###
+<!-- ###
 Only the *Admin Users* could create, update or delete registers of the main tables.<br/>
 <br/>
-Lastly, you would have a *Home page* and an *About Us* page with some information about the app. -->
+Lastly, you would have a *Home page* and an *About Us* page with some information about the app.  -->
+
+
 
 ### User Cases
 <img src="documentation/images/userCase.PNG" alt="User-Cases" />
