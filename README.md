@@ -178,9 +178,40 @@ To see the postgre database generation code, head to <a href="animes/db/schema.r
       <li>The project will be a web app</li>
     </ul>
   </li>
+  <li>Main purpose
+    <ul>
+      <li>Store, manage and check data about anime series.</li>
+      <li>Store, manage and check data about an anime's actors.</li>
+      <li>Store, manage and check data about an anime's characters.</li>
+    </ul>
+  </li>
+  <li>Interfaces needed
+    <ul>
+      <li>Home Page (App presentation)</li>
+      <li>About Us (App functionalities explanation for the users)</li>
+      <li>Anime Browser (Displaies all or a Search result)</li>
+      <li>Anime Info Page (Includes a list of actors for that anime)</li>
+      <li>One Anime Characters List Page (You access it inside the Anime Info Page)</li>
+      <li>Actor Info Page (Information about one actor)</li>
+      <li>Character Info Page (Information about one character)</li>
+      <li>Add New Anime Page (Accessed from the Anime Browser)</li>
+      <li>Update Existing Anime Page (Accessed from the Anime Info Page)</li>
+      <li>Add New Actor Page (Accessed from the Anime Info Page)</li>
+      <li>Update Existing Actor Page (Accessed from the Actor Info Page)</li>
+      <li>Add New Character Page (Accessed from the One Anime Characters List Page)</li>
+      <li>Update Existing Character Page (Accessed from the Character Info Page)</li>
+    </ul>
+  </li>
+  <li>Users
+    <ul>
+      <li>There will also be a Sign Up Page, Sign In Page and a User Personal Page</li>
+      <li>Each User can have one of two roles: Normal User or Admin User</li>
+      <li>Every User will have a 'Favourite Animes' Page and a 'Favourite Characters' Page. Once you are logged in, a button (Add Fav) will appear in the Anime / Character Info Page. Unless you already have that Anime / Character added to your favourites. On that case a 'Del Fav' button will replaced the prior mencioned.</li>
+      <li>Only the 'Admin Users' will be able to either Create, Update or Delete the Animes / Actors / Characters data.
+    </ul>
+  </li>
 </ol>
-The main objective of the project was to create a web app for storing, managing and checking *anime* and related information.<br/>
-The app needed to have an *anime* searching engine, a place where you could either see every *anime* in the database or to search the one that you want to check.<br/>
+<!-- The app needed to have an *anime* searching engine, a place where you could either see every *anime* in the database or to search the one that you want to check.<br/>
 Every *anime* had to have to more lists related to them.<br/>
 The first one had to be the *actors*, and you would see that in the same page where you would check all the information of an *anime*.<br/>
 The second list would be a *character* list. This list would be in a different page that you could access from the *anime info page*.<br/>
@@ -199,7 +230,7 @@ There would be two *user roles*:
 ###
 Only the *Admin Users* could create, update or delete registers of the main tables.<br/>
 <br/>
-Lastly, you would have a *Home page* and an *About Us* page with some information about the app.
+Lastly, you would have a *Home page* and an *About Us* page with some information about the app. -->
 
 ### User Cases
 <img src="documentation/images/userCase.PNG" alt="User-Cases" />
