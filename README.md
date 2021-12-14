@@ -371,14 +371,14 @@ For this project I used *Abel* (A Google Font).<br/>
 This is a modern interpretation of sans serif.<br/>
 It was originally used for newspaper headlines and posters. Its angled terminals and spiked stems give it enough style to be unique at display sizes, while its mono-weight still works well at smaller text sizes.
 
-###
+#### User customization
 The user also has a *customizable page* where they can check their personal info, and the famous *'Favourite'* lists.
 <div align="center">
   <img src="documentation/images/usercustom.PNG" alt="custom" width="550" />
   <img src="documentation/images/favouriteanimes.PNG" alt="fav" width="550" />
 </div>
 
-###
+### Summary
 Again, all these things were made with simplicity in mind. Looking for an esay and fast way to do everything while keeping good aesthetic.
 
 # Guides
