@@ -499,7 +499,8 @@ It's really that simple. You go to the *Anime browser* and feel that something i
 <div align="center">
   <img src="documentation/images/addAnime.PNG" alt="add-anime" width="600" />
 </div>
-<br/>
+
+###
 The same goes to the *Actors* and *Characters*.<br/>
 <br/>
 <div align="center">
