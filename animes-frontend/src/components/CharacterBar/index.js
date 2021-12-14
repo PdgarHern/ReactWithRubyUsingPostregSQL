@@ -21,8 +21,17 @@ const CharacterBar = ({ character, animeId }) => {
   }
 
   const handleDelete = async () => {
-    await API.deleteCharacter(character.id);
-    navigate(`/characters/${animeId}`);
+    try {
+      await API.deleteCharacter(character.id);
+
+      sessionStorage.removeItem(`character${character.id}`);
+      sessionStorage.removeItem(`anime${animeId}`);
+
+      navigate(`/characters/${animeId}`);
+    } catch (error) {
+      navigate(`/characters/${animeId}`);
+    }
+    
   }
 
   const handleBrowseAnimes = () => {

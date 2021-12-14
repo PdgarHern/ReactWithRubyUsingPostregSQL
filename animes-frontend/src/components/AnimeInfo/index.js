@@ -35,8 +35,19 @@ const AnimeInfo = ({ anime }) => {
   }
 
   const handleDelete = async () => {
-    await API.deleteAnime(anime.id);
-    navigate('/browse-info');
+    try {
+      await API.deleteAnime(anime.id);
+
+      sessionStorage.removeItem('browseInfoState');
+
+      navigate('/browse-info');
+    } catch (error) {
+      setError(true);
+      setTimeout(() => {
+        navigate('/browse-info');
+      }, 3000);
+    }
+    
   }
 
   const handleCharacters = () => {
@@ -94,6 +105,8 @@ const AnimeInfo = ({ anime }) => {
       }
     }
   }
+
+  if (error) return <div className="formError">There was an error...</div>;
 
   return (
     <>
