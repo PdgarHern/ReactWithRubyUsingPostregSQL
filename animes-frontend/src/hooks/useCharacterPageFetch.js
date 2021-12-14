@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 // API
 import API from "../API";
+import { isPersistedState } from "../helpers";
 
 const initialState = {
     page: 0,
@@ -36,6 +37,14 @@ export const useCharacterPageFetch = () => {
 
   // Initial and Search
   useEffect(() => {
+    if (!searchTerm) {
+      const sessionState = isPersistedState('charactersState');
+
+      if (sessionState) {
+        setState(sessionState);
+        return;
+      }
+    }
     setState(initialState);
     fetchCharacters(1, searchTerm);
   }, [searchTerm]);
@@ -46,7 +55,12 @@ export const useCharacterPageFetch = () => {
 
     fetchCharacters(state.page + 1, searchTerm);
     setIsLoadingMore(false);
-  }, [isLoadingMore, searchTerm, state.page])
+  }, [isLoadingMore, searchTerm, state.page]);
+
+  // Write to sessionStorage
+  useEffect(() => {
+    if (!searchTerm) sessionStorage.setItem('charactersState', JSON.stringify(state));
+  }, [searchTerm, state]);
 
   return { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
 

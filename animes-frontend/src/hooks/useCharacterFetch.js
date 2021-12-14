@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+// API
 import API from "../API";
+// Helpers
+import { isPersistedState } from "../helpers";
 
 export const useCharacterFetch = characterId => {
   const [state, setState] = useState({});
@@ -23,10 +26,23 @@ export const useCharacterFetch = characterId => {
       } catch (error) {
         setError(true);
       }
+
+      const sessionState = isPersistedState(`character${characterId}`);
+
+      if (sessionState) {
+        setState(sessionState);
+        setLoading(false);
+        return;
+      }
     }
 
     fetchCharacter();
   }, [characterId]);
+
+  // Write to sessionStorage
+  useEffect(() => {
+    sessionStorage.setItem(`character${characterId}`, JSON.stringify(state));
+  }, [characterId, state]);
 
   return { state, loading, error };
 }

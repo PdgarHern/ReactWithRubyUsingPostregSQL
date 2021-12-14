@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+// API
 import API from "../API";
+// Helpers
+import { isPersistedState } from "../helpers";
 
 export const useActorFetch = actorId => {
   const [state, setState] = useState({});
@@ -25,8 +28,21 @@ export const useActorFetch = actorId => {
       }
     }
 
+    const sessionState = isPersistedState(`actor${actorId}`);
+
+    if (sessionState) {
+      setState(sessionState);
+      setLoading(false);
+      return;
+    }
+
     fetchActor();
   }, [actorId]);
+
+  // Write to sessionStorage
+  useEffect(() => {
+    sessionStorage.setItem(`actor${actorId}`, JSON.stringify(state));
+  }, [actorId, state]);
 
   return { state, loading, error };
 }
