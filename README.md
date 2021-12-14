@@ -172,6 +172,15 @@ We add these:
 To see the postgre database generation code, head to <a href="animes/db/schema.rb">animes/db/schema.rb</a>
 
 # User Requirements
+<ol>
+  <li>
+  
+### Platform
+  </li>
+    <ul>
+      <li>The project will be a web app</li>
+    </ul>
+</ol>
 The main objective of the project was to create a web app for storing, managing and checking *anime* and related information.<br/>
 The app needed to have an *anime* searching engine, a place where you could either see every *anime* in the database or to search the one that you want to check.<br/>
 Every *anime* had to have to more lists related to them.<br/>
