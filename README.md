@@ -507,7 +507,8 @@ The same goes to the *Actors* and *Characters*.<br/>
   <img src="documentation/images/addActor.PNG" alt="add-actor" width="600" />
   <img src="documentation/images/addChar.PNG" alt="add-char" width="600" />
 </div>
-<br/>
+
+###
 If the database already has some data, you may as well start as a normal user, and take advantage of the benefits of having an account by adding some animes to your *favourites* with that big *Add Fav*.<br/>
 Maybe do the same with some *characters*.<br/>
 <br/>
