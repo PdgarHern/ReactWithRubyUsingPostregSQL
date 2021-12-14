@@ -30,24 +30,66 @@ const PostActor = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const [nameError, setNameError] = useState(false);
+  const [genderError, setGenderError] = useState(false);
+  const [ageError, setAgeError] = useState(false);
+  const [charError, setCharError] = useState(false);
+  const [imgError, setImgError] = useState(false);
+
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
+    let errors = 0;
+
     try {
-      setLoading(true);
-      const formData = new FormData();
-      formData.append('name', name);
-      formData.append('gender', gender);
-      formData.append('age', age);
-      formData.append('character_done', character);
-      formData.append('anime_id', animeId);
-      if (img != null) formData.append('img', img);
+      if (name == '') {
+        setNameError(true);
+        errors += 1;
+      }
+      if (gender == '') {
+        setGenderError(true);
+        errors += 1;
+      }
+      if (age == '' || age <= 5 || age > 100) {
+        setAgeError(true);
+        errors += 1;
+      }
+      if (character == '') {
+        setCharError(true);
+        errors += 1;
+      }
+      if (img == null) {
+        setImgError(true);
+        errors += 1;
+      }
 
-      await API.postActor(formData);
+      if (errors === 0) {
+        setLoading(true);
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('gender', gender);
+        formData.append('age', age);
+        formData.append('character_done', character);
+        formData.append('anime_id', animeId);
+        if (img != null) formData.append('img', img);
+  
+        await API.postActor(formData);
+  
+        setLoading(false);
+  
+        navigate(`/anime/${animeId}`);
+      } else {
+        setTimeout(() => {
+          setNameError(false);
+          setGenderError(false);
+          setAgeError(false);
+          setCharError(false);
+          setImgError(false);
 
-      setLoading(false);
-
-      navigate(`/anime/${animeId}`);
+          errors = 0;
+        }, 3000);
+      }
+      
     } catch (error) {
       setError(true);
       setTimeout(() => {
@@ -100,6 +142,7 @@ const PostActor = () => {
                   name='name'
                   onChange={handleInput}
                 />
+                {nameError && <div className="formError">*Insert a name</div>}
                 <label>Gender</label>
                 <input
                   type='text'
@@ -107,6 +150,7 @@ const PostActor = () => {
                   name='gender'
                   onChange={handleInput}
                 />
+                {genderError && <div className="formError">*Insert a gender</div>}
                 <label>Age</label>
                 <input
                   type='text'
@@ -114,6 +158,7 @@ const PostActor = () => {
                   name='age'
                   onChange={handleInput}
                 />
+                {ageError && <div className="formError">*Insert a valid age</div>}
                 <label>Character</label>
                 <input
                   type='text'
@@ -121,6 +166,7 @@ const PostActor = () => {
                   name='character'
                   onChange={handleInput}
                 />
+                {charError && <div className="formError">*Insert the character</div>}
               </div>
               <div className="column">
                 <label>Image</label>
@@ -131,6 +177,7 @@ const PostActor = () => {
                   onChange={handleInput}
                 />
                 <img id="img" src={ImgExample} alt='Not-Found' />
+                {imgError && <div className="formError">*Insert an image</div>}
               </div>
             </>
           )}

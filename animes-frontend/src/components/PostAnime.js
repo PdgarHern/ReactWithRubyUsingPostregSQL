@@ -33,29 +33,95 @@ const PostAnime = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [errorTitle, setErrorTitle] = useState(false);
+  const [errorGenres, setErrorGenres] = useState(false);
+  const [errorAuthor, setErrorAuthor] = useState(false);
+  const [errorStudio, setErrorStudio] = useState(false);
+  const [errorPremiered, setErrorPremiered] = useState(false);
+  const [errorDemographic, setErrorDemographic] = useState(false);
+  const [errorEpisodes, setErrorEpisodes] = useState(false);
+  const [errorPoster, setErrorPoster] = useState(false);
+  const [errorThumb, setErrorThumb] = useState(false);
+
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
+    let errors = 0;
+
     try {
-      setLoading(true);
-      const formData = new FormData();
-      formData.append('title', title);
-      formData.append('plot', plot);
-      formData.append('genres', genres);
-      formData.append('author', author);
-      formData.append('studio', studio);
-      formData.append('premiered', premiered);
-      formData.append('demographic', demographic);
-      formData.append('episodes', episodes);
-      if (poster != null) formData.append('poster', poster);
-      if (thumb != null) formData.append('thumb', thumb);
+      if (title == '') {
+        setErrorTitle(true);
+        errors += 1;
+      }
+      if (genres == '') {
+        setErrorGenres(true);
+        errors += 1;
+      }
+      if (author == '') {
+        setErrorAuthor(true);
+        errors += 1;
+      }
+      if (studio == '') {
+        setErrorStudio(true);
+        errors += 1;
+      }
+      if (premiered == '' || premiered < 1910 || premiered > 2100) {
+        setErrorPremiered(true);
+        errors += 1;
+      }
+      if (demographic == '') {
+        setErrorDemographic(true);
+        errors += 1;
+      }
+      if (episodes == '' || episodes <= 0) {
+        setErrorEpisodes(true);
+        errors += 1;
+      }
+      if (poster == null) {
+        setErrorPoster(true);
+        errors += 1;
+      }
+      if (thumb == null) {
+        setErrorThumb(true);
+        errors += 1;
+      }
 
+      if (errors === 0) {
+        setLoading(true);
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('plot', plot);
+        formData.append('genres', genres);
+        formData.append('author', author);
+        formData.append('studio', studio);
+        formData.append('premiered', premiered);
+        formData.append('demographic', demographic);
+        formData.append('episodes', episodes);
+        if (poster != null) formData.append('poster', poster);
+        if (thumb != null) formData.append('thumb', thumb);
+  
+  
+        await API.postAnime(formData);
+  
+        setLoading(false);
+  
+        navigate(`/browse-info`);
+      } else {
+        setTimeout(() => {
+          setErrorTitle(false);
+          setErrorGenres(false);
+          setErrorAuthor(false);
+          setErrorStudio(false);
+          setErrorPremiered(false);
+          setErrorDemographic(false);
+          setErrorEpisodes(false);
+          setErrorPoster(false);
+          setErrorThumb(false);
 
-      await API.postAnime(formData);
-
-      setLoading(false);
-
-      navigate(`/browse-info`);
+          errors = 0;
+        }, 3000);
+      }
+      
     } catch (error) {
       setError(true);
       setTimeout(() => {
@@ -114,6 +180,7 @@ const PostAnime = () => {
                   name='title'
                   onChange={handleInput}
                 />
+                {errorTitle && <div className="formError">*Insert a title</div>}
                 <label>Plot</label>
                 <input
                   type='text'
@@ -128,6 +195,7 @@ const PostAnime = () => {
                   name='genres'
                   onChange={handleInput}
                 />
+                {errorGenres && <div className="formError">*Insert genre/s</div>}
                 <label>Author</label>
                 <input
                   type='text'
@@ -135,6 +203,7 @@ const PostAnime = () => {
                   name='author'
                   onChange={handleInput}
                 />
+                {errorAuthor && <div className="formError">*Insert the author/s</div>}
                 <label>Studio</label>
                 <input
                   type='text'
@@ -142,6 +211,7 @@ const PostAnime = () => {
                   name='studio'
                   onChange={handleInput}
                 />
+                {errorStudio && <div className="formError">*Insert the studio/s</div>}
                 <label>Premiered</label>
                 <input
                   type='number'
@@ -149,6 +219,7 @@ const PostAnime = () => {
                   name='premiered'
                   onChange={handleInput}
                 />
+                {errorPremiered && <div className="formError">*Insert a valid year</div>}
                 <label>Demographic</label>
                 <input
                   type='text'
@@ -156,6 +227,7 @@ const PostAnime = () => {
                   name='demographic'
                   onChange={handleInput}
                 />
+                {errorDemographic && <div className="formError">*Insert the demographic/s</div>}
                 <label>Episodes</label>
                 <input
                   type='number'
@@ -163,6 +235,7 @@ const PostAnime = () => {
                   name='episodes'
                   onChange={handleInput}
                 />
+                {errorEpisodes && <div className="formError">*Insert a valid number</div>}
               </div>
               <div className="column">
                 <label>Poster</label>
@@ -173,6 +246,8 @@ const PostAnime = () => {
                   onChange={handleInput}
                 />
                 <img id="posterImg" src={PosterExample} alt="Not Found" />
+                {errorPoster && <div className="formError">*Insert a poster</div>}
+                <br/>
                 <label>Thumb</label>
                 <input
                   id="image"
@@ -181,6 +256,7 @@ const PostAnime = () => {
                   onChange={handleInput}
                 />
                 <img id="thumbImg" src={ThumbExample} alt="Not Found" />
+                {errorThumb && <div className="formError">*Insert a thumb</div>}
               </div>
             </>
           )}

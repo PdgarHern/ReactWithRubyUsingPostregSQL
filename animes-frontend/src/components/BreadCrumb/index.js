@@ -12,8 +12,12 @@ const BreadCrumb = ({ animeTitle, linkPath }) => (
       <Link to={linkPath}>
         <span>Back</span>
       </Link>
-      <span>|</span>
-      <span>{animeTitle}</span>
+      {animeTitle && 
+        <>
+          <span>|</span>
+          <span>{animeTitle}</span>
+        </>
+      }
     </Content>
   </Wrapper>
 );
