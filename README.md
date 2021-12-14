@@ -378,6 +378,19 @@ The user also has a *customizable page* where they can check their personal info
   <img src="documentation/images/favouriteanimes.PNG" alt="fav" width="550" />
 </div>
 
+#### Interfaces
+They are consistent. As you could have seen in the prototype, there are certain paterns thaht repeat themselves.<br/>
+This makes it easier for the user to navigate and use the app, as well as making the learning process faster.
+
+#### Text redaction
+Every text (Apart from the *anime's plot* and the *About Us Page*) is small, short, easy to read.<br/>
+If there was a lot of text, the user could get tired more easily, so we can make the experience more comfortable by using small texts.
+
+#### Multimedia aspect
+As an app about TV series, you can spect to see a lot of posters and images.<br/>
+However, these images don't overcharge the page, are easily distinguishable and, most times, are your way in to the information stored in the database.<br/>
+Again, using the minimalistic design of the app, we can display all these different images and still looks nice and elegant.
+
 ### Summary
 Again, all these things were made with simplicity in mind. Looking for an esay and fast way to do everything while keeping good aesthetic.
 
