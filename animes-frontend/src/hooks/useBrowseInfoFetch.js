@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 // API
 import API from '../API';
+// Helpers
+import { isPersistedState } from "../helpers";
 
 const initialState = {
   page: 0,
@@ -36,6 +38,14 @@ export const useBrowseInfoFetch = () => {
 
   // Initial and Search
   useEffect(() => {
+    if (!searchTerm) {
+      const sessionState = isPersistedState('browseInfoState');
+
+      if (sessionState) {
+        setState(sessionState);
+        return;
+      }
+    }
     setState(initialState);
     fetchAnimes(1, searchTerm);
   }, [searchTerm]);
@@ -46,7 +56,12 @@ export const useBrowseInfoFetch = () => {
 
     fetchAnimes(state.page + 1, searchTerm);
     setIsLoadingMore(false);
-  }, [isLoadingMore, searchTerm, state.page])
+  }, [isLoadingMore, searchTerm, state.page]);
+
+  // Write to sessionStorage
+  useEffect(() => {
+    if (!searchTerm) sessionStorage.setItem('browseInfoState', JSON.stringify(state));
+  }, [searchTerm, state]);
 
   return { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore };
 
