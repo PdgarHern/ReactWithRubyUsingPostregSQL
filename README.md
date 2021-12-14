@@ -44,6 +44,17 @@
       <a href="#interfaces">Interfaces</a>
       <ul>
         <li><a href="#usability">Usability</a></li>
+        <ul>
+          <li><a href="#visual-design">Visual design</a></li>
+          <li><a href="#error-handling">Error handling</a></li>
+          <li><a href="#notifications-for-the-user">Notifications for the user</a></li>
+          <li><a href="#font">Font</a></li>
+          <li><a href="#user-customization">User customization</a></li>
+          <li><a href="#interfaces-display">Interfaces display</a></li>
+          <li><a href="#text-redaction">Text redaction</a></li>
+          <li><a href="#multimedia-aspect">Multimedia aspect</a></li>
+          <li><a href="#summary">Summary</a></li>
+        </ul>
       </ul>
     </li>
     <li>
@@ -378,7 +389,7 @@ The user also has a *customizable page* where they can check their personal info
   <img src="documentation/images/favouriteanimes.PNG" alt="fav" width="550" />
 </div>
 
-#### Interfaces
+#### Interfaces display
 They are consistent. As you could have seen in the prototype, there are certain paterns thaht repeat themselves.<br/>
 This makes it easier for the user to navigate and use the app, as well as making the learning process faster.
 
