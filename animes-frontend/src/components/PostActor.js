@@ -76,6 +76,7 @@ const PostActor = () => {
         await API.postActor(formData);
   
         setLoading(false);
+        sessionStorage.removeItem(`anime${animeId}`);
   
         navigate(`/anime/${animeId}`);
       } else {

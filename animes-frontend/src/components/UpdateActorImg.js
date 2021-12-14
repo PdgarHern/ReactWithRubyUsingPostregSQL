@@ -38,6 +38,8 @@ const UpdateActorImg = () => {
       await API.updateActor(actorId, formData);
 
       setLoading(false);
+      sessionStorage.removeItem(`actor${actorId}`);
+      sessionStorage.removeItem(`anime${actor.anime_id}`);
 
       navigate(`/actor/${actorId}`);
     } catch (error) {

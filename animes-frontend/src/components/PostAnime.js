@@ -104,6 +104,7 @@ const PostAnime = () => {
         await API.postAnime(formData);
   
         setLoading(false);
+        sessionStorage.removeItem('browseInfoState');
   
         navigate(`/browse-info`);
       } else {

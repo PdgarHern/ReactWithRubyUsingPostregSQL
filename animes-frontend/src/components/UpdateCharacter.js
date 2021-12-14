@@ -76,6 +76,8 @@ const UpdateCharacter = () => {
     await API.updateCharacter(characterId, body);
 
     setLoading(false);
+    sessionStorage.removeItem(`character${characterId}`);
+    sessionStorage.removeItem(`anime${character.anime_id}`);
 
     navigate(`/character/info/${characterId}`);
   }
