@@ -328,7 +328,8 @@ Easy to read, easy to interact... easy to use.<br/>
 <br/>
 The *navigation* is easy to learn and remember for the user.<br/>
 The information shown is displayed in a way that it's easy to found what you are looking for in a short period of time.<br/>
-<br/>
+
+#### Visual Design
 The visual design as a whole is minimalistic.<br/>
 The app goes on with four main colors:<br/>
 <ol>
