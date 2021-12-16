@@ -5,6 +5,7 @@ import Grid from "./Grid";
 import Thumb from "./Thumb";
 import ButtonDark from "./ButtonDark";
 import SearchBar from "./SearchBar";
+import Footer from "./Footer";
 import Spinner from "./Spinner";
 // Hooks
 import { useBrowseInfoFetch } from "../hooks/useBrowseInfoFetch";
@@ -54,6 +55,7 @@ const BrowseInfo = () => {
           />
         ))}
       </Grid>
+      {!loading && !error && <Footer />}
       {loading && <div className="spinner"><Spinner /></div>}
       {state.page < state.total_pages && !loading && (
         <ButtonDark text="Load More" callback={() => setIsLoadingMore(true)} />

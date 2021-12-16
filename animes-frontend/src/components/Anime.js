@@ -8,6 +8,7 @@ import AnimeBar from "./AnimeBar";
 import Grid from "./Grid";
 import Actor from "./ActorC";
 import ButtonDark from "./ButtonDark";
+import Footer from "./Footer";
 import Spinner from "./Spinner";
 // Hook
 import { useAnimeFetch } from "../hooks/useAnimeFetch";
@@ -67,6 +68,7 @@ const Anime = () => {
           {localStorage.userToken && admin && (
             <ButtonDark text="Add Actor" callback={handleAddButton} />
           )}
+          <Footer />
         </>
       )}
       {loading && <div className="spinner"><Spinner /></div>}
